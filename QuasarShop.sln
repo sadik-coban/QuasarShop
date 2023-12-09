@@ -5,7 +5,15 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuasarShop", "QuasarShop\QuasarShop.csproj", "{C7578410-F4A1-48F9-A7C2-61BD30F58F53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuasarShopData", "..\QuasarShopData\QuasarShopData.csproj", "{0F31C298-9AE0-4E13-B57D-807E53068E88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuasarShopData", "..\QuasarShopData\QuasarShopData.csproj", "{0F31C298-9AE0-4E13-B57D-807E53068E88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{D0BE6240-C1AE-4847-A6BD-6920BF6A637F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationsSqlServer", "MigrationsSqlServer\MigrationsSqlServer.csproj", "{80702856-D1B3-4D48-97B0-BDC4B3BC7908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationsPostgreSql", "MigrationsPostgreSql\MigrationsPostgreSql.csproj", "{05E701E6-F87B-44FA-941E-D9484C38D8F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationsMySql", "MigrationsMySql\MigrationsMySql.csproj", "{1D6C1419-31F1-4CE9-9493-C8A5FF54A90E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +29,26 @@ Global
 		{0F31C298-9AE0-4E13-B57D-807E53068E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F31C298-9AE0-4E13-B57D-807E53068E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F31C298-9AE0-4E13-B57D-807E53068E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80702856-D1B3-4D48-97B0-BDC4B3BC7908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80702856-D1B3-4D48-97B0-BDC4B3BC7908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80702856-D1B3-4D48-97B0-BDC4B3BC7908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80702856-D1B3-4D48-97B0-BDC4B3BC7908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E701E6-F87B-44FA-941E-D9484C38D8F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E701E6-F87B-44FA-941E-D9484C38D8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E701E6-F87B-44FA-941E-D9484C38D8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E701E6-F87B-44FA-941E-D9484C38D8F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D6C1419-31F1-4CE9-9493-C8A5FF54A90E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6C1419-31F1-4CE9-9493-C8A5FF54A90E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6C1419-31F1-4CE9-9493-C8A5FF54A90E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6C1419-31F1-4CE9-9493-C8A5FF54A90E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{80702856-D1B3-4D48-97B0-BDC4B3BC7908} = {D0BE6240-C1AE-4847-A6BD-6920BF6A637F}
+		{05E701E6-F87B-44FA-941E-D9484C38D8F4} = {D0BE6240-C1AE-4847-A6BD-6920BF6A637F}
+		{1D6C1419-31F1-4CE9-9493-C8A5FF54A90E} = {D0BE6240-C1AE-4847-A6BD-6920BF6A637F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90A5098C-CAF5-4719-A74D-4C17E9D600A2}
