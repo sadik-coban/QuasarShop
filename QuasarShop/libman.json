@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "startbootstrap-sb-admin-2-bs5@4.1.5-beta.8",
+      "destination": "Styles/startbootstrap-sb-admin-2-bs5/",
+      "files": [
+        "scss/sb-admin-2.scss",
+        "scss/_buttons.scss",
+        "scss/_cards.scss",
+        "scss/_charts.scss",
+        "scss/_dropdowns.scss",
+        "scss/_error.scss",
+        "scss/_footer.scss",
+        "scss/_global.scss",
+        "scss/_login.scss",
+        "scss/_mixins.scss",
+        "scss/_navs.scss",
+        "scss/_utilities.scss",
+        "scss/_variables.scss",
+        "scss/navs/_global.scss",
+        "scss/navs/_sidebar.scss",
+        "scss/navs/_topbar.scss",
+        "scss/utilities/_animation.scss",
+        "scss/utilities/_background.scss",
+        "scss/utilities/_border.scss",
+        "scss/utilities/_display.scss",
+        "scss/utilities/_progress.scss",
+        "scss/utilities/_rotate.scss",
+        "scss/utilities/_text.scss"
+      ]
+    }
+  ]
+}
