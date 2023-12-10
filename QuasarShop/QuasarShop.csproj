@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\QuasarShopData\QuasarShopData.csproj" />
     <ProjectReference Include="..\MigrationsMySql\MigrationsMySql.csproj" />
     <ProjectReference Include="..\MigrationsPostgreSql\MigrationsPostgreSql.csproj" />
     <ProjectReference Include="..\MigrationsSqlServer\MigrationsSqlServer.csproj" />
