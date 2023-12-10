@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuasarShopData;
 
@@ -12,6 +13,9 @@ public class Order
 
     public User? User { get; set; }
     public ICollection<OrderDetail> OrderDetails { get; set; } = new HashSet<OrderDetail>();
+
+    [NotMapped]
+    public decimal GrandTotal => OrderDetails.Sum(p => p.LineTotal);
 
 }
 

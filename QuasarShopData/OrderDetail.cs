@@ -19,6 +19,9 @@ public class OrderDetail
     [NotMapped]
     public decimal DiscountedPrice => Price - (Price * DiscountRate / 100.0m);
 
+
+    [NotMapped]
+    public decimal LineTotal => DiscountedPrice * Quantity;
 }
 
 public class OrderDetailEntityTypeConfiguration : IEntityTypeConfiguration<OrderDetail>
