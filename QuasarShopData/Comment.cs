@@ -13,7 +13,6 @@ public class Comment : EntityBase
     public int Rate { get; set; }
 
     public Product? Product { get; set; }
-    public override string EntityName => "Yorum";
 
 
 }

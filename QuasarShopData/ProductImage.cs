@@ -11,7 +11,6 @@ public class ProductImage : EntityBase
     public string Image { get; set; }
 
     public Product? Product { get; set; }
-    public override string EntityName => "Ürün Görseli";
 
 }
 

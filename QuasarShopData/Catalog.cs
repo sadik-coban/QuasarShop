@@ -9,8 +9,6 @@ public class Catalog : EntityBase
 
     public string Name { get; set; }
 
-    public override string EntityName => "Katalog";
-
     public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 }
 

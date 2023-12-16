@@ -1749,12 +1749,12 @@
     <ProjectReference Include="..\MigrationsPostgreSql\MigrationsPostgreSql.csproj" />
     <ProjectReference Include="..\MigrationsSqlServer\MigrationsSqlServer.csproj" />
     <ProjectReference Include="..\QuasarShopData\QuasarShopData.csproj" />
+    <ProjectReference Include="..\QuasarShopServices\QuasarShopServices.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Styles\" />
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 

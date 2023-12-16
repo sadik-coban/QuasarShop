@@ -4,6 +4,9 @@ using NETCore.MailKit.Extensions;
 using NETCore.MailKit.Infrastructure.Internal;
 using QuasarShop;
 using QuasarShopData;
+using QuasarShopServices;
+using System.Collections;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,6 +73,9 @@ builder
         });
     });
 
+builder
+    .Services
+    .AddQuasarShop();
 
 var app = builder.Build();
 

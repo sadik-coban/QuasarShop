@@ -11,7 +11,5 @@ public abstract class EntityBase
 
     public User? User { get; set; }
 
-    [NotMapped]
-    public virtual string EntityName => "QuasarShop Entity";
 }
 

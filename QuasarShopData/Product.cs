@@ -23,7 +23,6 @@ public class Product : EntityBase
 
     [NotMapped]
     public decimal DiscountedPrice => Price - (Price * DiscountRate / 100.0m);
-    public override string EntityName => "Ürün";
 
 }
 

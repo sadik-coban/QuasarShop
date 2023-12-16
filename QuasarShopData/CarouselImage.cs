@@ -11,7 +11,6 @@ public class CarouselImage : EntityBase
     public DateTime? DateFirst { get; set; }
     public DateTime? DateEnd { get; set; }
 
-    public override string EntityName => "Tanıtım Görseli";
 }
 
 public class CarouselImageEntityTypeConfiguration : IEntityTypeConfiguration<CarouselImage>

@@ -1,6 +1,14 @@
 ﻿[
   {
-    "outputFile": "wwwroot/css/Admin.css",
-    "inputFile": "Styles/Admin.scss"
+    "outputFile": "wwwroot/css/Admin-indigo.css",
+    "inputFile": "Styles/Admin-indigo.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Admin-orange.css",
+    "inputFile": "Styles/Admin-orange.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Admin-green.css",
+    "inputFile": "Styles/Admin-green.scss"
   }
 ]
