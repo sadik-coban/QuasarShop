@@ -30,5 +30,5 @@ public class ProductViewModel
     [Display(Name = "İndirim Oranı")]
     [Required(ErrorMessage = "{0} alanı boş bırakılamaz!")]
     [RegularExpression(@"^[0-9]{1,2}$", ErrorMessage = "Lütfen geçerli bir oran yazınız!")]
-    public string? DiscountRate { get; set; }
+    public string DiscountRate { get; set; }
 }

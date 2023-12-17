@@ -27,7 +27,16 @@
                 {
                     <tr>
                         <td>@item.Name</td>
-                        <td></td>
+                        <td>
+                            <div class="d-flex gap-0">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-link">
+                                    <i class="bi bi-pen text-muted"></i>
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-link remove-btn">
+                                    <i class="bi bi-trash text-danger"></i>
+                                </a>
+                            </div>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -44,4 +53,28 @@
 else
 {
     <partial name="_NoDataPartial" />
+}
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $(() => {
+        $('.remove-btn').on('click', (evt) => {
+            Swal.fire({
+                icon: 'warning',
+                title: 'UYARI!',
+                html: 'Bu kayıt <b>TAMAMEN</b> silinecektir. Devam etmek istiyor musunuz?',
+                confirmButtonText: '<i class="bi bi-trash"></i> SİL',
+                showCancelButton: true,
+                cancelButtonText: 'İPTAL'
+            })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = $(evt.currentTarget).attr('href');
+                    }
+                });;
+            return false;
+        });
+    })
+</script>
 }

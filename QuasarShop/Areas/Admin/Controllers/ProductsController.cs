@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using QuasarShop.Models;
-using QuasarShopData;
 using QuasarShopServices;
+using System.Globalization;
 
 namespace QuasarShop.Areas.Admin.Controllers;
 
@@ -13,7 +12,7 @@ namespace QuasarShop.Areas.Admin.Controllers;
 public class ProductsController : ControllerBase
 {
     private readonly IProductsService productsService;
-
+    private readonly string entityName = "Katalog";
     public ProductsController(
         IProductsService productsService
         )
@@ -34,30 +33,51 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(ProductViewModel model)
     {
+        
         await productsService.Create(
-            model.Name, 
-            model.Enabled, 
-            UserId, 
-            decimal.Parse(model.Price), 
-            int.Parse(model.DiscountRate ?? "0"),
-            model.Description,
-            null
+            model.Name,
+            model.Enabled,
+            UserId,
+            description: model.Description,
+            price: decimal.Parse(model.Price, CultureInfo.CreateSpecificCulture("tr-TR")),
+            discountRate: int.Parse(model.DiscountRate),
+            image: model.Image
             );
+        TempData["success"] = $"{entityName} ekleme işlemi başarıyla tamamlanmıştır!";
         return RedirectToAction(nameof(Index));
+
     }
-    public IActionResult Edit(Guid id)
+    public async Task<IActionResult> Edit(Guid id)
     {
-        return View();
+        var item = await productsService.GetById(id);
+        if (item is null)
+            return RedirectToAction(nameof(Index));
+        return View(new ProductViewModel
+        {
+            Name = item.Name,
+            Enabled = item.Enabled
+        });
     }
 
     [HttpPost]
-    public IActionResult Edit(Product model)
+    public async Task<IActionResult> Edit(Guid id, ProductViewModel model)
     {
-        return View();
+        var item = await productsService.GetById(id);
+
+        item.Name = model.Name;
+        item.Enabled = model.Enabled;
+
+        TempData["success"] = $"{entityName} güncelleme işlemi başarıyla tamamlanmıştır!";
+
+        await productsService.Update(item);
+        return RedirectToAction(nameof(Index));
     }
-    public IActionResult Delete(Guid id)
+
+    public async Task<IActionResult> Delete(Guid id)
     {
-        return View();
+        await productsService.Delete(id);
+        TempData["success"] = $"{entityName} silme işlemi başarıyla tamamlanmıştır!";
+        return RedirectToAction(nameof(Index));
     }
 
 }

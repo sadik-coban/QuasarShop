@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QuasarShop.Models;
-using QuasarShopData;
 using QuasarShopServices;
 
 namespace QuasarShop.Areas.Admin.Controllers;
@@ -12,7 +11,7 @@ namespace QuasarShop.Areas.Admin.Controllers;
 public class CatalogsController : ControllerBase
 {
     private readonly ICatalogsService catalogsService;
-
+    private readonly string entityName = "Katalog";
     public CatalogsController(
         ICatalogsService catalogsService
         )
@@ -23,7 +22,7 @@ public class CatalogsController : ControllerBase
     [Authorize(Roles = "Administrators,ProductAdministrators,OrderAdministrators")]
     public async Task<IActionResult> Index()
     {
-        return View( catalogsService.GetAll().ToListAsync());
+        return View(await catalogsService.GetAll().ToListAsync());
     }
     public IActionResult Create()
     {
@@ -34,21 +33,41 @@ public class CatalogsController : ControllerBase
     public async Task<IActionResult> Create(CatalogViewModel model)
     {
         await catalogsService.Create(model.Name, model.Enabled, UserId);
+        TempData["success"] = $"{entityName} ekleme işlemi başarıyla tamamlanmıştır!";
         return RedirectToAction(nameof(Index));
+
     }
-    public IActionResult Edit(Guid id)
+    public async Task<IActionResult> Edit(Guid id)
     {
-        return View();
+        var item = await catalogsService.GetById(id);
+        if (item is null)
+            return RedirectToAction(nameof(Index));
+        return View(new CatalogViewModel
+        {
+            Name = item.Name,
+            Enabled = item.Enabled
+        });
     }
 
     [HttpPost]
-    public IActionResult Edit(Catalog model)
+    public async Task<IActionResult> Edit(Guid id, CatalogViewModel model)
     {
-        return View();
+        var item = await catalogsService.GetById(id);
+
+        item.Name = model.Name;
+        item.Enabled = model.Enabled;
+
+        TempData["success"] = $"{entityName} güncelleme işlemi başarıyla tamamlanmıştır!";
+
+        await catalogsService.Update(item);
+        return RedirectToAction(nameof(Index));
     }
-    public IActionResult Delete(Guid id)
+
+    public async Task<IActionResult> Delete(Guid id)
     {
-        return View();
+        await catalogsService.Delete(id);
+        TempData["success"] = $"{entityName} silme işlemi başarıyla tamamlanmıştır!";
+        return RedirectToAction(nameof(Index));
     }
 
 }
