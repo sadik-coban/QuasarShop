@@ -9,6 +9,8 @@ public static class AppExtensions
 
         services
             .AddScoped<ICatalogsService, CatalogsService>();
+        services
+            .AddScoped<IProductsService, ProductsService>();
 
         return services;
     }

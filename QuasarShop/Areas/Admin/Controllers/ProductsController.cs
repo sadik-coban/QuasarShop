@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using QuasarShop.Models;
 using QuasarShopData;
@@ -9,31 +10,39 @@ namespace QuasarShop.Areas.Admin.Controllers;
 
 [Area("Admin")]
 [Authorize(Roles = "Administrators,ProductAdministrators")]
-public class CatalogsController : ControllerBase
+public class ProductsController : ControllerBase
 {
-    private readonly ICatalogsService catalogsService;
+    private readonly IProductsService productsService;
 
-    public CatalogsController(
-        ICatalogsService catalogsService
+    public ProductsController(
+        IProductsService productsService
         )
     {
-        this.catalogsService = catalogsService;
+        this.productsService = productsService;
     }
 
     [Authorize(Roles = "Administrators,ProductAdministrators,OrderAdministrators")]
     public async Task<IActionResult> Index()
     {
-        return View( catalogsService.GetAll().ToListAsync());
+        return View(await productsService.GetAll().ToListAsync());
     }
     public IActionResult Create()
     {
-        return View(new CatalogViewModel { Enabled = true });
+        return View(new ProductViewModel { Enabled = true });
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(CatalogViewModel model)
+    public async Task<IActionResult> Create(ProductViewModel model)
     {
-        await catalogsService.Create(model.Name, model.Enabled, UserId);
+        await productsService.Create(
+            model.Name, 
+            model.Enabled, 
+            UserId, 
+            decimal.Parse(model.Price), 
+            int.Parse(model.DiscountRate ?? "0"),
+            model.Description,
+            null
+            );
         return RedirectToAction(nameof(Index));
     }
     public IActionResult Edit(Guid id)
@@ -42,7 +51,7 @@ public class CatalogsController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Edit(Catalog model)
+    public IActionResult Edit(Product model)
     {
         return View();
     }

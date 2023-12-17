@@ -5,14 +5,14 @@ namespace QuasarShopServices;
 
 public interface ICatalogsService
 {
-    Task<List<Catalog>> GetAll();
+    IQueryable<Catalog> GetAll();
 
     Task<Catalog?> GetById(Guid id);
 
-    Task Create(Catalog catalog);
+    Task Create(Catalog item);
     Task Create(string Name, bool enabled, Guid userId);
 
-    Task Update(Catalog catalog);
+    Task Update(Catalog item);
 
     Task Delete(Guid id);
 }
@@ -28,11 +28,11 @@ public class CatalogsService : ICatalogsService
         this.context = context;
     }
 
-    public async Task Create(Catalog catalog)
+    public async Task Create(Catalog item)
     {
-        catalog.DateCreated = DateTime.UtcNow;
+        item.DateCreated = DateTime.UtcNow;
 
-        await context.Catalogs.AddAsync(catalog);
+        await context.Catalogs.AddAsync(item);
         await context.SaveChangesAsync();
     }
 
@@ -50,9 +50,9 @@ public class CatalogsService : ICatalogsService
         await context.SaveChangesAsync();
     }
 
-    public Task<List<Catalog>> GetAll()
+    public IQueryable<Catalog> GetAll()
     {
-        return context.Catalogs.ToListAsync();
+        return context.Catalogs.AsQueryable<Catalog>(); 
     }
 
     public Task<Catalog?> GetById(Guid id)
@@ -60,9 +60,9 @@ public class CatalogsService : ICatalogsService
         return context.Catalogs.SingleOrDefaultAsync(p => p.Id == id);
     }
 
-    public async Task Update(Catalog catalog)
+    public async Task Update(Catalog item)
     {
-        context.Catalogs.Update(catalog);
+        context.Catalogs.Update(item);
         await context.SaveChangesAsync();
     }
 }
