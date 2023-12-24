@@ -11,5 +11,7 @@ public abstract class EntityBase
 
     public User? User { get; set; }
 
+    [NotMapped] public string UserName => User!.Name;
+
 }
 

@@ -21,14 +21,21 @@ public class ProductViewModel
 
 
     [Display(Name = "Açıklama")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
 
     [Display(Name = "Görsel")]
     public IFormFile? Image { get; set; }
 
-    [Display(Name = "İndirim Oranı")]
+    [Display(Name = "İndirim Oranı (%)")]
     [Required(ErrorMessage = "{0} alanı boş bırakılamaz!")]
     [RegularExpression(@"^[0-9]{1,2}$", ErrorMessage = "Lütfen geçerli bir oran yazınız!")]
     public string DiscountRate { get; set; }
+
+    [Display(Name = "Katalog")]
+    public IEnumerable<Guid> Catalogs { get; set; }
+
+    [Display(Name = "Foto Galeri")]
+    public IEnumerable<IFormFile> Images { get; set; }
+
 }

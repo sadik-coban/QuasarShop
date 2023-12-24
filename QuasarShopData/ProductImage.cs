@@ -4,9 +4,9 @@ using QuasarShopData.Infrastructure;
 
 namespace QuasarShopData;
 
-public class ProductImage : EntityBase
+public class ProductImage 
 {
-
+    public Guid Id { get; set; }
     public Guid ProductId { get; set; }
     public string Image { get; set; }
 

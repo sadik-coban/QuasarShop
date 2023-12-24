@@ -15,7 +15,6 @@ public class Manager : User
     public ICollection<Catalog> Catalogs { get; set; } = new HashSet<Catalog>();
     public ICollection<CarouselImage> CarouselImages { get; set; } = new HashSet<CarouselImage>();
     public ICollection<Product> Products { get; set; } = new HashSet<Product>();
-    public ICollection<ProductImage> ProductImages { get; set; } = new HashSet<ProductImage>();
     public ICollection<UserAddress> DeliveryAddresses { get; set; } = new HashSet<UserAddress>();
     public ICollection<UserAddress> BillingAddresses { get; set; } = new HashSet<UserAddress>();
 }
@@ -29,6 +28,7 @@ public class ManagerEntityTypeConfiguration : IEntityTypeConfiguration<Manager>
             .WithOne(p => (Manager)p.User!)
             .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Restrict);
+        
         builder
             .HasMany(p => p.Catalogs)
             .WithOne(p => (Manager)p.User!)
@@ -40,11 +40,7 @@ public class ManagerEntityTypeConfiguration : IEntityTypeConfiguration<Manager>
             .WithOne(p => (Manager)p.User!)
             .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Restrict);
-        builder
-            .HasMany(p => p.ProductImages)
-            .WithOne(p => (Manager)p.User!)
-            .HasForeignKey(p => p.UserId)
-            .OnDelete(DeleteBehavior.Restrict);
+
 
     }
 }

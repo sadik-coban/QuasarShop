@@ -15,6 +15,7 @@ public static class AppExtensions
         var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
         var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
         var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
+        
         context.Database.Migrate();
 
         roleManager.CreateAsync(new Role { Name = "Administrators" }).Wait();

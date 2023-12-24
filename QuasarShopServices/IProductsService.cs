@@ -11,7 +11,7 @@ public interface IProductsService
 
     Task Create(Product item);
 
-    Task Create(string name, bool enabled, Guid userId, decimal price, int discountRate, string? description, string? image);
+    Task Create(string name, bool enabled, Guid userId, decimal price, int discountRate, string? description, string? image, IEnumerable<string>? images, IEnumerable<Guid> catalogs);
 
     Task Update(Product item);
 
@@ -38,8 +38,10 @@ public class ProductsService : IProductsService
         await context.SaveChangesAsync();
     }
 
-    public async Task Create(string name, bool enabled, Guid userId, decimal price, int discountRate, string? description, string? image)
+    public async Task Create(string name, bool enabled, Guid userId, decimal price, int discountRate, string? description, string? image, IEnumerable<string>? images, IEnumerable<Guid> catalogs)
     {
+        var selectedCatalogs = context.Catalogs.Where(p => catalogs.Any(q => q == p.Id)).ToList();
+
         await Create(new Product
         {
             UserId = userId,
@@ -48,7 +50,9 @@ public class ProductsService : IProductsService
             Price = price,
             DiscountRate = discountRate,
             Description = description,
-            Image = image
+            Image = image,
+            ProductImages = images.Select(p => new ProductImage { Image = p }).ToList(),
+            Catalogs = selectedCatalogs
         });
     }
 

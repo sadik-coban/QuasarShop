@@ -3,6 +3,8 @@ using QuasarShopData;
 
 namespace QuasarShopServices;
 
+
+
 public interface ICatalogsService
 {
     IQueryable<Catalog> GetAll();
@@ -39,6 +41,7 @@ public class CatalogsService : ICatalogsService
     public async Task Create(string name, bool enabled, Guid userId)
     {
         await Create(new Catalog { UserId = userId, Name = name, Enabled = enabled });
+        
     }
 
     public async Task Delete(Guid id)
