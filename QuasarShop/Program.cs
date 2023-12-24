@@ -17,6 +17,8 @@ builder
     .Services
     .AddDbContext<AppDbContext>(config =>
     {
+        //config.UseLazyLoadingProxies();
+
         var dbProvider = builder.Configuration.GetValue<string>("DbProvider");
         var cs = builder.Configuration.GetConnectionString(dbProvider!);
         switch (dbProvider)

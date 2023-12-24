@@ -36,6 +36,6 @@ public class ProductViewModel
     public IEnumerable<Guid> Catalogs { get; set; }
 
     [Display(Name = "Foto Galeri")]
-    public IEnumerable<IFormFile> Images { get; set; }
+    public IEnumerable<IFormFile>? Images { get; set; }
 
 }

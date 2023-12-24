@@ -18,6 +18,9 @@ namespace MigrationsSqlServer.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.14")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -503,12 +506,6 @@ namespace MigrationsSqlServer.Migrations
                     b.Property<bool>("Enabled")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("ManagerId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("ManagerId1")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -521,10 +518,6 @@ namespace MigrationsSqlServer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ManagerId");
-
-                    b.HasIndex("ManagerId1");
 
                     b.HasIndex("UserId");
 
@@ -725,14 +718,6 @@ namespace MigrationsSqlServer.Migrations
 
             modelBuilder.Entity("QuasarShopData.UserAddress", b =>
                 {
-                    b.HasOne("QuasarShopData.Manager", null)
-                        .WithMany("BillingAddresses")
-                        .HasForeignKey("ManagerId");
-
-                    b.HasOne("QuasarShopData.Manager", null)
-                        .WithMany("DeliveryAddresses")
-                        .HasForeignKey("ManagerId1");
-
                     b.HasOne("QuasarShopData.Customer", "User")
                         .WithMany("Addresses")
                         .HasForeignKey("UserId")
@@ -771,13 +756,9 @@ namespace MigrationsSqlServer.Migrations
 
             modelBuilder.Entity("QuasarShopData.Manager", b =>
                 {
-                    b.Navigation("BillingAddresses");
-
                     b.Navigation("CarouselImages");
 
                     b.Navigation("Catalogs");
-
-                    b.Navigation("DeliveryAddresses");
 
                     b.Navigation("Products");
                 });

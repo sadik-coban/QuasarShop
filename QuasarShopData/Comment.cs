@@ -12,7 +12,7 @@ public class Comment : EntityBase
     public DateTime Date { get; set; }
     public int Rate { get; set; }
 
-    public Product? Product { get; set; }
+    public virtual Product? Product { get; set; }
 
 
 }

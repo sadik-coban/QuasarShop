@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QuasarShopData;
+using System.Text.RegularExpressions;
 
 namespace QuasarShopServices;
 
@@ -16,6 +17,9 @@ public interface IProductsService
     Task Update(Product item);
 
     Task Delete(Guid id);
+
+    string? GetProductImage(Guid id);
+    byte[]? GetProductImageBytes(Guid id);
 }
 
 
@@ -51,7 +55,7 @@ public class ProductsService : IProductsService
             DiscountRate = discountRate,
             Description = description,
             Image = image,
-            ProductImages = images.Select(p => new ProductImage { Image = p }).ToList(),
+            ProductImages = images?.Select(p => new ProductImage { Image = p }).ToList(),
             Catalogs = selectedCatalogs
         });
     }
@@ -73,6 +77,16 @@ public class ProductsService : IProductsService
     public Task<Product?> GetById(Guid id)
     {
         return context.Products.SingleOrDefaultAsync(p => p.Id == id);
+    }
+
+    public string? GetProductImage(Guid id)
+    {
+        return GetAll().Select(p => new { p.Id, p.Image }).SingleOrDefault(p => p.Id == id)?.Image;
+    }
+
+    public byte[]? GetProductImageBytes(Guid id)
+    {
+        return Convert.FromBase64String(GetProductImage(id).Replace("data:image/jpeg;base64,", ""));
     }
 
     public async Task Update(Product item)

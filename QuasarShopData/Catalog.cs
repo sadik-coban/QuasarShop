@@ -9,7 +9,7 @@ public class Catalog : EntityBase
 
     public string Name { get; set; }
 
-    public ICollection<Product> Products { get; set; } = new HashSet<Product>();
+    public virtual ICollection<Product> Products { get; set; } = new HashSet<Product>();
 }
 
 public class CatalogEntityTypeConfiguration : IEntityTypeConfiguration<Catalog>
@@ -19,6 +19,7 @@ public class CatalogEntityTypeConfiguration : IEntityTypeConfiguration<Catalog>
         builder
             .HasIndex(p => new { p.Name })
             .IsUnique();
+
     }
 }
 

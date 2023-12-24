@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using QuasarShopData;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace QuasarShopData;
 
@@ -12,11 +11,9 @@ public class User : IdentityUser<Guid>
 }
 public class Manager : User
 {
-    public ICollection<Catalog> Catalogs { get; set; } = new HashSet<Catalog>();
-    public ICollection<CarouselImage> CarouselImages { get; set; } = new HashSet<CarouselImage>();
-    public ICollection<Product> Products { get; set; } = new HashSet<Product>();
-    public ICollection<UserAddress> DeliveryAddresses { get; set; } = new HashSet<UserAddress>();
-    public ICollection<UserAddress> BillingAddresses { get; set; } = new HashSet<UserAddress>();
+    public virtual ICollection<Catalog> Catalogs { get; set; } = new HashSet<Catalog>();
+    public virtual ICollection<CarouselImage> CarouselImages { get; set; } = new HashSet<CarouselImage>();
+    public virtual ICollection<Product> Products { get; set; } = new HashSet<Product>();
 }
 
 public class ManagerEntityTypeConfiguration : IEntityTypeConfiguration<Manager>
@@ -47,10 +44,10 @@ public class ManagerEntityTypeConfiguration : IEntityTypeConfiguration<Manager>
 
 public class Customer : User
 {
-    public ICollection<UserAddress> Addresses { get; set; } = new HashSet<UserAddress>();
-    public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
-    public ICollection<Order> Orders { get; set; } = new HashSet<Order>();
-    public ICollection<ShoppingCartItem> ShoppingCartItems { get; set; } = new HashSet<ShoppingCartItem>();
+    public virtual ICollection<UserAddress> Addresses { get; set; } = new HashSet<UserAddress>();
+    public virtual ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
+    public virtual ICollection<Order> Orders { get; set; } = new HashSet<Order>();
+    public virtual ICollection<ShoppingCartItem> ShoppingCartItems { get; set; } = new HashSet<ShoppingCartItem>();
 
 }
 

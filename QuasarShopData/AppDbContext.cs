@@ -18,12 +18,12 @@ public class AppDbContext : IdentityDbContext<User, Role, Guid>
         base.OnModelCreating(builder);
     }
 
-    public DbSet<CarouselImage> CarouselImages { get; set; }
-    public DbSet<Catalog> Catalogs { get; set; }
-    public DbSet<Comment> Comments { get; set; }
-    public DbSet<Order> Orders { get; set; }
-    public DbSet<OrderDetail> OrderDetails { get; set; }
-    public DbSet<Product> Products { get; set; }
-    public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
-    public DbSet<UserAddress> UserAddresses { get; set; }
+    public virtual DbSet<CarouselImage> CarouselImages { get; set; }
+    public virtual DbSet<Catalog> Catalogs { get; set; }
+    public virtual DbSet<Comment> Comments { get; set; }
+    public virtual DbSet<Order> Orders { get; set; }
+    public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+    public virtual DbSet<UserAddress> UserAddresses { get; set; }
 }

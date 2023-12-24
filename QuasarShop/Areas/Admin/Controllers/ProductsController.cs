@@ -33,7 +33,7 @@ public class ProductsController : ControllerBase
     [Authorize(Roles = "Administrators,ProductAdministrators,OrderAdministrators")]
     public IActionResult Index()
     {
-        var result = productsService.GetAll().ToList();
+        var result = productsService.GetAll().Include(p=>p.User).Include(p=>p.Catalogs).ToList();
         return View(result);
     }
     public async Task<IActionResult> Create()

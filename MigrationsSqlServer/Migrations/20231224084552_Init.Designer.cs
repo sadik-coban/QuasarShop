@@ -12,7 +12,7 @@ using QuasarShopData;
 namespace MigrationsSqlServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231203110715_Init")]
+    [Migration("20231224084552_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -21,6 +21,9 @@ namespace MigrationsSqlServer.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.14")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -349,12 +352,6 @@ namespace MigrationsSqlServer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Enabled")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Image")
                         .IsRequired()
                         .IsUnicode(false)
@@ -363,14 +360,9 @@ namespace MigrationsSqlServer.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("ProductImage");
                 });
@@ -705,15 +697,7 @@ namespace MigrationsSqlServer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QuasarShopData.Manager", "User")
-                        .WithMany("ProductImages")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("Product");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("QuasarShopData.ShoppingCartItem", b =>
@@ -778,8 +762,6 @@ namespace MigrationsSqlServer.Migrations
                     b.Navigation("CarouselImages");
 
                     b.Navigation("Catalogs");
-
-                    b.Navigation("ProductImages");
 
                     b.Navigation("Products");
                 });

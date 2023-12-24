@@ -357,20 +357,11 @@ namespace MigrationsSqlServer.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Image = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Enabled = table.Column<bool>(type: "bit", nullable: false),
-                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Image = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductImage", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductImage_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ProductImage_Products_ProductId",
                         column: x => x.ProductId,
@@ -506,11 +497,6 @@ namespace MigrationsSqlServer.Migrations
                 name: "IX_ProductImage_ProductId",
                 table: "ProductImage",
                 column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductImage_UserId",
-                table: "ProductImage",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_Name",
