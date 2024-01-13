@@ -32,9 +32,18 @@ public class CatalogsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(CatalogViewModel model)
     {
-        await catalogsService.Create(model.Name, model.Enabled, UserId);
-        TempData["success"] = $"{entityName} ekleme işlemi başarıyla tamamlanmıştır!";
-        return RedirectToAction(nameof(Index));
+        try
+        {
+            await catalogsService.Create(model.Name, model.Enabled, UserId);
+            TempData["success"] = $"{entityName} ekleme işlemi başarıyla tamamlanmıştır!";
+            return RedirectToAction(nameof(Index));
+        }
+        catch (DbUpdateException)
+        {
+            TempData["error"] = $"Aynı isimli bir kayıt olduğundan işlem yapılamıyor.";
+
+            return View(model);
+        }
 
     }
     public async Task<IActionResult> Edit(Guid id)

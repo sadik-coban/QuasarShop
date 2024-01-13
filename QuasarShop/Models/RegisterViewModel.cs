@@ -16,6 +16,12 @@ public class RegisterViewModel
     [DataType(DataType.Text)]
     public string Name { get; set; }
 
+
+    [Display(Name = "Doğum T.")]
+    [DataType(DataType.Date)]
+    public DateTime DateOfBirth { get; set; }
+
+
     [Display(Name = "Parola")]
     [Required(ErrorMessage = "{0} alanı boş bırakılamaz!")]
     [DataType(DataType.Password)]

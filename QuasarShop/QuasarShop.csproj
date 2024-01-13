@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+    <Content Remove="Views\Shared\p.cshtml" />
     <Content Remove="wwwroot\js\chart-area-demo.js" />
     <Content Remove="wwwroot\js\chart.js\Chart.bundle.js" />
     <Content Remove="wwwroot\js\chart.js\Chart.bundle.min.js" />
@@ -1742,6 +1743,7 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.*" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.*" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.*" />
+    <PackageReference Include="X.PagedList" Version="8.4.7" />
   </ItemGroup>
 
   <ItemGroup>

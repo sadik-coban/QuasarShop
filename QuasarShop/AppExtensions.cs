@@ -15,7 +15,7 @@ public static class AppExtensions
         var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
         var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
         var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
-        
+
         context.Database.Migrate();
 
         roleManager.CreateAsync(new Role { Name = "Administrators" }).Wait();
@@ -23,7 +23,7 @@ public static class AppExtensions
         roleManager.CreateAsync(new Role { Name = "OrderAdministrators" }).Wait();
         roleManager.CreateAsync(new Role { Name = "Members" }).Wait();
 
-        var user = new User
+        var user = new Manager
         {
             UserName = configuration.GetValue<string>("Security:DefaultUser:UserName"),
             Email = configuration.GetValue<string>("Security:DefaultUser:UserName"),
@@ -37,4 +37,18 @@ public static class AppExtensions
 
         return builder;
     }
+
+    //public static PagedList<T> ToPagedList<T>(this IQueryable<T> list, int page, int pageSize = 10)
+    //{
+    //    return new PagedList<T> { AbsolutePage = page, PageSize = pageSize, Items = list.Skip((page - 1) * pageSize).Take(pageSize) };
+    //}
 }
+
+//public class PagedList<T>
+//{
+//    public int PageSize { get; set; }
+//    public int AbsolutePage { get; set; }
+//    public int PageCount => (int)Math.Ceiling(Items.Count() / (double)PageSize);
+//    public IEnumerable<T> Items { get; set; } = Enumerable.Empty<T>();
+
+//}

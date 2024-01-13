@@ -5,24 +5,26 @@ using QuasarShopData;
 
 namespace QuasarShopData;
 
-public class User : IdentityUser<Guid>
+public abstract class User : IdentityUser<Guid>
 {
     public string Name { get; set; }
 
 }
 public class Manager : User
 {
+
     public ICollection<Catalog> Catalogs { get; set; } = new HashSet<Catalog>();
     public ICollection<CarouselImage> CarouselImages { get; set; } = new HashSet<CarouselImage>();
     public ICollection<Product> Products { get; set; } = new HashSet<Product>();
-    public ICollection<UserAddress> DeliveryAddresses { get; set; } = new HashSet<UserAddress>();
-    public ICollection<UserAddress> BillingAddresses { get; set; } = new HashSet<UserAddress>();
 }
 
 public class ManagerEntityTypeConfiguration : IEntityTypeConfiguration<Manager>
 {
     public void Configure(EntityTypeBuilder<Manager> builder)
     {
+        builder
+            .ToTable("Managers");
+
         builder
             .HasMany(p => p.CarouselImages)
             .WithOne(p => (Manager)p.User!)
@@ -41,12 +43,14 @@ public class ManagerEntityTypeConfiguration : IEntityTypeConfiguration<Manager>
             .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
-
+        
+     
     }
 }
 
 public class Customer : User
 {
+    public DateTime? DateOfBirth { get; set; }
     public ICollection<UserAddress> Addresses { get; set; } = new HashSet<UserAddress>();
     public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
     public ICollection<Order> Orders { get; set; } = new HashSet<Order>();
@@ -58,6 +62,9 @@ public class CustomerEntityTypeConfiguration : IEntityTypeConfiguration<Customer
 {
     public void Configure(EntityTypeBuilder<Customer> builder)
     {
+        builder
+            .ToTable("Customers");
+
         builder
             .HasMany(p => p.Addresses)
             .WithOne(p => (Customer)p.User!)

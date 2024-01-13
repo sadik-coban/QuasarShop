@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using QuasarShop.Models;
 using QuasarShopServices;
 using System.Globalization;
+using X.PagedList;
 using IO = System.IO;
 namespace QuasarShop.Areas.Admin.Controllers;
 
@@ -16,7 +17,7 @@ public class ProductsController : ControllerBase
     private readonly ICatalogsService catalogsService;
     private readonly IFilesService filesService;
     private readonly IWebHostEnvironment webHostEnvironment;
-    private readonly string entityName = "Katalog";
+    private readonly string entityName = "Ürün";
     public ProductsController(
         IProductsService productsService,
         ICatalogsService catalogsService,
@@ -31,9 +32,10 @@ public class ProductsController : ControllerBase
     }
 
     [Authorize(Roles = "Administrators,ProductAdministrators,OrderAdministrators")]
-    public IActionResult Index()
+    public IActionResult Index(int? page)
     {
-        var result = productsService.GetAll().ToList();
+        var result = productsService
+            .GetAll().Include(p => p.User).Include(p=>p.Catalogs).ToPagedList(page ?? 1, 10);
         return View(result);
     }
     public async Task<IActionResult> Create()

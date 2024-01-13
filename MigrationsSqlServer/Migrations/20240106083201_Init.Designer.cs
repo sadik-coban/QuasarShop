@@ -12,7 +12,7 @@ using QuasarShopData;
 namespace MigrationsSqlServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231203110715_Init")]
+    [Migration("20240106083201_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -349,12 +349,6 @@ namespace MigrationsSqlServer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Enabled")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Image")
                         .IsRequired()
                         .IsUnicode(false)
@@ -363,14 +357,9 @@ namespace MigrationsSqlServer.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("ProductImage");
                 });
@@ -440,10 +429,6 @@ namespace MigrationsSqlServer.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -500,9 +485,7 @@ namespace MigrationsSqlServer.Migrations
 
                     b.ToTable("AspNetUsers", (string)null);
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
-
-                    b.UseTphMappingStrategy();
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("QuasarShopData.UserAddress", b =>
@@ -539,14 +522,17 @@ namespace MigrationsSqlServer.Migrations
                 {
                     b.HasBaseType("QuasarShopData.User");
 
-                    b.HasDiscriminator().HasValue("Customer");
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("QuasarShopData.Manager", b =>
                 {
                     b.HasBaseType("QuasarShopData.User");
 
-                    b.HasDiscriminator().HasValue("Manager");
+                    b.ToTable("Managers", (string)null);
                 });
 
             modelBuilder.Entity("CatalogProduct", b =>
@@ -705,15 +691,7 @@ namespace MigrationsSqlServer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QuasarShopData.Manager", "User")
-                        .WithMany("ProductImages")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("Product");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("QuasarShopData.ShoppingCartItem", b =>
@@ -744,6 +722,24 @@ namespace MigrationsSqlServer.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("QuasarShopData.Customer", b =>
+                {
+                    b.HasOne("QuasarShopData.User", null)
+                        .WithOne()
+                        .HasForeignKey("QuasarShopData.Customer", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("QuasarShopData.Manager", b =>
+                {
+                    b.HasOne("QuasarShopData.User", null)
+                        .WithOne()
+                        .HasForeignKey("QuasarShopData.Manager", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("QuasarShopData.Order", b =>
@@ -778,8 +774,6 @@ namespace MigrationsSqlServer.Migrations
                     b.Navigation("CarouselImages");
 
                     b.Navigation("Catalogs");
-
-                    b.Navigation("ProductImages");
 
                     b.Navigation("Products");
                 });

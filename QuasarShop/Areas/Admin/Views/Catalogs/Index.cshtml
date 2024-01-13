@@ -34,6 +34,7 @@
                             <partial name="_EnabledIconsPartial" model="item.Enabled" />
                         </td>
                         <td>
+                            @item.User.Name
                         </td>
                         <td>
                             @item.DateCreated.ToLocalTime().Date.ToShortDateString()

@@ -96,14 +96,15 @@ namespace QuasarShop.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            var user = new User
+            var user = new Customer
             {
                 UserName = model.UserName,
                 Name = model.Name,
-                Email = model.UserName
+                Email = model.UserName,
+                DateOfBirth = model.DateOfBirth
             };
 
-            var result = await userManager.CreateAsync(user, model.Password);
+            var result = await userManager.CreateAsync(user,model.Password);
             if (result.Succeeded)
             {
                 var claims = new[]

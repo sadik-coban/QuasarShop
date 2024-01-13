@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QuasarShopData;
 
 namespace QuasarShop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Administrators, ProductAdministrators, OrderAdministrators")]
     public class DashboardController : Controller
     {
         private readonly AppDbContext context;
