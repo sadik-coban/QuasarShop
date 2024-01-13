@@ -39,7 +39,16 @@
         <input class="form-control" asp-for="DiscountRate" />
         <span asp-validation-for="DiscountRate"></span>
     </div>
+
 </div>
+
+<div class="mb-3 col-6">
+    <label class="form-label">İndirimli Fiyat</label>
+    <input id="DiscountedPrice" class="form-control" readonly />
+</div>
+
+
+
 <div class="mb-3 col-12">
     <label class="form-label" asp-for="Description"></label>
     <textarea class="form-control" asp-for="Description"></textarea>

@@ -14,11 +14,11 @@ public class Product : EntityBase
     public int DiscountRate { get; set; }
     public string? Image { get; set; }
 
-    public ICollection<Catalog> Catalogs { get; set; } = new HashSet<Catalog>();
-    public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
-    public ICollection<OrderDetail> OrderDetails { get; set; } = new HashSet<OrderDetail>();
-    public ICollection<ProductImage> ProductImages { get; set; } = new HashSet<ProductImage>();
-    public ICollection<ShoppingCartItem> ShoppingCartItems { get; set; } = new HashSet<ShoppingCartItem>();
+    public virtual ICollection<Catalog> Catalogs { get; set; } = new HashSet<Catalog>();
+    public virtual ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new HashSet<OrderDetail>();
+    public virtual ICollection<ProductImage> ProductImages { get; set; } = new HashSet<ProductImage>();
+    public virtual ICollection<ShoppingCartItem> ShoppingCartItems { get; set; } = new HashSet<ShoppingCartItem>();
 
 
     [NotMapped]

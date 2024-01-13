@@ -12,7 +12,11 @@ using QuasarShopData;
 namespace MigrationsSqlServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
+<<<<<<<< HEAD:MigrationsSqlServer/Migrations/20240106083201_Init.Designer.cs
     [Migration("20240106083201_Init")]
+========
+    [Migration("20231224084552_Init")]
+>>>>>>>> 6d9b9e6fa0b89ba5d0bc4138b15212b5e92b4f0a:MigrationsSqlServer/Migrations/20231224084552_Init.Designer.cs
     partial class Init
     {
         /// <inheritdoc />
@@ -21,6 +25,9 @@ namespace MigrationsSqlServer.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.14")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);

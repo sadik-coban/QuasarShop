@@ -9,7 +9,7 @@ public abstract class EntityBase
     public bool Enabled { get; set; }
     public DateTime DateCreated { get; set; } = DateTime.UtcNow;
 
-    public User? User { get; set; }
+    public virtual User? User { get; set; }
 
     [NotMapped] public string UserName => User!.Name;
 

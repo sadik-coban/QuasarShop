@@ -55,6 +55,7 @@ public class CatalogsService : ICatalogsService
 
     public IQueryable<Catalog> GetAll()
     {
+        var r = context.Catalogs.ToList();
         return context.Catalogs.AsQueryable<Catalog>(); 
     }
 

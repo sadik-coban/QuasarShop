@@ -10,7 +10,7 @@ public class UserAddress : EntityBase
     public string Name { get; set; }
     public string Text { get; set; }
 
-    public User? User { get; set; }
+    public virtual User? User { get; set; }
 
 }
 

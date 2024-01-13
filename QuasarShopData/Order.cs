@@ -11,8 +11,8 @@ public class Order
     public DateTime Date { get; set; }
     public string? CargoTrackingNumber { get; set; }
 
-    public User? User { get; set; }
-    public ICollection<OrderDetail> OrderDetails { get; set; } = new HashSet<OrderDetail>();
+    public virtual User? User { get; set; }
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new HashSet<OrderDetail>();
 
     [NotMapped]
     public decimal GrandTotal => OrderDetails.Sum(p => p.LineTotal);

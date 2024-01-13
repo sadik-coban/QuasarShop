@@ -13,8 +13,8 @@ public class OrderDetail
     public decimal Price { get; set; }
     public int DiscountRate { get; set; }
 
-    public Order? Order { get; set; }
-    public Product? Product { get; set; }
+    public virtual Order? Order { get; set; }
+    public virtual Product? Product { get; set; }
 
     [NotMapped]
     public decimal DiscountedPrice => Price - (Price * DiscountRate / 100.0m);

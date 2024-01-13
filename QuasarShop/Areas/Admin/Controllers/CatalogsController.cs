@@ -22,7 +22,8 @@ public class CatalogsController : ControllerBase
     [Authorize(Roles = "Administrators,ProductAdministrators,OrderAdministrators")]
     public async Task<IActionResult> Index()
     {
-        return View(await catalogsService.GetAll().Include(p=>p.User).ToListAsync());
+        var result = await catalogsService.GetAll().Include(p=>p.User).ToListAsync();
+        return View(result);
     }
     public IActionResult Create()
     {
