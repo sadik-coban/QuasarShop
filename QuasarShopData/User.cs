@@ -8,7 +8,6 @@ namespace QuasarShopData;
 public abstract class User : IdentityUser<Guid>
 {
     public string Name { get; set; }
-
 }
 public class Manager : User
 {

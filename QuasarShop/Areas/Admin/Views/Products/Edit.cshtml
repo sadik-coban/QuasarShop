@@ -1,9 +1,9 @@
-﻿@model CatalogViewModel
+﻿@model ProductViewModel
 @{
-    ViewData["Title"] = "Katalog Güncelleme";
+    ViewData["Title"] = "Ürün Güncelleme";
 }
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <partial name="_FieldsPartial" model="Model" />
     <hr />
     <partial name="_FormButtonsPartial" />
@@ -11,4 +11,5 @@
 
 @section scripts {
     <partial name="_ValidationScriptsPartial" />
+    <partial name="_DiscountScriptsPartial" />
 }

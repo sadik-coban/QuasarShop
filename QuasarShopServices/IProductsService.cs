@@ -10,11 +10,13 @@ public interface IProductsService
 
     Task<Product?> GetById(Guid id);
 
+    Task<Product?> GetByIdWithCatalogs(Guid id);
+
     Task Create(Product item);
 
     Task Create(string name, bool enabled, Guid userId, decimal price, int discountRate, string? description, string? image, IEnumerable<string>? images, IEnumerable<Guid> catalogs);
 
-    Task Update(Product item);
+    Task Update(Product item, IEnumerable<Guid> catalogs, IEnumerable<string> images, IEnumerable<Guid> imagesToDelete);
 
     Task Delete(Guid id);
 
@@ -59,6 +61,17 @@ public class ProductsService : IProductsService
             Catalogs = selectedCatalogs
         });
     }
+    public async Task Update(Product item, IEnumerable<Guid> catalogs, IEnumerable<string> images, IEnumerable<Guid> imagesToDelete)
+    {
+        var selectedCatalogs = context.Catalogs.Where(p => catalogs.Any(q => q == p.Id)).ToList();
+        item.Catalogs.Clear();
+        item.Catalogs = selectedCatalogs;
+        images?.Select(p => new ProductImage { Image = p }).ToList().ForEach(item.ProductImages.Add);
+        context.ProductImages.Where(p => imagesToDelete.Any(q => q == p.Id)).ExecuteDelete();
+        context.Products.Update(item);
+
+        await context.SaveChangesAsync();
+    }
 
     public async Task Delete(Guid id)
     {
@@ -78,6 +91,10 @@ public class ProductsService : IProductsService
     {
         return context.Products.SingleOrDefaultAsync(p => p.Id == id);
     }
+    public Task<Product?> GetByIdWithCatalogs(Guid id)
+    {
+        return context.Products.Include(p=>p.ProductImages).Include(p=>p.Catalogs).SingleOrDefaultAsync(p => p.Id == id);
+    }
 
     public string? GetProductImage(Guid id)
     {
@@ -89,9 +106,4 @@ public class ProductsService : IProductsService
         return Convert.FromBase64String(GetProductImage(id).Replace("data:image/jpeg;base64,", ""));
     }
 
-    public async Task Update(Product item)
-    {
-        context.Products.Update(item);
-        await context.SaveChangesAsync();
-    }
 }

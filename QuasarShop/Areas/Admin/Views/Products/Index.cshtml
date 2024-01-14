@@ -40,7 +40,7 @@
                 {
                     <tr>
                         <td>
-                            <img src="@Url.Action("productimage","files", new { area = "", id = item.Id})" class="img-fluid object-fit-contain" alt="@item.Name" height="80" width="80" onerror="this.onerror=null;this.src = '/images/no-image.jpg'" />
+                            <img src="@item.Image" class="img-fluid object-fit-contain" alt="@item.Name" height="80" width="80" onerror="this.onerror=null;this.src = '/images/no-image.jpg'" />
                         </td>
                         <td>@item.Name</td>
                         <td>

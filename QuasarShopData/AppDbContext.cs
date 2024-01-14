@@ -24,6 +24,7 @@ public class AppDbContext : IdentityDbContext<User, Role, Guid>
     public virtual DbSet<Order> Orders { get; set; }
     public virtual DbSet<OrderDetail> OrderDetails { get; set; }
     public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<ProductImage> ProductImages { get; set; }
     public virtual DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
     public virtual DbSet<UserAddress> UserAddresses { get; set; }
 }

@@ -19,7 +19,6 @@ public class CatalogEntityTypeConfiguration : IEntityTypeConfiguration<Catalog>
         builder
             .HasIndex(p => new { p.Name })
             .IsUnique();
-
     }
 }
 
