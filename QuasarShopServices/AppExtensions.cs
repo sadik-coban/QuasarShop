@@ -13,6 +13,8 @@ public static class AppExtensions
             .AddScoped<IProductsService, ProductsService>();
         services
             .AddScoped<IFilesService, FileService>();
+        services
+            .AddScoped<ICarouselImageService, CarouselImageService>();
 
         return services;
     }

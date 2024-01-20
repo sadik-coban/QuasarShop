@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
-using QuasarShopServices;
 
 namespace QuasarShop.Controllers
 {

@@ -6,8 +6,24 @@ namespace QuasarShop;
 
 public static class AppExtensions
 {
+
+    public static IServiceCollection AddQuasarShop(this IServiceCollection services)
+    {
+
+        services
+            .AddScoped<ICatalogsService, CatalogsService>();
+        services
+            .AddScoped<IProductsService, ProductsService>();
+        services
+            .AddScoped<IFilesService, FileService>();
+        services
+            .AddScoped<ICarouselImageService, CarouselImageService>();
+
+        return services;
+    }
     public static IApplicationBuilder UseQuasarShop(this IApplicationBuilder builder)
     {
+
 
         using var scope = builder.ApplicationServices.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();

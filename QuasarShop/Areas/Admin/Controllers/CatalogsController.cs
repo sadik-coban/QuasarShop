@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QuasarShop.Models;
-using QuasarShopServices;
 
 namespace QuasarShop.Areas.Admin.Controllers;
 

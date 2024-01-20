@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QuasarShop.Models;
-using QuasarShopServices;
 using System.Globalization;
 using X.PagedList;
 using IO = System.IO;
