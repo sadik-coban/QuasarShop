@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CarouselImage>
+@{
+    ViewData["Title"] = "Tanıtım Görselleri";
+}
+
+<partial name="_ToolbarPartial" />
+
+<div class="row row-cols-1 row-cols-md-2 g-2">
+    @foreach (var carouselImage in Model)
+    {
+        <div class="col">
+            <div class="card">
+                <img src="@carouselImage.Image" class="card-img-top" />
+                <div class="card-body">
+                    <div class="d-flex justify-content-center gap-2">
+                        @if (carouselImage.DateFirst is not null)
+                        {
+                            @carouselImage.DateFirst!.Value.ToShortDateString()
+                        }
+                        @if (carouselImage.DateFirst is not null && carouselImage.DateEnd is not null)
+                        {
+                            <div>-</div>
+                        }
+                        @if (carouselImage.DateEnd is not null)
+                        {
+                            @carouselImage.DateFirst!.Value.ToShortDateString()
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
