@@ -19,6 +19,8 @@ public interface IProductsService
 
     Task Delete(Guid id);
 
+    Task<IEnumerable<Product>> GetBestSellersAsync(int size = 10);
+
     string? GetProductImage(Guid id);
     byte[]? GetProductImageBytes(Guid id);
 }
@@ -105,4 +107,8 @@ public class ProductsService : IProductsService
         return Convert.FromBase64String(GetProductImage(id).Replace("data:image/jpeg;base64,", ""));
     }
 
+    public async Task<IEnumerable<Product>> GetBestSellersAsync(int size = 10)
+    {
+        return await context.Products.OrderByDescending(p=> p.OrderDetails.Sum(q=>q.Quantity)).Take(size).ToListAsync();
+    }
 }

@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Protocols.WsTrust;
 using QuasarShopData;
+using System.Globalization;
+using System.Security.Claims;
 
 namespace QuasarShop;
 
@@ -23,7 +26,9 @@ public static class AppExtensions
     }
     public static IApplicationBuilder UseQuasarShop(this IApplicationBuilder builder)
     {
-
+        //CultureInfo.CurrentUICulture.NumberFormat.CurrencySymbol = "€";
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.CreateSpecificCulture("en_GB");
+        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.CreateSpecificCulture("en_GB");
 
         using var scope = builder.ApplicationServices.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -49,6 +54,7 @@ public static class AppExtensions
 
         userManager.CreateAsync(user, configuration.GetValue<string>("Security:DefaultUser:Password")).Wait(); ;
         userManager.AddToRoleAsync(user, "Administrators").Wait();
+        var claimResult =  userManager.AddClaimAsync(user, new Claim(ClaimTypes.GivenName, configuration.GetValue<string>("Security:DefaultUser:Name"))).Result;
 
 
         return builder;

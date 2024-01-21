@@ -8,7 +8,7 @@ public interface ICarouselImageService
     IQueryable<CarouselImage> GetAll();
     CarouselImage? GetById(Guid id);
     Task CreateAsync(string image, DateTime? dateFirst, DateTime? dateEnd, Guid userId, bool enabled = true);
-    Task UpdateAsync(Guid id, string image, DateTime? dateFirst, DateTime? dateEnd);
+    Task UpdateAsync(Guid id, string image, DateTime? dateFirst, DateTime? dateEnd, bool enabled);
     Task DeleteAsync(Guid id);
 }
 
@@ -55,14 +55,14 @@ public class CarouselImageService : ICarouselImageService
         return context.CarouselImages.Find(id);
     }
 
-    public async Task UpdateAsync(Guid id, string image, DateTime? dateFirst, DateTime? dateEnd)
+    public async Task UpdateAsync(Guid id, string image, DateTime? dateFirst, DateTime? dateEnd, bool enabled)
     {
         var item = await context.CarouselImages.FindAsync(id);
 
         item.DateEnd = dateEnd;
         item.DateFirst = dateFirst;
         item.Image = image;
-
+        item.Enabled = enabled;
         context.CarouselImages.Update(item);
         await context.SaveChangesAsync();
     }

@@ -49,5 +49,38 @@ namespace QuasarShop.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            var item = carouselImageService.GetById(id);
+            var model = new CarouselImageViewModel
+            {
+                Enabled = item.Enabled,
+                DateFirst = item.DateFirst,
+                DateEnd = item.DateEnd,
+                Image = item.Image,
+                Id = id
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(CarouselImageViewModel model)
+        {
+            await carouselImageService.UpdateAsync(
+                 model.Id,
+                 model.ImageFile is null ? model.Image : await filesService.ResizeImageAsync(model.ImageFile.OpenReadStream(), 1440, 480),
+                 model.DateFirst,
+                 model.DateEnd,
+                 model.Enabled);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await carouselImageService.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

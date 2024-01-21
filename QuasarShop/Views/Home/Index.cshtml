@@ -1,8 +1,54 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Hoş geldiniz";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+        @foreach (var carouselImage in ViewBag.CarouselImages)
+        {
+            var isFirst = (ViewBag.CarouselImages as IList<QuasarShopData.CarouselImage>)!.First() == carouselImage;
+            <div class="carousel-item @(isFirst ? "active" : "")">
+                <img src="@carouselImage.Image" class="d-block w-100" alt="QuasarShop">
+            </div>
+        }
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+
+<div class="fs-4 text-secondary py-2 border-bottom mb-3">Çok Satanlar</div>
+
+<div class="row row-cols-1 row-cols-md-4 g-3">
+    @foreach (var product in ViewBag.BestSellers as IEnumerable<Product>)
+    {
+        <div class="col">
+            <div class="card h-100">
+                <img src="@product.Image" class="card-img-top" alt="@product.Name" />
+                <div class="card-body">
+                    <div class="card-title">
+                        @product.Name
+                    </div>
+                    <div class="card-title fs-2">
+                        @product.Price.ToString("c2")
+                    </div>
+                    <div class="d-flex justify-content-center gap-2">
+                        <a class="btn btn-light" asp-controller="Home" asp-action="AddToFavorites">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <a class="btn btn-light" asp-controller="Home" asp-action="AddToShoppingCart">
+                            <i class="bi bi-cart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+

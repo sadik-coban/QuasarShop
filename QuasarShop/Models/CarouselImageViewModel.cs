@@ -4,6 +4,8 @@ namespace QuasarShop.Models
 {
     public class CarouselImageViewModel
     {
+        public Guid Id { get; set; }
+
         [Display(Name = "Görsel Dosyası")]
 
         public IFormFile? ImageFile { get; set; }
@@ -18,6 +20,8 @@ namespace QuasarShop.Models
         [Display(Name = "Son Tarih")]
         [DataType(DataType.Date)]
         public DateTime? DateEnd { get; set; }
+
+        public string Image { get; set; }
 
     }
 }

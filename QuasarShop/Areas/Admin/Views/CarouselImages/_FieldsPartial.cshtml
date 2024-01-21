@@ -1,4 +1,13 @@
 ﻿@model CarouselImageViewModel
+
+<input type="hidden" asp-for="Image" />
+
+@if (ViewContext.RouteData.Values["action"]?.ToString() == "Edit")
+{
+    <div class="mb-3 col-12 col-lg-4">
+        <img src="@Model.Image" width="360" height="120" />
+    </div>
+}
 <div class="mb-3 col-12 col-lg-4">
     <label class="form-label" asp-for="ImageFile"></label>
     <input class="form-control" asp-for="ImageFile" accept="image/*" />
