@@ -1,21 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Protocols.WsTrust;
+using QuasarShop.Models;
+using System.Security.Claims;
 
 namespace QuasarShop.Components
 {
     public class NavBarViewComponent : ViewComponent
     {
         private readonly ICatalogsService catalogsService;
+        private readonly IProductsService productsService;
 
         public NavBarViewComponent(
-            ICatalogsService catalogsService
+            ICatalogsService catalogsService,
+            IProductsService productsService
             )
         {
             this.catalogsService = catalogsService;
+            this.productsService = productsService;
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(await catalogsService.GetAll().Where(p => p.Enabled).ToListAsync());
+            var userId = Guid.Parse(UserClaimsPrincipal.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? Guid.Empty.ToString());
+            return View(new NavbarViewModel
+            {
+                Catalogs = await catalogsService.GetAll().Where(p => p.Enabled).ToListAsync(),
+                FavoriteCount = User.Identity.IsAuthenticated ? await productsService.GetFavoriteCount(userId) : 0,
+                ShoppingCartItemCount = User.Identity.IsAuthenticated ? await productsService.GetShoppingCartCount(userId) : 0
+            });
         }
     }
 }

@@ -42,8 +42,6 @@ public class ManagerEntityTypeConfiguration : IEntityTypeConfiguration<Manager>
             .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        
-     
     }
 }
 
@@ -54,6 +52,7 @@ public class Customer : User
     public ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
     public ICollection<Order> Orders { get; set; } = new HashSet<Order>();
     public ICollection<ShoppingCartItem> ShoppingCartItems { get; set; } = new HashSet<ShoppingCartItem>();
+    public ICollection<Favorite> Favorites { get; set; } = new HashSet<Favorite>();
 
 }
 
@@ -88,6 +87,11 @@ public class CustomerEntityTypeConfiguration : IEntityTypeConfiguration<Customer
             .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
+        builder
+          .HasMany(p => p.Favorites)
+          .WithOne(p => (Customer)p.User!)
+          .HasForeignKey(p => p.UserId)
+          .OnDelete(DeleteBehavior.Restrict);
 
     }
 }

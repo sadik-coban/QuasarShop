@@ -24,6 +24,7 @@ public class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 {
     public void Configure(EntityTypeBuilder<Order> builder)
     {
+        
         builder
             .HasIndex(p => new { p.Date })
             .IsDescending();

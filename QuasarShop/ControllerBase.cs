@@ -5,5 +5,5 @@ namespace QuasarShop;
 
 public abstract class ControllerBase : Controller
 {
-    public Guid UserId => Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+    public Guid? UserId => User.Identity?.IsAuthenticated == true ? Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value) : default;
 }

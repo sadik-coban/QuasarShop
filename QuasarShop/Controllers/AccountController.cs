@@ -11,20 +11,22 @@ using System.Security.Claims;
 
 namespace QuasarShop.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : ControllerBase
     {
         private readonly AppDbContext context;
         private readonly SignInManager<User> signInManager;
         private readonly UserManager<User> userManager;
         private readonly IEmailService emailService;
         private readonly IWebHostEnvironment env;
+        private readonly IProductsService productsService;
 
         public AccountController(
             AppDbContext context,
             SignInManager<User> signInManager,
             UserManager<User> userManager,
             IEmailService emailService,
-            IWebHostEnvironment env
+            IWebHostEnvironment env,
+            IProductsService productsService
             )
         {
             this.context = context;
@@ -32,6 +34,7 @@ namespace QuasarShop.Controllers
             this.userManager = userManager;
             this.emailService = emailService;
             this.env = env;
+            this.productsService = productsService;
         }
 
 
@@ -132,7 +135,6 @@ namespace QuasarShop.Controllers
             }
         }
 
-
         public async Task<IActionResult> ConfirmEmail(Guid id, string token)
         {
             var user = await userManager.FindByIdAsync(id.ToString());
@@ -190,6 +192,11 @@ namespace QuasarShop.Controllers
             return RedirectToAction(nameof(Login));
         }
 
-
+        [Authorize]
+        public async Task<IActionResult> AddToFavorites(Guid id, string? returnUrl)
+        {
+            await productsService.AddToFavorites(id, UserId!.Value);
+            return Redirect($"{(returnUrl ?? "/")}#{id}");
+        }
     }
 }

@@ -63,7 +63,7 @@ public class ProductsController : ControllerBase
         await productsService.Create(
             model.Name,
             model.Enabled,
-            UserId,
+            UserId!.Value,
             description: model.Description,
             price: decimal.Parse(model.Price, CultureInfo.CreateSpecificCulture("tr-TR")),
             discountRate: int.Parse(model.DiscountRate),

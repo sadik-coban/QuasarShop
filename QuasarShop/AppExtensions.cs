@@ -27,8 +27,8 @@ public static class AppExtensions
     public static IApplicationBuilder UseQuasarShop(this IApplicationBuilder builder)
     {
         //CultureInfo.CurrentUICulture.NumberFormat.CurrencySymbol = "€";
-        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.CreateSpecificCulture("en_GB");
-        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.CreateSpecificCulture("en_GB");
+        //CultureInfo.DefaultThreadCurrentCulture = CultureInfo.CreateSpecificCulture("en_GB");
+        //CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.CreateSpecificCulture("en_GB");
 
         using var scope = builder.ApplicationServices.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();

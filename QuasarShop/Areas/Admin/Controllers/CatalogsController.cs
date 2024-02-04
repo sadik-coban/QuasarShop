@@ -34,7 +34,7 @@ public class CatalogsController : ControllerBase
     {
         try
         {
-            await catalogsService.Create(model.Name, model.Enabled, UserId);
+            await catalogsService.Create(model.Name, model.Enabled, UserId!.Value);
             TempData["success"] = $"{entityName} ekleme işlemi başarıyla tamamlanmıştır!";
             return RedirectToAction(nameof(Index));
         }

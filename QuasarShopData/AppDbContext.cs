@@ -27,4 +27,5 @@ public class AppDbContext : IdentityDbContext<User, Role, Guid>
     public virtual DbSet<ProductImage> ProductImages { get; set; }
     public virtual DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
     public virtual DbSet<UserAddress> UserAddresses { get; set; }
+    public virtual DbSet<Favorite> Favorites { get; set; }
 }

@@ -24,31 +24,4 @@
 
 <div class="fs-4 text-secondary py-2 border-bottom mb-3">Çok Satanlar</div>
 
-<div class="row row-cols-1 row-cols-md-4 g-3">
-    @foreach (var product in ViewBag.BestSellers as IEnumerable<Product>)
-    {
-        <div class="col">
-            <div class="card h-100">
-                <img src="@product.Image" class="card-img-top" alt="@product.Name" />
-                <div class="card-body">
-                    <div class="card-title">
-                        @product.Name
-                    </div>
-                    <div class="card-title fs-2">
-                        @product.Price.ToString("c2")
-                    </div>
-                    <div class="d-flex justify-content-center gap-2">
-                        <a class="btn btn-light" asp-controller="Home" asp-action="AddToFavorites">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <a class="btn btn-light" asp-controller="Home" asp-action="AddToShoppingCart">
-                            <i class="bi bi-cart"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
-</div>
-
-
+<partial name="_ProductListPartial" model="ViewBag.BestSellers" />

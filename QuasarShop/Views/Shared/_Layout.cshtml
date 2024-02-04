@@ -7,9 +7,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - QuasarShop</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
 </head>
 <body>
     @if (adminRoles.Any(User.IsInRole))
@@ -19,9 +18,24 @@
         </div>
     }
     <header>
-        @await Component.InvokeAsync("NavBar"))
+        @await Component.InvokeAsync("NavBar")
     </header>
+
     <div class="container">
+        <div class="d-flex justify-content-end mb-1">
+            <form method="get" asp-action="Search">
+                <div class="row row-cols-lg-auto g-2">
+                    <div class="col-12">
+                        <input type="search" class="form-control" name="keywords" id="keywords" value="@ViewContext.HttpContext.Request.Query["keywords"]" />
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -34,7 +48,22 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        $(() => {
+            $('.rating-wrapper i').on('mouseenter', (evt) => {
+                let elm = $(evt.target);
+                let index = $(elm).attr('data-index');
+                $('.rating-wrapper i').removeClass('bi-star');
+                for (var i = 0; i < 5; i++) {
+
+                    $(`.rating-wrapper i[data-index=${i}]`).addClass(i <= index ? 'bi-star-fill' : 'bi-star')
+                }
+            });
+
+        });
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

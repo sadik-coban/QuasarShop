@@ -242,6 +242,21 @@ namespace MigrationsSqlServer.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("QuasarShopData.Favorite", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Favorites");
+                });
+
             modelBuilder.Entity("QuasarShopData.Order", b =>
                 {
                     b.Property<Guid>("Id")
@@ -343,7 +358,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fabd4a7c-3067-4931-9240-3713b8583d61"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4354),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open heart valvuloplasty without replacement, unspecified valve",
                             DiscountRate = 25,
                             Enabled = true,
@@ -355,7 +370,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("79833465-e45a-473e-bb70-84b7270269d1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4381),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of cornea",
                             DiscountRate = 21,
                             Enabled = true,
@@ -367,7 +382,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d302873a-7f24-4f2f-b12c-5905bc97df14"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4384),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Spinal tap",
                             DiscountRate = 25,
                             Enabled = true,
@@ -379,7 +394,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3737fcdc-797b-4df5-a5b9-2c577644f518"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4387),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision or destruction of lesion or tissue of brain",
                             DiscountRate = 28,
                             Enabled = true,
@@ -391,7 +406,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("277c1db6-1321-46e8-8009-a8cf66ca46bc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4390),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intra-operative coronary fluorescence vascular angiography",
                             DiscountRate = 29,
                             Enabled = true,
@@ -403,7 +418,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b1fb26d6-b3e3-4d74-89d8-94cacd01eddc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4393),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Free skin graft, not otherwise specified",
                             DiscountRate = 22,
                             Enabled = true,
@@ -415,7 +430,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("27dd431c-5a56-4212-b1ad-5c654649e09f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4396),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of gastroschisis",
                             DiscountRate = 4,
                             Enabled = true,
@@ -427,7 +442,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("717b71fc-6468-47b3-bc3f-9504430dd5c8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4399),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Simple suture of dura mater of brain",
                             DiscountRate = 28,
                             Enabled = true,
@@ -439,7 +454,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d57d8158-466c-4c2d-87fd-3ac70cab14db"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4402),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other extracapsular extraction of lens",
                             DiscountRate = 14,
                             Enabled = true,
@@ -451,7 +466,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a92c4725-a849-4805-8d72-1060001e3cae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4406),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cauterization of hemorrhoids",
                             DiscountRate = 25,
                             Enabled = true,
@@ -463,7 +478,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b084c7a0-69d1-42fd-a4b1-4d2035f3b409"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4409),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of peripheral neurostimulator lead(s)",
                             DiscountRate = 15,
                             Enabled = true,
@@ -475,7 +490,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d15f81d9-9bcd-4067-827b-82974b6ce46f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4411),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of scrotal fistula",
                             DiscountRate = 22,
                             Enabled = true,
@@ -487,7 +502,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bac78566-b1e0-4b2d-9756-90e10597437a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4414),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ligation of thyroid vessels",
                             DiscountRate = 7,
                             Enabled = true,
@@ -499,7 +514,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9f216c71-b994-4c77-bdc8-60d13359c4cf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4416),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other lysis of perivesical adhesions",
                             DiscountRate = 0,
                             Enabled = true,
@@ -511,7 +526,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ab3a7e70-2956-4b5e-a8ee-2c0ac52783cb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4418),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total ostectomy, unspecified site",
                             DiscountRate = 6,
                             Enabled = true,
@@ -523,7 +538,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d97b60f8-fdef-4be8-b895-2b6e37165b02"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4422),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total ostectomy, other bones",
                             DiscountRate = 10,
                             Enabled = true,
@@ -535,7 +550,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("52cabc26-d159-4a6a-8191-54c8e69e41bd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4425),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of muscle or fascia for graft",
                             DiscountRate = 19,
                             Enabled = true,
@@ -547,7 +562,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("566325ef-98eb-4c9c-84b1-fe2319e97c4b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4505),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Application of external fixator device, tarsals and metatarsals",
                             DiscountRate = 15,
                             Enabled = true,
@@ -559,7 +574,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("06af60aa-0609-497b-ae71-6f87fc517b20"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4509),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation of intraocular telescope prosthesis",
                             DiscountRate = 20,
                             Enabled = true,
@@ -571,7 +586,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e1f9a8bd-4cf2-4955-97ec-caa584e10054"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4512),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Application of plaster jacket",
                             DiscountRate = 12,
                             Enabled = true,
@@ -583,7 +598,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b5fef59e-6b11-43a3-8957-dbd6a2ebe962"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4515),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of foreign body, not otherwise specified",
                             DiscountRate = 26,
                             Enabled = true,
@@ -595,7 +610,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("91299716-4322-420e-949c-70a689cbc7cf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4518),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of T-tube, other bile duct tube, or liver tube",
                             DiscountRate = 28,
                             Enabled = true,
@@ -607,7 +622,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("139d8ea7-58d5-4832-b68b-5f0e62c0e3cc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4521),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection of therapeutic substance into heart",
                             DiscountRate = 4,
                             Enabled = true,
@@ -619,7 +634,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e3d17310-053b-47fc-add2-09c27003d48e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4525),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic biopsy of ovary",
                             DiscountRate = 12,
                             Enabled = true,
@@ -631,7 +646,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("877434c9-c129-4d91-83d7-2b01439e132e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4527),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision or other destruction of Bartholin's gland (cyst)",
                             DiscountRate = 12,
                             Enabled = true,
@@ -643,7 +658,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("be1692fb-184a-4df4-981b-bbaea77df19f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4529),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of corrective procedure on heart",
                             DiscountRate = 21,
                             Enabled = true,
@@ -655,7 +670,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8b277ea2-aa42-4ad6-aa5a-a4cd27af8cfa"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4532),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Artificial pneumothorax for collapse of lung",
                             DiscountRate = 28,
                             Enabled = true,
@@ -667,7 +682,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b3ca38c0-19c0-4ab9-9f25-914e0773276f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4534),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Procedure on three vessels",
                             DiscountRate = 20,
                             Enabled = true,
@@ -679,7 +694,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("96ee3419-df86-4850-a688-f469f01b45e9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4537),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on musculoskeletal system",
                             DiscountRate = 29,
                             Enabled = true,
@@ -691,7 +706,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4e089db8-feb6-4069-a42d-cce7ed221355"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4540),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intra-operative coronary fluorescence vascular angiography",
                             DiscountRate = 2,
                             Enabled = true,
@@ -703,7 +718,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("44ae1077-43b8-4e3d-9de5-ecc704ce8496"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4544),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other laparoscopic partial excision of large intestine",
                             DiscountRate = 26,
                             Enabled = true,
@@ -715,7 +730,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("27e3f38d-8579-427f-b98b-a30ef725e8f4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4546),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of mouth",
                             DiscountRate = 2,
                             Enabled = true,
@@ -727,7 +742,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fda8bf50-1b30-48fc-a5ef-2064a5c2ab96"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4549),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision or replacement of epiretinal visual prosthesis",
                             DiscountRate = 0,
                             Enabled = true,
@@ -739,7 +754,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("401c5aae-ca98-4277-8b0a-5a20fe111619"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4552),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Debridement of open fracture site, tarsals and metatarsals",
                             DiscountRate = 5,
                             Enabled = true,
@@ -751,7 +766,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5187187e-5acd-4e15-bc91-0bb5d3a0543c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4596),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lower limb amputation, not otherwise specified",
                             DiscountRate = 6,
                             Enabled = true,
@@ -763,7 +778,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d3bd2cd1-864b-4f12-960a-89a0200ce4aa"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4599),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dysphasia training",
                             DiscountRate = 5,
                             Enabled = true,
@@ -775,7 +790,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("00cfb94b-be82-401c-8f39-060883bf469c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4602),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other contrast bronchogram",
                             DiscountRate = 14,
                             Enabled = true,
@@ -787,7 +802,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dbfa3914-ae1c-4c0d-8d1a-e9dbe53011d5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4605),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Rectal massage (for levator spasm)",
                             DiscountRate = 7,
                             Enabled = true,
@@ -799,7 +814,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7a254063-9b37-46c5-a372-dfa2880d9cb4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4608),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open pull-through resection of rectum",
                             DiscountRate = 0,
                             Enabled = true,
@@ -811,7 +826,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2765e173-babe-43e9-8664-df3299217e3e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4610),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sequestrectomy, scapula, clavicle, and thorax [ribs and sternum]",
                             DiscountRate = 17,
                             Enabled = true,
@@ -823,7 +838,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d9acf79c-4d14-4a89-9268-2f6386889272"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4614),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cauterization of hemorrhoids",
                             DiscountRate = 30,
                             Enabled = true,
@@ -835,7 +850,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1f15bc2b-6ab6-4607-b8ce-52cd8534cdae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4617),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on biliary tract",
                             DiscountRate = 21,
                             Enabled = true,
@@ -847,7 +862,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e558fca0-a1ca-4020-a526-1fd1ea604fc0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4619),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other fixation of small intestine",
                             DiscountRate = 12,
                             Enabled = true,
@@ -859,7 +874,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("506bc753-8847-4a1c-a16e-633c25947904"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4622),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other puncture of vein",
                             DiscountRate = 22,
                             Enabled = true,
@@ -871,7 +886,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0fbc5216-88f5-4f12-8f01-085bd080f5fa"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4624),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Catheter based invasive electrophysiologic testing",
                             DiscountRate = 6,
                             Enabled = true,
@@ -883,7 +898,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b4375e06-4234-4c9b-971f-276669761eb5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4627),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total splenectomy",
                             DiscountRate = 9,
                             Enabled = true,
@@ -895,7 +910,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("80ce9564-5fa7-4f5f-8d3b-59c6e58bba19"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4630),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Metacarpophalangeal fusion",
                             DiscountRate = 20,
                             Enabled = true,
@@ -907,7 +922,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fd83d5e0-6aa1-4127-95da-fcd8036536b9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4633),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incidental appendectomy",
                             DiscountRate = 24,
                             Enabled = true,
@@ -919,7 +934,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("97ef0c6c-8b62-4302-9364-d1e9df2e5c56"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4636),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other open incisional hernia repair with graft or prosthesis",
                             DiscountRate = 6,
                             Enabled = true,
@@ -931,7 +946,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("636509ed-9301-4eaa-9713-eb03404a52ed"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4638),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on oral cavity",
                             DiscountRate = 7,
                             Enabled = true,
@@ -943,7 +958,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("be2985aa-2158-4d17-b93e-89b50457b2fb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4641),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other plastic repair of external ear",
                             DiscountRate = 3,
                             Enabled = true,
@@ -955,7 +970,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("166e07e9-088e-4fe0-8dc9-4b1c1ba4bfae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4687),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from musculoskeletal system and of joint fluid, parasitology",
                             DiscountRate = 8,
                             Enabled = true,
@@ -967,7 +982,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("08a53539-cb45-446d-97df-ec73fa965b93"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4690),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total ostectomy, other bones",
                             DiscountRate = 5,
                             Enabled = true,
@@ -979,7 +994,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f2b67080-7d0c-4c9a-9495-26b54d442069"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4692),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ultrasound study of eye",
                             DiscountRate = 1,
                             Enabled = true,
@@ -991,7 +1006,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4f812544-9929-48bf-82a5-6f5c7dab20c4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4695),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Labial frenectomy",
                             DiscountRate = 17,
                             Enabled = true,
@@ -1003,7 +1018,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("305cb84f-f3e1-487f-84ae-e12242dcc4ff"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4697),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of four or more vascular stents",
                             DiscountRate = 6,
                             Enabled = true,
@@ -1015,7 +1030,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0792fc73-dba3-49e7-93b8-043dcd6cdf77"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4700),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open total intra-abdominal colectomy",
                             DiscountRate = 14,
                             Enabled = true,
@@ -1027,7 +1042,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3bf6f21b-7c69-4451-991d-25294e4818fd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4703),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of carotid sinus stimulation pulse generator only",
                             DiscountRate = 25,
                             Enabled = true,
@@ -1039,7 +1054,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("373d9110-9004-4ce7-ae09-9e29b5ed6818"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4705),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of one vascular stent",
                             DiscountRate = 27,
                             Enabled = true,
@@ -1051,7 +1066,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dcea9a3e-e98d-4ba5-908f-970a352c767f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4708),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and unspecified repair of the anulus fibrosus",
                             DiscountRate = 6,
                             Enabled = true,
@@ -1063,7 +1078,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("54e87c39-383c-4fd4-afe3-ebe5764583cf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4710),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on biliary tract",
                             DiscountRate = 10,
                             Enabled = true,
@@ -1075,7 +1090,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a37903bf-facd-4e8f-b5c0-ac2105de69ee"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4712),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other removal of remaining ovary",
                             DiscountRate = 13,
                             Enabled = true,
@@ -1087,7 +1102,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("06e22a22-af51-4281-bee8-dd4526deb0ff"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4715),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of fracture with internal fixation, unspecified site",
                             DiscountRate = 9,
                             Enabled = true,
@@ -1099,7 +1114,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c4dee1b0-482f-4f5f-988a-5cc9f8771689"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4719),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from musculoskeletal system and of joint fluid, culture and sensitivity",
                             DiscountRate = 29,
                             Enabled = true,
@@ -1111,7 +1126,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5019c726-ad08-4c50-92d3-82d505d8fe2f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4722),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of mediastinum",
                             DiscountRate = 0,
                             Enabled = true,
@@ -1123,7 +1138,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b5b29a2f-190a-4263-9b63-f7a091d0d12b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4726),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Thoracoscopic ablation of lung lesion or tissue",
                             DiscountRate = 4,
                             Enabled = true,
@@ -1135,7 +1150,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("53bdcbd7-a3b8-4d45-b5d8-93b53f8b4913"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4729),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on perirenal tissue, perivesical tissue, and retroperitoneum",
                             DiscountRate = 25,
                             Enabled = true,
@@ -1147,7 +1162,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("11d429e5-9eff-4ad9-aa9c-3d70f45917e7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4732),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Reopening of laminectomy site",
                             DiscountRate = 20,
                             Enabled = true,
@@ -1159,7 +1174,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7ebfcb9d-c503-42db-a2c2-b74a6cb68d28"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4778),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of pituitary gland",
                             DiscountRate = 27,
                             Enabled = true,
@@ -1171,7 +1186,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7e133375-316d-4fda-930f-03983c98209c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4781),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Destruction of cranial and peripheral nerves",
                             DiscountRate = 20,
                             Enabled = true,
@@ -1183,7 +1198,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("868ff154-b52d-473f-a68d-c44003b15cec"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4784),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Isolation of intestinal segment, not otherwise specified",
                             DiscountRate = 27,
                             Enabled = true,
@@ -1195,7 +1210,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8727a524-fc51-4360-bb2d-6350a7c17004"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4787),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and open repair of direct inguinal hernia with graft or prosthesis",
                             DiscountRate = 23,
                             Enabled = true,
@@ -1207,7 +1222,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ee4948ce-c20f-4591-99af-68169976e965"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4789),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation or replacement of cochlear prosthetic device, not otherwise specified",
                             DiscountRate = 2,
                             Enabled = true,
@@ -1219,7 +1234,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("776360f8-6c29-44f1-8a86-692171333c40"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4793),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bone graft, carpals and metacarpals",
                             DiscountRate = 17,
                             Enabled = true,
@@ -1231,7 +1246,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b9a2833c-ffff-498a-8eb0-ffc5b94c92c8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4796),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Delayed opening of colostomy",
                             DiscountRate = 25,
                             Enabled = true,
@@ -1243,7 +1258,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ed4acadd-9b4a-4d64-ab79-f9363752cde2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4799),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other hand tendon transfer or transplantation",
                             DiscountRate = 25,
                             Enabled = true,
@@ -1255,7 +1270,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fe9ff8de-d65d-45aa-a54e-0994656f92c7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4801),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open and other resection of transverse colon",
                             DiscountRate = 8,
                             Enabled = true,
@@ -1267,7 +1282,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9707e772-8133-4cdb-a2f8-7b5ad53a9c64"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4805),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dilation and curettage for termination of pregnancy",
                             DiscountRate = 18,
                             Enabled = true,
@@ -1279,7 +1294,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("44e9d546-ecbd-45db-9603-660fd186f44f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4807),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on cul-de-sac",
                             DiscountRate = 3,
                             Enabled = true,
@@ -1291,7 +1306,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("734f6281-f438-490d-909d-0e6350108ef0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4810),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transfusion of other substance",
                             DiscountRate = 9,
                             Enabled = true,
@@ -1303,7 +1318,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8809fbd0-4cd5-4100-81bc-d7e0791942a6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4812),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Skeletal x-ray of shoulder and upper arm",
                             DiscountRate = 9,
                             Enabled = true,
@@ -1315,7 +1330,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("336e221d-df82-4ca8-acd9-b1c531a13ac4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4814),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Internal fixation of bone without fracture reduction, humerus",
                             DiscountRate = 7,
                             Enabled = true,
@@ -1327,7 +1342,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a1ac9226-b8c5-4a60-bd69-e1d96f116b52"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4817),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ligation of meningeal vessel",
                             DiscountRate = 12,
                             Enabled = true,
@@ -1339,7 +1354,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e6a78f08-9c2f-4d41-b394-f52edf065457"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4820),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on trachea",
                             DiscountRate = 18,
                             Enabled = true,
@@ -1351,7 +1366,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0197a8a8-f9d5-4665-9f66-5f1cc2d6567b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4822),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other partial ostectomy, unspecified site",
                             DiscountRate = 11,
                             Enabled = true,
@@ -1363,7 +1378,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9e5ccbaa-8108-4e2f-ba2a-90aa5dbebb54"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4865),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of stent (tube) in biliary or pancreatic duct",
                             DiscountRate = 15,
                             Enabled = true,
@@ -1375,7 +1390,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("93112c3a-8722-4406-a675-3f2fc60955a3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4868),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open biopsy of rectum",
                             DiscountRate = 1,
                             Enabled = true,
@@ -1387,7 +1402,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("65c9d072-648a-43a3-be5b-45a29047444d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4870),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wedge osteotomy, carpals and metacarpals",
                             DiscountRate = 12,
                             Enabled = true,
@@ -1399,7 +1414,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f0fe0b81-d8a8-43e5-a082-6cad59d7f7de"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4873),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Angiocardiography of right heart structures",
                             DiscountRate = 28,
                             Enabled = true,
@@ -1411,7 +1426,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("86923a18-b47a-458d-a6d6-b61b51e93781"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4875),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Local excision or destruction of other lesion of nose",
                             DiscountRate = 26,
                             Enabled = true,
@@ -1423,7 +1438,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0282e57b-6b86-47d3-8c35-c8b44b8a3434"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4878),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Control of hemorrhage following vascular surgery",
                             DiscountRate = 13,
                             Enabled = true,
@@ -1435,7 +1450,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("90872bc9-0b98-44d9-bda4-a75c5e43eba1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4881),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed [percutaneous] biopsy of seminal vesicles",
                             DiscountRate = 2,
                             Enabled = true,
@@ -1447,7 +1462,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2579f878-f76e-4a2d-8acd-b3361bdc0613"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4884),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of joint, hip",
                             DiscountRate = 5,
                             Enabled = true,
@@ -1459,7 +1474,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bc57b54d-43bc-491f-bef8-3aabf30cc924"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4887),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other skin graft to other sites",
                             DiscountRate = 7,
                             Enabled = true,
@@ -1471,7 +1486,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5be324a6-b9d1-46dc-adc6-d38773f45e47"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4889),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Administration of neuroprotective agent",
                             DiscountRate = 15,
                             Enabled = true,
@@ -1483,7 +1498,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a0735573-01d3-415b-b5e3-3aa314bec806"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4892),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of bone, tarsals and metatarsals",
                             DiscountRate = 23,
                             Enabled = true,
@@ -1495,7 +1510,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bfcbea48-5e89-4371-bd94-43ee47ec5cc2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4894),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Vaccination against typhoid and paratyphoid fever",
                             DiscountRate = 17,
                             Enabled = true,
@@ -1507,7 +1522,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a7dc5447-fdd5-4fce-818a-0245f0273099"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4896),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of fistula of cervix",
                             DiscountRate = 18,
                             Enabled = true,
@@ -1519,7 +1534,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e1ae9e2d-5af4-4a3e-9ce0-587b60d61e8f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4900),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of dislocation of other specified sites",
                             DiscountRate = 11,
                             Enabled = true,
@@ -1531,7 +1546,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f3ca907a-c84f-4b1a-8d5f-44d14eed512b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4903),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Autotransplantation of cells of Islets of Langerhans",
                             DiscountRate = 19,
                             Enabled = true,
@@ -1543,7 +1558,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e789d16b-b925-4ab4-80dc-aeda9bcc093a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4905),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Uroflowmetry [UFR]",
                             DiscountRate = 4,
                             Enabled = true,
@@ -1555,7 +1570,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e18c6560-3d5f-4c8e-8748-a04131864489"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4909),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lysis of intraluminal adhesions of vagina",
                             DiscountRate = 3,
                             Enabled = true,
@@ -1567,7 +1582,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0e7b0280-9cf1-45c4-8941-1bc2f20ad05e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4951),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Release of carpal tunnel",
                             DiscountRate = 0,
                             Enabled = true,
@@ -1579,7 +1594,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6120a74e-a2bd-432f-b3ee-3e098b26276f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4955),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dysphasia training",
                             DiscountRate = 13,
                             Enabled = true,
@@ -1591,7 +1606,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0dcc7aeb-e31b-4392-94ad-b250e21fd3ee"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4957),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open biopsy of tongue",
                             DiscountRate = 22,
                             Enabled = true,
@@ -1603,7 +1618,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("eff45f99-0abb-4472-9d3c-dadeac378f6c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4960),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open and other partial gastrectomy",
                             DiscountRate = 10,
                             Enabled = true,
@@ -1615,7 +1630,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4d39be5c-4838-4af7-be47-020c14d2788f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4963),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other rhinoplasty",
                             DiscountRate = 21,
                             Enabled = true,
@@ -1627,7 +1642,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ad8a7d77-aadd-4be2-9e5f-d86236c51851"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4965),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and unspecified segmental resection of lung",
                             DiscountRate = 18,
                             Enabled = true,
@@ -1639,7 +1654,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4bea9356-a8c6-48f9-b28c-6da92805a219"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4968),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of hip replacement, both acetabular and femoral components",
                             DiscountRate = 0,
                             Enabled = true,
@@ -1651,7 +1666,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("284fcc9e-d925-4ce9-aa6f-66f63b116fb7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4972),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion or replacement of multiple array neurostimulator pulse generator, not specified as rechargeable",
                             DiscountRate = 27,
                             Enabled = true,
@@ -1663,7 +1678,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("52218408-71db-4642-ba58-6104a92fec74"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4974),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Reduction genioplasty",
                             DiscountRate = 19,
                             Enabled = true,
@@ -1675,7 +1690,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4c16ec58-79c8-4337-b05b-6fca14be6c96"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4980),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arthrodesis of other specified joints",
                             DiscountRate = 2,
                             Enabled = true,
@@ -1687,7 +1702,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("366d4078-7bf3-474e-a0ed-f44a65d21245"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4983),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other anastomosis or bypass of ureter",
                             DiscountRate = 1,
                             Enabled = true,
@@ -1699,7 +1714,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1ca4048e-5572-4b39-aa1f-d2a378351d16"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4986),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic bilateral repair of indirect inguinal hernia with graft or prosthesis",
                             DiscountRate = 8,
                             Enabled = true,
@@ -1711,7 +1726,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b4ff52d4-7297-4584-8fb4-ce5725a395b6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4989),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transplantation of spermatic cord",
                             DiscountRate = 22,
                             Enabled = true,
@@ -1723,7 +1738,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8757cca8-4d52-41d0-8069-329cb0e1c854"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4991),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of other bile ducts for relief of obstruction",
                             DiscountRate = 11,
                             Enabled = true,
@@ -1735,7 +1750,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cf9c8d40-b10c-4a2c-9069-e8d418d84a55"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4994),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on kidney",
                             DiscountRate = 28,
                             Enabled = true,
@@ -1747,7 +1762,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9a315e71-2541-41a3-b9c9-b9d0ebbcced6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(4997),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Division of joint capsule, ligament, or cartilage, ankle",
                             DiscountRate = 10,
                             Enabled = true,
@@ -1759,7 +1774,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5fd74fa8-a8a4-43ca-b4b9-56299e7e3622"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5000),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Suture of capsule or ligament of other lower extremity",
                             DiscountRate = 17,
                             Enabled = true,
@@ -1771,7 +1786,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f517ca9d-be25-4c5a-8b4d-b41f25f3588f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5041),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of internal fixation device from facial bone",
                             DiscountRate = 1,
                             Enabled = true,
@@ -1783,7 +1798,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("479b0068-e03a-4757-aaac-abe9953a8ed1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5045),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Psychoanalysis",
                             DiscountRate = 14,
                             Enabled = true,
@@ -1795,7 +1810,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("21052533-4987-40e8-a64c-7ad9ff62939f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5047),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Osteoclasis, tarsals and metatarsals",
                             DiscountRate = 19,
                             Enabled = true,
@@ -1807,7 +1822,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("37ee17ec-1fcd-4d51-b104-d4f377e2726b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5050),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of soft tissue of hand",
                             DiscountRate = 30,
                             Enabled = true,
@@ -1819,7 +1834,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a2ceed47-99e2-4a54-a651-6a38af00ecc8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5053),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and open repair of other hernia of anterior abdominal wall with graft or prosthesis",
                             DiscountRate = 15,
                             Enabled = true,
@@ -1831,7 +1846,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("885b7be8-045d-4c1b-bbb8-06ab0b519196"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5056),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of implantable pressure sensor without lead for intracardiac or great vessel hemodynamic monitoring",
                             DiscountRate = 8,
                             Enabled = true,
@@ -1843,7 +1858,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cb10447b-19b2-4446-b384-a5930fd0737d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5060),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on larynx",
                             DiscountRate = 11,
                             Enabled = true,
@@ -1855,7 +1870,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d58bbb5f-5d99-410b-8073-f0b812cc0cb7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5064),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of hip, not elsewhere classified",
                             DiscountRate = 14,
                             Enabled = true,
@@ -1867,7 +1882,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bb60ce14-d7d0-47c0-b084-d4ac55a2ea07"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5067),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of other vaginal pessary",
                             DiscountRate = 28,
                             Enabled = true,
@@ -1879,7 +1894,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5e69cc09-a34a-4ec8-b0b5-74dbc60dadac"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5070),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Orthovoltage radiation",
                             DiscountRate = 7,
                             Enabled = true,
@@ -1891,7 +1906,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3c12b40c-146f-4752-ae7e-ec8fe6b3ba89"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5073),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Correction of lid retraction",
                             DiscountRate = 18,
                             Enabled = true,
@@ -1903,7 +1918,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2bdaa253-5a2a-47f7-b7e4-aaaf0433fe42"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5075),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Keratoprosthesis",
                             DiscountRate = 16,
                             Enabled = true,
@@ -1915,7 +1930,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5ffd5fcb-4c6f-4797-8975-0651b90735e4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5078),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other bypass anastomosis for heart revascularization",
                             DiscountRate = 18,
                             Enabled = true,
@@ -1927,7 +1942,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("86423ecc-616e-4784-bbbd-0c6472409e8c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5080),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other group therapy",
                             DiscountRate = 19,
                             Enabled = true,
@@ -1939,7 +1954,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("018a6515-43a9-471d-8238-bd2d62bd0677"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5083),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incision of lacrimal passages",
                             DiscountRate = 14,
                             Enabled = true,
@@ -1951,7 +1966,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("657c0aef-9665-41d5-a891-ffbb2bdcc380"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5085),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of cystocele and rectocele with graft or prosthesis",
                             DiscountRate = 17,
                             Enabled = true,
@@ -1963,7 +1978,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f1e68ad0-264e-4f23-a981-7f168d615f45"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5088),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other scleral reinforcement",
                             DiscountRate = 26,
                             Enabled = true,
@@ -1975,7 +1990,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("883c963c-d6fe-489e-be2a-acaebd47aa7f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5131),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of vessel, lower limb veins",
                             DiscountRate = 0,
                             Enabled = true,
@@ -1987,7 +2002,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("febdd888-57d7-4fef-a459-b11357a72d15"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5135),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of vessels, abdominal veins",
                             DiscountRate = 12,
                             Enabled = true,
@@ -1999,7 +2014,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("570d1f44-9310-4a72-af6d-03940fbe693f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5138),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Immunization for allergy",
                             DiscountRate = 1,
                             Enabled = true,
@@ -2011,7 +2026,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("72da4113-1530-4383-9414-c10f9ad2de66"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5142),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other mammography",
                             DiscountRate = 28,
                             Enabled = true,
@@ -2023,7 +2038,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bcf1c1a6-1aa1-4c13-9f60-1f24f4e8fac1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5145),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wedge osteotomy, femur",
                             DiscountRate = 5,
                             Enabled = true,
@@ -2035,7 +2050,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b22b1cdd-0aa4-490d-a10d-f03fa0abb9c7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5148),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unilateral exploration of adrenal field",
                             DiscountRate = 19,
                             Enabled = true,
@@ -2047,7 +2062,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("61fc5a3d-ee90-41f5-9e6b-a6d2cd64972b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5150),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intraoperative cholangiogram",
                             DiscountRate = 1,
                             Enabled = true,
@@ -2059,7 +2074,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e158444b-cf85-4d8f-8a69-a8279dd3007d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5154),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Tendon transfer or transplantation",
                             DiscountRate = 19,
                             Enabled = true,
@@ -2071,7 +2086,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ccae9be7-43e7-4558-9baa-9fdb536808d9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5156),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of esophageal fistula, not elsewhere classified",
                             DiscountRate = 17,
                             Enabled = true,
@@ -2083,7 +2098,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("82d59e38-d980-4aa9-8d40-8fa03cac5178"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5158),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair or plastic operations on bone, scapula, clavicle, and thorax [ribs and sternum]",
                             DiscountRate = 9,
                             Enabled = true,
@@ -2095,7 +2110,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("347ca935-5221-4cab-8ac0-628f04d6614e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5161),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of bone, other bones",
                             DiscountRate = 2,
                             Enabled = true,
@@ -2107,7 +2122,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("62f52ab2-2214-4da2-b858-f827fcf17e8e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5163),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of blood vessel with synthetic patch graft",
                             DiscountRate = 27,
                             Enabled = true,
@@ -2119,7 +2134,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7b4e2151-4a32-4420-9970-7a5e3f231a09"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5166),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of intracranial neurostimulator lead(s)",
                             DiscountRate = 7,
                             Enabled = true,
@@ -2131,7 +2146,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8b7c4cf1-45de-4cfc-8718-8be0ce208914"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5169),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ethmoidotomy",
                             DiscountRate = 15,
                             Enabled = true,
@@ -2143,7 +2158,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7765f961-e8ff-48ee-889b-ebae92074903"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5171),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Amputation of cervix",
                             DiscountRate = 8,
                             Enabled = true,
@@ -2155,7 +2170,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cf033129-159a-4325-93fa-640316095ce0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5174),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incision of bone without division, other bones",
                             DiscountRate = 20,
                             Enabled = true,
@@ -2167,7 +2182,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("af3bab1d-ae81-487f-9c86-d670f5c6e9a7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5176),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Manual reduction of hernia",
                             DiscountRate = 8,
                             Enabled = true,
@@ -2179,7 +2194,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e52c0917-532c-4094-a367-6ee742c12d27"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5427),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Application of plaster jacket",
                             DiscountRate = 23,
                             Enabled = true,
@@ -2191,7 +2206,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("baf30168-a5b0-4b06-a1fc-087f96349ef4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5436),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cardiopulmonary resuscitation, not otherwise specified",
                             DiscountRate = 15,
                             Enabled = true,
@@ -2203,7 +2218,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("883afdef-6a15-498c-8a2a-259fedb503a4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5441),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of alveolus",
                             DiscountRate = 10,
                             Enabled = true,
@@ -2215,7 +2230,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3adab313-b6f6-4d50-b2b4-a3beb77f806b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5445),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transfusion of packed cells",
                             DiscountRate = 12,
                             Enabled = true,
@@ -2227,7 +2242,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5f52f3f9-0819-4b7a-a461-942d9ef8a5ae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5452),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on breast",
                             DiscountRate = 27,
                             Enabled = true,
@@ -2239,7 +2254,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("90f7ec70-49d5-486b-90d3-457b638091a8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5456),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Pyloromyotomy",
                             DiscountRate = 30,
                             Enabled = true,
@@ -2251,7 +2266,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("78ec1e41-f932-458f-ad49-fcf36cdeea2d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5461),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of pterygium",
                             DiscountRate = 2,
                             Enabled = true,
@@ -2263,7 +2278,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0a8ac04a-4344-4558-ac1b-b4a714522a73"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5464),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other obstetric operations",
                             DiscountRate = 25,
                             Enabled = true,
@@ -2275,7 +2290,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("44afc871-58bb-465b-8d7f-86c63f645c91"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5467),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other specified instrumental delivery",
                             DiscountRate = 1,
                             Enabled = true,
@@ -2287,7 +2302,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8cc138e0-9e08-4292-8c6c-49f4fc1d5099"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5469),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ocular motility study",
                             DiscountRate = 4,
                             Enabled = true,
@@ -2299,7 +2314,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6622f536-4912-456d-acbf-aa061c4769a0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5472),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Extraction of deciduous tooth",
                             DiscountRate = 15,
                             Enabled = true,
@@ -2311,7 +2326,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8e894f1c-8734-4c73-ae97-24212eb21e8d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5474),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of intercostal catheter for drainage",
                             DiscountRate = 1,
                             Enabled = true,
@@ -2323,7 +2338,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b9f7276b-962b-4c24-9b88-63590a5e7d5d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5477),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from musculoskeletal system and of joint fluid, cell block and Papanicolaou smear",
                             DiscountRate = 3,
                             Enabled = true,
@@ -2335,7 +2350,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d2aeb91d-f565-4d03-a2be-346a6e6cbe39"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5479),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of bony palate",
                             DiscountRate = 5,
                             Enabled = true,
@@ -2347,7 +2362,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7da8e54e-4138-4bda-9175-75d19780bdae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5482),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sequestrectomy, patella",
                             DiscountRate = 27,
                             Enabled = true,
@@ -2359,7 +2374,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6bc63621-ed5a-418a-b201-3f23dedb9fa3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5484),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of intraluminal foreign body from urethra without incision",
                             DiscountRate = 18,
                             Enabled = true,
@@ -2371,7 +2386,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b54204de-3855-4ae8-bc16-63e2ebacef4e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5487),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, culture and sensitivity",
                             DiscountRate = 7,
                             Enabled = true,
@@ -2383,7 +2398,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1d385d73-1b1f-4b76-a3d0-6b89a1a67c58"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5689),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of peritoneal and retroperitoneal specimen, parasitology",
                             DiscountRate = 25,
                             Enabled = true,
@@ -2395,7 +2410,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5b10baa6-77cc-4764-8d70-07d8c5687aa7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5696),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of foreign body from spinal canal",
                             DiscountRate = 8,
                             Enabled = true,
@@ -2407,7 +2422,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("108deb24-430f-4efd-b589-a794cdcd01cf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5699),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of joint structure, hand and finger",
                             DiscountRate = 10,
                             Enabled = true,
@@ -2419,7 +2434,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("86a4eb6a-4082-4932-bc4c-8cf3cbcec138"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5702),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open biopsy of cranial or peripheral nerve or ganglion",
                             DiscountRate = 17,
                             Enabled = true,
@@ -2431,7 +2446,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a6798064-0a51-4c85-a15e-75b88faeef04"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5705),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Limb shortening procedures, humerus",
                             DiscountRate = 5,
                             Enabled = true,
@@ -2443,7 +2458,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b24739ca-66cf-4b63-bd34-07cd42df347f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5708),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incision, excision, and destruction of inner ear",
                             DiscountRate = 8,
                             Enabled = true,
@@ -2455,7 +2470,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("697d24c2-9a3d-467f-beba-00ce320a45ca"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5711),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on tongue",
                             DiscountRate = 26,
                             Enabled = true,
@@ -2467,7 +2482,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2eb1bb02-9374-4a54-a8a1-3e73a81b4611"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5714),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal or destruction of epithelial downgrowth from anterior chamber",
                             DiscountRate = 28,
                             Enabled = true,
@@ -2479,7 +2494,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a9978320-ee47-4ff0-b9e4-9371f166fdfc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5717),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transluminal coronary atherectomy",
                             DiscountRate = 14,
                             Enabled = true,
@@ -2491,7 +2506,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("778c9a14-f4e9-4fe4-80a2-325d93c9c368"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5721),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open heart valvuloplasty without replacement, unspecified valve",
                             DiscountRate = 23,
                             Enabled = true,
@@ -2503,7 +2518,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1a9b27e6-61d8-4234-b9da-d100da1f9a2e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5723),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of salivary gland or duct",
                             DiscountRate = 28,
                             Enabled = true,
@@ -2515,7 +2530,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("af4ebf18-c429-434f-bff6-43b42c7d966a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5726),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Control of epistaxis by posterior (and anterior) packing",
                             DiscountRate = 25,
                             Enabled = true,
@@ -2527,7 +2542,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6b2b5f26-62b9-4613-97f2-d1929998da9d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5729),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Audiological evaluation",
                             DiscountRate = 29,
                             Enabled = true,
@@ -2539,7 +2554,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("122ca4d3-51d1-471c-b2cd-873eec91aeeb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5731),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Creation of conduit between right ventricle and pulmonary artery",
                             DiscountRate = 2,
                             Enabled = true,
@@ -2551,7 +2566,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7ffdd858-1d71-4455-8434-553b7a3149a4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5734),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Accessory-facial anastomosis",
                             DiscountRate = 2,
                             Enabled = true,
@@ -2563,7 +2578,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2bba50ff-b65e-4cc2-a17a-074d5d89612c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5737),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open and other sigmoidectomy",
                             DiscountRate = 13,
                             Enabled = true,
@@ -2575,7 +2590,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9d268bcb-fab4-4bed-b563-699d574fb7df"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5740),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intracardiac echocardiography",
                             DiscountRate = 24,
                             Enabled = true,
@@ -2587,7 +2602,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c4764c2e-834b-40f6-9af0-f97169359f7e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5788),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Behavior therapy",
                             DiscountRate = 30,
                             Enabled = true,
@@ -2599,7 +2614,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("724d9b5f-4f62-4653-b5b4-d6c4a221e9be"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5791),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Osteoclasis, femur",
                             DiscountRate = 18,
                             Enabled = true,
@@ -2611,7 +2626,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2556d805-b77a-4055-acb0-4a0188456adf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5795),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other consultation",
                             DiscountRate = 21,
                             Enabled = true,
@@ -2623,7 +2638,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5ffbebc2-81d8-4987-b8ec-fef6369fd38c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5798),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Routine psychiatric visit, not otherwise specified",
                             DiscountRate = 9,
                             Enabled = true,
@@ -2635,7 +2650,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("793b5dba-da4f-412d-affa-3b12c7cd0b9b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5801),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Division of laryngeal nerve",
                             DiscountRate = 1,
                             Enabled = true,
@@ -2647,7 +2662,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7efc9bb3-879c-4af9-abfe-7dea20329e20"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5804),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implant of single ventricular (extracorporeal) external heart assist system",
                             DiscountRate = 18,
                             Enabled = true,
@@ -2659,7 +2674,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d4781ba2-20ec-48a1-b9c1-9301492db3b5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5806),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Peritoneal lavage",
                             DiscountRate = 21,
                             Enabled = true,
@@ -2671,7 +2686,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b02bc556-8873-4fc5-ac2f-1e462dcdf522"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5809),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Packing of external auditory canal",
                             DiscountRate = 23,
                             Enabled = true,
@@ -2683,7 +2698,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ca1e2e3e-3982-4b90-ba9f-6d563764a065"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5811),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of petrous pyramid air cells",
                             DiscountRate = 29,
                             Enabled = true,
@@ -2695,7 +2710,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fad8dc8a-378f-4bde-8f4f-fb75c9a13ad4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5814),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of mallet finger",
                             DiscountRate = 16,
                             Enabled = true,
@@ -2707,7 +2722,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6a7b4e3e-f8f7-437e-8806-83fc03f27293"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5816),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of vulva",
                             DiscountRate = 18,
                             Enabled = true,
@@ -2719,7 +2734,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9e9e0524-5400-41c8-9525-965c29d52bb7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5819),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unilateral radical mastectomy",
                             DiscountRate = 8,
                             Enabled = true,
@@ -2731,7 +2746,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0dff4984-97ac-4d7f-be18-c534eb01b36f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5822),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arthroscopy, knee",
                             DiscountRate = 26,
                             Enabled = true,
@@ -2743,7 +2758,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("56673be6-6950-4015-aa16-96db27641cd6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5825),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wedge resection of ovary",
                             DiscountRate = 20,
                             Enabled = true,
@@ -2755,7 +2770,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6487425c-08f1-4ce1-b160-61579c4e55df"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5828),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Temporary ileostomy",
                             DiscountRate = 3,
                             Enabled = true,
@@ -2767,7 +2782,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("403a38e3-495e-4dfd-bb3d-3938e841aa01"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5833),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of urachus",
                             DiscountRate = 2,
                             Enabled = true,
@@ -2779,7 +2794,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bfe1b4bf-bc65-4171-aebb-59b9433eac82"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5835),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Contrast epididymogram",
                             DiscountRate = 9,
                             Enabled = true,
@@ -2791,7 +2806,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("55599ead-9408-4772-ad0a-8bc6b2f7c84f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5881),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of carotid sinus stimulation lead(s) only",
                             DiscountRate = 28,
                             Enabled = true,
@@ -2803,7 +2818,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1fae1925-1c49-48c7-875f-292acde2df12"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5884),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of choledochohepatic tube for decompression",
                             DiscountRate = 22,
                             Enabled = true,
@@ -2815,7 +2830,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e9f9d8e8-1fdd-49be-aa9c-7b1de34c30bf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5887),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of implanted devices from bone, other bones",
                             DiscountRate = 13,
                             Enabled = true,
@@ -2827,7 +2842,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7d10eeb6-f88c-473e-8d27-9dea4adc9e0c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5889),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Homograft to skin",
                             DiscountRate = 13,
                             Enabled = true,
@@ -2839,7 +2854,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("123ddbee-8e00-4e02-908b-4148fe25b663"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5891),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from ear, nose, throat, and larynx, culture and sensitivity",
                             DiscountRate = 3,
                             Enabled = true,
@@ -2851,7 +2866,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d9f21199-97f4-45de-93f4-bee8c0864158"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5894),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open biopsy of seminal vesicles",
                             DiscountRate = 9,
                             Enabled = true,
@@ -2863,7 +2878,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c1f971d7-1e1d-4971-bf15-3ed6b2e323f3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5896),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incision of larynx or trachea",
                             DiscountRate = 3,
                             Enabled = true,
@@ -2875,7 +2890,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("41ea509d-7b9b-4006-b682-c1ae058bf148"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5899),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other contrast bronchogram",
                             DiscountRate = 22,
                             Enabled = true,
@@ -2887,7 +2902,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9818f6bc-b494-4371-821a-399de111fa8d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5902),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from nervous system and of spinal fluid, bacterial smear",
                             DiscountRate = 25,
                             Enabled = true,
@@ -2899,7 +2914,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8362802e-199b-4e06-bfc1-2fc3d60260fb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5905),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arthrotomy for removal of prosthesis without replacement, knee",
                             DiscountRate = 27,
                             Enabled = true,
@@ -2911,7 +2926,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("19347b6e-b95e-4ef4-b0ae-c6b49a05c9a5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5907),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of perirenal or perivesical tissue",
                             DiscountRate = 20,
                             Enabled = true,
@@ -2923,7 +2938,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("93351c9a-6420-4628-a60e-9c786106382e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5910),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of other device from trunk",
                             DiscountRate = 14,
                             Enabled = true,
@@ -2935,7 +2950,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0b0e6ddc-8b2d-4f58-a668-725cb7267899"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5912),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lacrimal gland, not otherwise specified",
                             DiscountRate = 19,
                             Enabled = true,
@@ -2947,7 +2962,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4629a669-ee9f-47bd-87f9-09a1ac1ce8f6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5915),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Augmentation rhinoplasty",
                             DiscountRate = 4,
                             Enabled = true,
@@ -2959,7 +2974,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5c45c652-d2f1-420c-b730-a9e1fa5a32f5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5921),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Initial insertion of single-chamber device, rate responsive",
                             DiscountRate = 28,
                             Enabled = true,
@@ -2971,7 +2986,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7737fa11-6373-4f8e-952a-cb46b2e0c507"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5924),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other iridoplasty",
                             DiscountRate = 4,
                             Enabled = true,
@@ -2983,7 +2998,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2fb65a17-3212-4bb6-9a7c-6e365d00884a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5926),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of fracture with internal fixation, humerus",
                             DiscountRate = 27,
                             Enabled = true,
@@ -2995,7 +3010,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4b53e27d-4f01-46ba-b7aa-f68833bf0347"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5968),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other surgical occlusion of vessels, upper limb vessels",
                             DiscountRate = 5,
                             Enabled = true,
@@ -3007,7 +3022,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("88171ed4-997d-4a57-8ce8-f49fd6294355"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5971),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of external auditory canal",
                             DiscountRate = 7,
                             Enabled = true,
@@ -3019,7 +3034,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("43a0290c-5006-4099-96bd-2aa52dc30924"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5975),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cervical sympathectomy",
                             DiscountRate = 18,
                             Enabled = true,
@@ -3031,7 +3046,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("75519efe-d186-4633-99ed-5868b15c7e1e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5977),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Monitoring of coronary blood flow",
                             DiscountRate = 0,
                             Enabled = true,
@@ -3043,7 +3058,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e6a3978c-8952-44c9-a404-59f5d3753aeb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5980),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bilateral subcutaneous mammectomy with synchronous implant",
                             DiscountRate = 1,
                             Enabled = true,
@@ -3055,7 +3070,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c6924e2d-6125-4a2b-99b0-e21af30494fd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5982),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Culdoscopy",
                             DiscountRate = 26,
                             Enabled = true,
@@ -3067,7 +3082,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a279ba83-4bba-4885-a04b-4a9281a1b08a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5985),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Pericardiocentesis",
                             DiscountRate = 23,
                             Enabled = true,
@@ -3079,7 +3094,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e48ff210-5fe6-4b77-98da-b80e267d6ba9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5987),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Formation of cranial bone flap",
                             DiscountRate = 1,
                             Enabled = true,
@@ -3091,7 +3106,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dd7a1385-86be-4eb7-8e74-18cd911287fa"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5990),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Endometrial ablation",
                             DiscountRate = 25,
                             Enabled = true,
@@ -3103,7 +3118,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f3e4b1e8-8e68-4f55-8e4d-5c58435f50ab"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5993),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Phacoemulsification and aspiration of cataract",
                             DiscountRate = 13,
                             Enabled = true,
@@ -3115,7 +3130,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fe932681-932a-4b35-9783-e730981616ba"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5995),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on one extraocular muscle",
                             DiscountRate = 8,
                             Enabled = true,
@@ -3127,7 +3142,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("200d6c87-8289-4fa0-907e-abba46440ae4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(5998),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Endovascular embolization or occlusion of vessel(s) of head or neck using bioactive coils",
                             DiscountRate = 22,
                             Enabled = true,
@@ -3139,7 +3154,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("380532fa-b7b0-448e-81f2-f53f631b6fd4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6000),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other active musculoskeletal exercise",
                             DiscountRate = 15,
                             Enabled = true,
@@ -3151,7 +3166,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7ab108b5-62f3-40f8-aceb-d2b9047676e6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6003),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from nervous system and of spinal fluid, cell block and Papanicolaou smear",
                             DiscountRate = 22,
                             Enabled = true,
@@ -3163,7 +3178,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d6668131-8c47-49c8-a9dd-3bba8dd7709b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6006),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dysphasia training",
                             DiscountRate = 23,
                             Enabled = true,
@@ -3175,7 +3190,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a1aad95e-cd8c-47e4-ad6c-e116e136a372"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6009),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of scrotal fistula",
                             DiscountRate = 14,
                             Enabled = true,
@@ -3187,7 +3202,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6c1c6b94-8d53-45fd-b765-c321da356adf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6012),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Urethral meatoplasty",
                             DiscountRate = 18,
                             Enabled = true,
@@ -3199,7 +3214,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f20c4f9f-52c5-44a5-af12-5712a482ad37"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6056),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Reopening of recent laparotomy site",
                             DiscountRate = 25,
                             Enabled = true,
@@ -3211,7 +3226,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c96619e0-00df-4ffd-8351-d16e377e04f9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6059),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of joint, knee",
                             DiscountRate = 25,
                             Enabled = true,
@@ -3223,7 +3238,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("794858e1-1841-470a-bbe4-ee64ddb7a3b8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6061),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on esophagus",
                             DiscountRate = 5,
                             Enabled = true,
@@ -3235,7 +3250,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7992f58e-b0cb-4636-894a-737567e4b354"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6064),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision and drainage of palmar or thenar space",
                             DiscountRate = 30,
                             Enabled = true,
@@ -3247,7 +3262,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("26b4e612-30cf-4298-a8c4-413cd2dfb2b5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6066),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Division of joint capsule, ligament, or cartilage, wrist",
                             DiscountRate = 4,
                             Enabled = true,
@@ -3259,7 +3274,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("870c1e8d-6e6d-4b77-870b-ab73217ef0bc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6069),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of other lesion or tissue of spermatic cord and epididymis",
                             DiscountRate = 29,
                             Enabled = true,
@@ -3271,7 +3286,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("73c64542-6d77-4e87-80ad-7c646a467e6f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6071),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Hypothermia (central) (local)",
                             DiscountRate = 30,
                             Enabled = true,
@@ -3283,7 +3298,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5135b95f-7acd-4b5e-a65f-ef1dcaf29791"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6073),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and open repair of diaphragmatic hernia, abdominal approach",
                             DiscountRate = 12,
                             Enabled = true,
@@ -3295,7 +3310,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9c7d5aa4-d29c-401b-bf17-c8cb09b94b3b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6076),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of joint, other specified sites",
                             DiscountRate = 3,
                             Enabled = true,
@@ -3307,7 +3322,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e5d0450e-e9fc-4064-a0ff-a5bc977b6589"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6079),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Percutaneous ablation of lung lesion or tissue",
                             DiscountRate = 1,
                             Enabled = true,
@@ -3319,7 +3334,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9bdcfe52-cd60-41f3-b95d-29bf1e3699cb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6081),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Anastomosis of gallbladder to hepatic ducts",
                             DiscountRate = 19,
                             Enabled = true,
@@ -3331,7 +3346,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("143e1702-c166-4ccd-b515-2aed6f3685ff"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6085),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Psychiatric mental status determination",
                             DiscountRate = 19,
                             Enabled = true,
@@ -3343,7 +3358,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("255980f2-36c2-4998-9536-04d6b3474086"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6088),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Neuroleptic therapy",
                             DiscountRate = 26,
                             Enabled = true,
@@ -3355,7 +3370,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("02773ce1-8359-400d-9fa1-eb187184ab4a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6090),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and unspecified ablation of lung lesion or tissue",
                             DiscountRate = 12,
                             Enabled = true,
@@ -3367,7 +3382,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bf33ee74-8b81-4742-bf91-7bf54742b32c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6093),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic radical abdominal hysterectomy",
                             DiscountRate = 26,
                             Enabled = true,
@@ -3379,7 +3394,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f07f17b3-1eca-44a6-acbf-ee7832621316"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6095),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Administration of diphtheria-tetanus-pertussis, combined",
                             DiscountRate = 5,
                             Enabled = true,
@@ -3391,7 +3406,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("91a76692-c51c-48b7-a29a-cb53af3ea431"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6097),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Diagnostic imaging, not elsewhere classified",
                             DiscountRate = 1,
                             Enabled = true,
@@ -3403,7 +3418,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("08298e6c-60fd-4857-9d5a-db0420f4c01e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6141),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of bone for graft, carpals and metacarpals",
                             DiscountRate = 21,
                             Enabled = true,
@@ -3415,7 +3430,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ee5930e8-87f8-4eae-ad7d-404a8b726392"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6144),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other cervical fusion of the posterior column, posterior technique",
                             DiscountRate = 7,
                             Enabled = true,
@@ -3427,7 +3442,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a6575091-5049-47f0-86de-dea1c92c1689"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6147),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of intrauterine contraceptive device",
                             DiscountRate = 29,
                             Enabled = true,
@@ -3439,7 +3454,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ebb9b0ef-08bd-460e-be1b-43499aec1729"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6153),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wedge osteotomy, carpals and metacarpals",
                             DiscountRate = 21,
                             Enabled = true,
@@ -3451,7 +3466,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9ff98384-25b1-4cbb-ae6a-9afaa0da7669"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6156),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other stapedectomy",
                             DiscountRate = 13,
                             Enabled = true,
@@ -3463,7 +3478,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("284d2058-bf48-4f37-add4-3bf4d3cf7102"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6159),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on vessels of heart",
                             DiscountRate = 2,
                             Enabled = true,
@@ -3475,7 +3490,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("33e2ebd6-e013-4b60-be6e-e261c4e2485d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6161),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and unspecified ablation of lung lesion or tissue",
                             DiscountRate = 1,
                             Enabled = true,
@@ -3487,7 +3502,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("12af7390-2070-466d-a973-abf8fd79717d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6164),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Amputation through hand",
                             DiscountRate = 16,
                             Enabled = true,
@@ -3499,7 +3514,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dededf39-9e18-49c3-924a-c226254affa0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6166),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of nasal packing",
                             DiscountRate = 11,
                             Enabled = true,
@@ -3511,7 +3526,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("09de8f5d-47af-4513-8520-94e28dce8488"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6170),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Radical vulvectomy",
                             DiscountRate = 27,
                             Enabled = true,
@@ -3523,7 +3538,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e772c67d-7e00-45e9-9758-53f7cf1a8d65"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6173),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on oral cavity",
                             DiscountRate = 3,
                             Enabled = true,
@@ -3535,7 +3550,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("901de49a-fc48-47b4-a8fa-4aadc5608afe"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6175),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Therapeutic leukopheresis",
                             DiscountRate = 15,
                             Enabled = true,
@@ -3547,7 +3562,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1b5dcb89-6c6c-4c2a-be1f-3862bcb4c852"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6178),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bilateral vulvectomy",
                             DiscountRate = 24,
                             Enabled = true,
@@ -3559,7 +3574,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f8dd6a69-6de4-4c35-8128-7cf1be44324b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6180),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Infusion of liquid brachytherapy radioisotope",
                             DiscountRate = 9,
                             Enabled = true,
@@ -3571,7 +3586,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5f64f596-3d54-4c54-8795-b76b84755685"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6182),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from lymph node and of lymph, other microscopic examination",
                             DiscountRate = 10,
                             Enabled = true,
@@ -3583,7 +3598,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0d1bc95f-92f0-4dad-a552-c0f51c888d37"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6185),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Reconstruction of eyelid with tarsoconjunctival flap",
                             DiscountRate = 3,
                             Enabled = true,
@@ -3595,7 +3610,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a6b1c5a0-65b1-40da-9f22-6f58e15c7a36"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6187),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Manual reduction of enterostomy prolapse",
                             DiscountRate = 24,
                             Enabled = true,
@@ -3607,7 +3622,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("704eb4eb-bb31-4e43-b5e0-d8a95884dff4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6232),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of any type of pacemaker device with single-chamber device, rate responsive",
                             DiscountRate = 17,
                             Enabled = true,
@@ -3619,7 +3634,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bf606fd6-57e5-47c0-aec6-41fce83dfbc2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6235),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other surgical occlusion of vessels, abdominal veins",
                             DiscountRate = 25,
                             Enabled = true,
@@ -3631,7 +3646,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("12fc5cdb-cc30-4863-8050-b3ac1d55b221"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6237),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wedge osteotomy, patella",
                             DiscountRate = 25,
                             Enabled = true,
@@ -3643,7 +3658,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1977e58f-2fa2-4ed0-ac7e-052b9c99d594"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6240),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of blood, cell block and Papanicolaou smear",
                             DiscountRate = 11,
                             Enabled = true,
@@ -3655,7 +3670,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("778e7d7e-d037-4337-b48b-b8b094657778"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6242),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other partial adrenalectomy",
                             DiscountRate = 26,
                             Enabled = true,
@@ -3667,7 +3682,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("61c9a15e-9d4d-44e8-bcb3-2009f6fed06c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6245),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Control of epistaxis by posterior (and anterior) packing",
                             DiscountRate = 22,
                             Enabled = true,
@@ -3679,7 +3694,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dc0f323c-6afb-4182-8040-fa795e65657d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6247),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unilateral radical mastectomy",
                             DiscountRate = 1,
                             Enabled = true,
@@ -3691,7 +3706,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("557a417a-ee9e-45d8-b18a-14aab221d22a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6249),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Triple arthrodesis",
                             DiscountRate = 4,
                             Enabled = true,
@@ -3703,7 +3718,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d9478ad8-c375-4982-8990-0f4a0bb155b7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6252),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other eyelid repair",
                             DiscountRate = 23,
                             Enabled = true,
@@ -3715,7 +3730,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9cfa6ff6-a5e9-479f-807e-fda82590a360"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6256),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ligation of dermal appendage",
                             DiscountRate = 5,
                             Enabled = true,
@@ -3727,7 +3742,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4f9e77e3-db8c-48ba-9a39-e59273e951f3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6259),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intravascular imaging, other specified vessel(s)",
                             DiscountRate = 22,
                             Enabled = true,
@@ -3739,7 +3754,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("984c50ab-5311-4bcb-ba76-66c315d03faa"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6261),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other anastomosis or bypass of ureter",
                             DiscountRate = 24,
                             Enabled = true,
@@ -3751,7 +3766,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5f69f22a-6459-437a-938c-33b8c8f05345"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6264),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open ablation of liver lesion or tissue",
                             DiscountRate = 30,
                             Enabled = true,
@@ -3763,7 +3778,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("98e6367f-9f32-4e75-b9cc-9811c797434b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6266),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Aspiration of fallopian tube",
                             DiscountRate = 4,
                             Enabled = true,
@@ -3775,7 +3790,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0b0a1eb1-d441-4bfe-8222-60c7ed8fe419"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6269),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on lung",
                             DiscountRate = 29,
                             Enabled = true,
@@ -3787,7 +3802,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7826017d-69a9-4f84-9e52-3cca427e2f13"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6271),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on ureter",
                             DiscountRate = 27,
                             Enabled = true,
@@ -3799,7 +3814,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b844bde8-761a-4c63-9d94-8a03914abe25"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6274),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other rehabilitation for the blind",
                             DiscountRate = 12,
                             Enabled = true,
@@ -3811,7 +3826,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a0366810-fbcb-4a07-b438-45bfa8be178b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6343),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of internal prosthesis of penis",
                             DiscountRate = 27,
                             Enabled = true,
@@ -3823,7 +3838,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8ddec21e-b0b3-4d3d-bcec-567feac74d5e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6347),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Alcohol detoxification",
                             DiscountRate = 4,
                             Enabled = true,
@@ -3835,7 +3850,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ac6dbf13-25ee-4e5d-97d4-472ecefc7f86"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6350),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Phlebography of other specified sites using contrast material",
                             DiscountRate = 24,
                             Enabled = true,
@@ -3847,7 +3862,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e5de65eb-5652-4047-a1e5-8cffa45066d8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6352),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Suture of capsule or ligament of other lower extremity",
                             DiscountRate = 22,
                             Enabled = true,
@@ -3859,7 +3874,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("151d7cca-bb59-4690-b0b9-13f42523d5d0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6355),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arthrotomy for removal of prosthesis without replacement, other specified sites",
                             DiscountRate = 5,
                             Enabled = true,
@@ -3871,7 +3886,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2e5167f4-ea19-4180-85ae-8ef36aff53a1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6358),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Simple suture of common bile duct",
                             DiscountRate = 7,
                             Enabled = true,
@@ -3883,7 +3898,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("11389371-4613-4421-8c96-1ab81cded836"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6361),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Reconstruction of conjunctival cul-de-sac with free graft",
                             DiscountRate = 14,
                             Enabled = true,
@@ -3895,7 +3910,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("098d02f7-ecac-41d3-bf23-d971f4edbeab"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6363),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Limb lengthening procedures, carpals and metacarpals",
                             DiscountRate = 3,
                             Enabled = true,
@@ -3907,7 +3922,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8fc591c1-080c-4b50-826e-8e86a6a0697c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6366),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Diagnostic procedures on bone, not elsewhere classified, unspecified site",
                             DiscountRate = 18,
                             Enabled = true,
@@ -3919,7 +3934,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("40d3940e-0fc2-4f1d-8e18-16d447bc8337"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6369),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Peritoneal dialysis",
                             DiscountRate = 23,
                             Enabled = true,
@@ -3931,7 +3946,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bfac89bd-435c-4c0e-87e7-49493876ece4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6372),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Partial excision of pituitary gland, transsphenoidal approach",
                             DiscountRate = 3,
                             Enabled = true,
@@ -3943,7 +3958,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ababd03f-82a0-4520-a64e-fe9e7e1cec3a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6375),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of ureterostomy tube",
                             DiscountRate = 6,
                             Enabled = true,
@@ -3955,7 +3970,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("33653f46-a2de-4afb-bedb-8997ab6dbe4f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6379),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Control of epistaxis by excision of nasal mucosa and skin grafting of septum and lateral nasal wall",
                             DiscountRate = 12,
                             Enabled = true,
@@ -3967,7 +3982,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0a3aa2e6-fdc6-46ae-83d4-471a1910dcee"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6381),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arteriography of other specified sites",
                             DiscountRate = 12,
                             Enabled = true,
@@ -3979,7 +3994,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e901eb38-b5b7-403b-aa90-d3f040737cc3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6384),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of intercostal catheter for drainage",
                             DiscountRate = 26,
                             Enabled = true,
@@ -3991,7 +4006,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e0adc567-88cb-4516-8f1c-33b3b740ea78"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6386),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of scleral staphyloma",
                             DiscountRate = 16,
                             Enabled = true,
@@ -4003,7 +4018,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8f38fd54-33ac-4e98-a362-1eac37c448e5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6389),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of retinal detachment with xenon arc photocoagulation",
                             DiscountRate = 24,
                             Enabled = true,
@@ -4015,7 +4030,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("db847cda-01cb-40f8-9633-3964ff59b0db"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6786),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed reduction of fracture with internal fixation, other specified bone",
                             DiscountRate = 16,
                             Enabled = true,
@@ -4027,7 +4042,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cdc53d76-9211-4550-a651-e516de59723c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6796),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Local excision of rectal lesion or tissue",
                             DiscountRate = 15,
                             Enabled = true,
@@ -4039,7 +4054,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("136075b8-c945-4c77-af49-ae4fea7e2718"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6800),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Operation on lens, not elsewhere classified",
                             DiscountRate = 12,
                             Enabled = true,
@@ -4051,7 +4066,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("24c03bd8-55be-4361-b543-da1b0f57ee9a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6803),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of amputation stump",
                             DiscountRate = 1,
                             Enabled = true,
@@ -4063,7 +4078,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0dde1d77-191e-4b8c-980a-52a178e2bc4a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6806),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Osteopathic manipulative treatment using indirect forces",
                             DiscountRate = 8,
                             Enabled = true,
@@ -4075,7 +4090,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4ed1bad9-b352-4bf4-af8d-53182603bc99"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6809),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on kidney",
                             DiscountRate = 29,
                             Enabled = true,
@@ -4087,7 +4102,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("65c5df06-c23b-420b-9a2c-8160a2daf859"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6812),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Percutaneous cystostomy",
                             DiscountRate = 9,
                             Enabled = true,
@@ -4099,7 +4114,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("26388ac4-dd20-47ef-b97c-432eb9be718a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6815),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Therapeutic plateletpheresis",
                             DiscountRate = 19,
                             Enabled = true,
@@ -4111,7 +4126,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b1af4420-0a17-4aef-b6fc-44d9aad7ab62"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6818),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Five-in-one repair of knee",
                             DiscountRate = 4,
                             Enabled = true,
@@ -4123,7 +4138,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9c554c35-d206-48f7-8135-29ec271a274f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6821),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of vessel",
                             DiscountRate = 18,
                             Enabled = true,
@@ -4135,7 +4150,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("987b7341-ce8b-42fd-b5da-3f983ffa2f65"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6825),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implant of single ventricular (extracorporeal) external heart assist system",
                             DiscountRate = 15,
                             Enabled = true,
@@ -4147,7 +4162,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("84b0817a-a6a9-4935-ab97-c6283f2990aa"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6828),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Limb shortening procedures, tibia and fibula",
                             DiscountRate = 19,
                             Enabled = true,
@@ -4159,7 +4174,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5fc6a44d-01cd-44cd-a946-0caabce44655"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6831),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Upper limb amputation, not otherwise specified",
                             DiscountRate = 17,
                             Enabled = true,
@@ -4171,7 +4186,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("14e594bc-a4cb-4421-8fbf-e2b14a1149d6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6833),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Suture of laceration of nose",
                             DiscountRate = 11,
                             Enabled = true,
@@ -4183,7 +4198,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4718b0a5-e6a7-4606-9421-015ec02160c6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6836),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other cervical fusion of the posterior column, posterior technique",
                             DiscountRate = 27,
                             Enabled = true,
@@ -4195,7 +4210,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("89447d9a-5c48-4297-a5e9-a19040b7510e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6838),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of mouth",
                             DiscountRate = 24,
                             Enabled = true,
@@ -4207,7 +4222,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b4f5361f-79bc-44c6-9f76-1229826e8421"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6841),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of muscle or fascia of hand for graft",
                             DiscountRate = 1,
                             Enabled = true,
@@ -4219,7 +4234,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d6ebc7fb-054d-442a-8109-e731363b724b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6887),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Permanent colostomy",
                             DiscountRate = 17,
                             Enabled = true,
@@ -4231,7 +4246,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dcc19478-e6be-456c-9c47-950210df0444"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6891),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from other site, bacterial smear",
                             DiscountRate = 11,
                             Enabled = true,
@@ -4243,7 +4258,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5b4c4940-d9d8-4cc3-8dd4-152b2f2e5e88"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6895),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on sympathetic nerves or ganglia",
                             DiscountRate = 6,
                             Enabled = true,
@@ -4255,7 +4270,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("38e64dbb-b6fe-46df-b3a7-75fa98dcfdfc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6899),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of perirectal fistula",
                             DiscountRate = 22,
                             Enabled = true,
@@ -4267,7 +4282,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("32c003ad-1cbd-4b07-962e-0e4e38f59fbe"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6902),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair and plastic operations on bronchus",
                             DiscountRate = 12,
                             Enabled = true,
@@ -4279,7 +4294,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9b7275a5-092e-4b3f-a8d9-a3bfe8047ddf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6905),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and open repair of other hernia of anterior abdominal wall with graft or prosthesis",
                             DiscountRate = 11,
                             Enabled = true,
@@ -4291,7 +4306,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d47c75c9-8130-406a-a890-e1d336a7415e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6908),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other bilateral endoscopic destruction or occlusion of fallopian tubes",
                             DiscountRate = 10,
                             Enabled = true,
@@ -4303,7 +4318,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d4c30afb-c9b8-4750-a544-6943c9d04ed1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6910),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Endoscopic excision or destruction of lesion or tissue of pancreatic duct",
                             DiscountRate = 26,
                             Enabled = true,
@@ -4315,7 +4330,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("40bbbf04-633c-4c79-ba82-2e67c3340ee0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6912),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Administration of intelligence test",
                             DiscountRate = 15,
                             Enabled = true,
@@ -4327,7 +4342,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b12fee30-ba6e-4d1f-980e-5702218979d2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6918),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on fallopian tubes",
                             DiscountRate = 13,
                             Enabled = true,
@@ -4339,7 +4354,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("57f981cc-8467-4c2b-8715-b3e2311580f3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6921),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Resection of vessel with replacement, other vessels of head and neck",
                             DiscountRate = 27,
                             Enabled = true,
@@ -4351,7 +4366,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0f8497a7-e086-4d0d-b427-376ac708509e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6924),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of ligature from ureter",
                             DiscountRate = 8,
                             Enabled = true,
@@ -4363,7 +4378,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("db6ea18f-1a4c-4895-940b-b6f8c3633e43"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6927),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on lacrimal gland",
                             DiscountRate = 7,
                             Enabled = true,
@@ -4375,7 +4390,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a673c6b0-6085-4a14-a694-e3537fb0c9bd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6930),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of nipple",
                             DiscountRate = 7,
                             Enabled = true,
@@ -4387,7 +4402,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fa7fc26e-bc31-4f0a-9e17-0e5450716969"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6933),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Percutaneous aspiration of kidney (pelvis)",
                             DiscountRate = 5,
                             Enabled = true,
@@ -4399,7 +4414,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ad1cab04-74bd-4614-8444-79282358633d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6937),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ureteropexy",
                             DiscountRate = 0,
                             Enabled = true,
@@ -4411,7 +4426,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e1c9d0a4-55e7-4de7-8848-f072369a2bf6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6939),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Common duct exploration for removal of calculus",
                             DiscountRate = 11,
                             Enabled = true,
@@ -4423,7 +4438,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2db9c650-ef03-4ae4-933f-12c253a21edf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6980),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of peritoneum",
                             DiscountRate = 16,
                             Enabled = true,
@@ -4435,7 +4450,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("174adf1a-54f0-465a-90b4-1d549fd9287f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6983),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closure of laceration of liver",
                             DiscountRate = 19,
                             Enabled = true,
@@ -4447,7 +4462,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bf801835-bf93-4abd-8bd9-9f28f7fa953c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6986),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Percutaneous robotic assisted procedure",
                             DiscountRate = 14,
                             Enabled = true,
@@ -4459,7 +4474,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cc655258-3f82-433a-b834-da5e43a49465"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6989),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on rectum and perirectal tissue",
                             DiscountRate = 16,
                             Enabled = true,
@@ -4471,7 +4486,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("625437ba-fa22-4f4c-8ba3-c557509a3b62"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6992),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, parasitology",
                             DiscountRate = 4,
                             Enabled = true,
@@ -4483,7 +4498,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d0b701ca-12d1-43d7-9d00-0e35c03dd4b9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6996),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from endocrine gland, not elsewhere classified, culture",
                             DiscountRate = 25,
                             Enabled = true,
@@ -4495,7 +4510,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("004d4520-1db7-48ad-98dd-a3691409a9ec"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(6998),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of nephrostomy tube",
                             DiscountRate = 3,
                             Enabled = true,
@@ -4507,7 +4522,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dfa4bc69-8fde-4021-b186-7c97d113bf0d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7002),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Suture of vein",
                             DiscountRate = 28,
                             Enabled = true,
@@ -4519,7 +4534,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("eef0b362-cfc3-470c-a2ef-0c00ff5e2a26"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7004),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Aorta-renal bypass",
                             DiscountRate = 3,
                             Enabled = true,
@@ -4531,7 +4546,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b4b80d5b-a914-4094-a132-2614a7ae056b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7007),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other change in hand muscle or tendon length",
                             DiscountRate = 18,
                             Enabled = true,
@@ -4543,7 +4558,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4e017fd8-f9a0-4bf6-8ece-7df7c5f14d48"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7011),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other mammography",
                             DiscountRate = 3,
                             Enabled = true,
@@ -4555,7 +4570,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c165ca72-656a-4123-88a5-aefd1290508f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7015),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Diagnostic procedures on bone, not elsewhere classified, other bones",
                             DiscountRate = 1,
                             Enabled = true,
@@ -4567,7 +4582,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("37e852bb-a398-4fde-8cd0-54b21d4c7c4b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7017),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other computerized axial tomography",
                             DiscountRate = 13,
                             Enabled = true,
@@ -4579,7 +4594,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3f0ef02c-2869-4626-9a93-5345ddb62466"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7019),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Exercise, not elsewhere classified",
                             DiscountRate = 7,
                             Enabled = true,
@@ -4591,7 +4606,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1f99ee26-6a65-43b2-a539-7b751da241b1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7023),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision or avulsion of cranial and peripheral nerves",
                             DiscountRate = 18,
                             Enabled = true,
@@ -4603,7 +4618,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("26145733-d5a1-48b0-a1db-f7b51907b2ef"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7026),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bilateral simple mastectomy",
                             DiscountRate = 9,
                             Enabled = true,
@@ -4615,7 +4630,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("93dcdd6a-2e5c-48a2-aac5-dc680675fe87"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7030),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unspecified operation on bone injury, unspecified site",
                             DiscountRate = 6,
                             Enabled = true,
@@ -4627,7 +4642,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0ebe3097-28f7-4017-89ae-c3446269f46c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7403),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of implant of breast",
                             DiscountRate = 10,
                             Enabled = true,
@@ -4639,7 +4654,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f9f33555-85a8-43b4-831c-b31e9ba0028e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7412),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on thorax",
                             DiscountRate = 3,
                             Enabled = true,
@@ -4651,7 +4666,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0a546239-396d-4cc6-b99f-3761e8f88f8e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7415),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open and other replacement of mitral valve",
                             DiscountRate = 28,
                             Enabled = true,
@@ -4663,7 +4678,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3ab5bf3d-d812-4b7f-a9c1-6e3ba4db9126"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7418),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Burying of fimbriae in uterine wall",
                             DiscountRate = 19,
                             Enabled = true,
@@ -4675,7 +4690,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d6557fdf-9bf9-4dbe-9759-977a83b3f07a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7420),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Partial gastrectomy with jejunal transposition",
                             DiscountRate = 25,
                             Enabled = true,
@@ -4687,7 +4702,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0810b0aa-d347-471d-8343-9ce3a0f22431"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7423),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision or replacement of artificial spinal disc prosthesis, lumbosacral",
                             DiscountRate = 7,
                             Enabled = true,
@@ -4699,7 +4714,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a192410a-4f2d-4f87-82d4-ced5e9c15d38"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7426),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closure of laceration of lung",
                             DiscountRate = 14,
                             Enabled = true,
@@ -4711,7 +4726,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("91d54624-af9a-4723-bba7-12c1b5d54653"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7430),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other local excision or destruction of lesion of joint, unspecified site",
                             DiscountRate = 14,
                             Enabled = true,
@@ -4723,7 +4738,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3e131ece-f768-487d-b0ed-e27cea8e4f7c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7433),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Initial insertion of single-chamber device, not specified as rate responsive",
                             DiscountRate = 21,
                             Enabled = true,
@@ -4735,7 +4750,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("36f8bfac-e8a5-4f84-9460-b4f2e71fe63c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7437),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of mediastinal drain",
                             DiscountRate = 21,
                             Enabled = true,
@@ -4747,7 +4762,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a2e1ca42-ae36-4625-938f-56ab7f1fc370"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7440),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of knee",
                             DiscountRate = 27,
                             Enabled = true,
@@ -4759,7 +4774,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("286c7917-c10b-47ed-ad55-66e97607494b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7443),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lingual thyroid",
                             DiscountRate = 8,
                             Enabled = true,
@@ -4771,7 +4786,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("442d1d2b-23b3-4748-8e7a-0e5c1f547791"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7446),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other craniectomy",
                             DiscountRate = 5,
                             Enabled = true,
@@ -4783,7 +4798,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bc104700-57c1-4516-8b9d-fa02fe9d971a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7448),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ureterotomy",
                             DiscountRate = 29,
                             Enabled = true,
@@ -4795,7 +4810,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1cfde542-3b36-4a3c-89ce-e94f90e7e6e7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7451),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of other vaginal pessary",
                             DiscountRate = 3,
                             Enabled = true,
@@ -4807,7 +4822,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("031dba15-d01f-4ac6-9e3a-8b525d65be73"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7454),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Trephination of sclera with iridectomy",
                             DiscountRate = 14,
                             Enabled = true,
@@ -4819,7 +4834,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("388ed71a-0da6-4413-967a-3258428a24c3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7456),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on vagina",
                             DiscountRate = 27,
                             Enabled = true,
@@ -4831,7 +4846,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("81ad6589-ca34-4418-8cbe-c43b6321d2ff"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7503),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Reduction of facial fracture, not otherwise specified",
                             DiscountRate = 0,
                             Enabled = true,
@@ -4843,7 +4858,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3599d907-6c00-4578-b569-365f4360b9ee"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7507),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total body scan",
                             DiscountRate = 7,
                             Enabled = true,
@@ -4855,7 +4870,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("749a939a-c369-4c0d-af45-17d913dd3e1e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7509),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other x-ray of abdomen",
                             DiscountRate = 7,
                             Enabled = true,
@@ -4867,7 +4882,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("eb18bab2-5eea-4e06-a140-40159d6895c2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7512),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incision of bone without division, femur",
                             DiscountRate = 12,
                             Enabled = true,
@@ -4879,7 +4894,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("baf0ea29-b12c-4653-a2cb-4a6f95f7ba37"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7515),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of external ear",
                             DiscountRate = 5,
                             Enabled = true,
@@ -4891,7 +4906,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7aa17d48-9920-46f9-b5b3-c34a9b368255"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7517),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of gastric anastomosis",
                             DiscountRate = 22,
                             Enabled = true,
@@ -4903,7 +4918,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4fc85375-968b-4bd2-aa80-50bdb36db320"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7521),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on valves of heart",
                             DiscountRate = 13,
                             Enabled = true,
@@ -4915,7 +4930,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b05a6558-a6f8-4d76-9824-90d6ef1ba784"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7524),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of parathyroid gland",
                             DiscountRate = 13,
                             Enabled = true,
@@ -4927,7 +4942,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("31bb91bf-c20a-4c49-b125-f3c9cfb2464c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7527),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of peritoneal and retroperitoneal specimen, cell block and Papanicolaou smear",
                             DiscountRate = 12,
                             Enabled = true,
@@ -4939,7 +4954,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fa7f9679-68d8-4429-9e05-405a786eee13"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7529),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of spermatic cord and epididymis",
                             DiscountRate = 5,
                             Enabled = true,
@@ -4951,7 +4966,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0dae9717-fafc-45b7-a6f9-7628e354f366"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7532),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Alcohol rehabilitation and detoxification",
                             DiscountRate = 30,
                             Enabled = true,
@@ -4963,7 +4978,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("da19bea3-cac3-4233-a2b7-f261b3fb728b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7534),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Partial ventriculectomy",
                             DiscountRate = 9,
                             Enabled = true,
@@ -4975,7 +4990,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("65453352-1250-4981-8c77-ebe7707f440b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7537),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lacrimal gland, not otherwise specified",
                             DiscountRate = 2,
                             Enabled = true,
@@ -4987,7 +5002,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8a1ed767-8217-4b34-a918-874a7aa4059a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7539),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed heart valvotomy, pulmonary valve",
                             DiscountRate = 22,
                             Enabled = true,
@@ -4999,7 +5014,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bfe61564-0403-476d-a0bb-cf46f07e3e7a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7541),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, toxicology",
                             DiscountRate = 8,
                             Enabled = true,
@@ -5011,7 +5026,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b6d109ac-41cb-4cbf-9253-ef39f4782530"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7545),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Allogeneic bone marrow transplant with purging",
                             DiscountRate = 29,
                             Enabled = true,
@@ -5023,7 +5038,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3aabc5e3-65a6-4dd7-9f71-c4a87dd4badd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7547),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of dislocation of foot and toe",
                             DiscountRate = 7,
                             Enabled = true,
@@ -5035,7 +5050,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9512d932-92de-4734-b3e4-22d3d50ee234"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7590),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Infusion of 4-Factor Prothrombin Complex Concentrate",
                             DiscountRate = 9,
                             Enabled = true,
@@ -5047,7 +5062,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c5c548e9-c21d-4418-b4eb-e5b83cb4ad5a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7593),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total excision of pineal gland",
                             DiscountRate = 0,
                             Enabled = true,
@@ -5059,7 +5074,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4a6e5e1a-1fd9-4b17-a40e-aff6b9bb745b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7596),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Artificial pacemaker rate check",
                             DiscountRate = 19,
                             Enabled = true,
@@ -5071,7 +5086,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("71b2b69a-1b18-42cd-b3e9-49b4a74d985b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7600),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on thoracic duct",
                             DiscountRate = 3,
                             Enabled = true,
@@ -5083,7 +5098,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c49cba04-84da-42bb-aca4-499d62b952c0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7602),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other intrathoracic anastomosis of esophagus",
                             DiscountRate = 25,
                             Enabled = true,
@@ -5095,7 +5110,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6cee756e-bba6-4942-a7d4-0165773d21e3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7605),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on seminal vesicles",
                             DiscountRate = 9,
                             Enabled = true,
@@ -5107,7 +5122,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f2b6625a-ddbd-4adc-893f-b470d6a68e02"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7609),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of electronic bladder stimulator",
                             DiscountRate = 27,
                             Enabled = true,
@@ -5119,7 +5134,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7da7df46-8c76-4d47-b240-f72c64f2bb44"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7611),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of external immobilization device",
                             DiscountRate = 5,
                             Enabled = true,
@@ -5131,7 +5146,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0d0f6323-796a-4bbe-8d73-1282350d6de4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7614),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Irrigation of cystostomy",
                             DiscountRate = 10,
                             Enabled = true,
@@ -5143,7 +5158,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d44298dd-7c13-4514-b61c-783eba3385cb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7617),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Mechanical vitrectomy by anterior approach",
                             DiscountRate = 29,
                             Enabled = true,
@@ -5155,7 +5170,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2eeb47af-55ed-4b1f-8079-2ae2ea9307a2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7619),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lumbar and lumbosacral fusion of the posterior column, posterior technique",
                             DiscountRate = 14,
                             Enabled = true,
@@ -5167,7 +5182,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("eec88267-d370-44c4-bc1a-d4d8a30c3afd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7622),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of vessel-to-vessel cannula",
                             DiscountRate = 21,
                             Enabled = true,
@@ -5179,7 +5194,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7fb293b6-0728-448e-b1ce-f974b3edc675"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7625),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other soft tissue x-ray of abdominal wall",
                             DiscountRate = 29,
                             Enabled = true,
@@ -5191,7 +5206,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("471d4fc1-c344-48e4-a8ec-f7f7050ee238"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7628),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Tympanosympathectomy",
                             DiscountRate = 20,
                             Enabled = true,
@@ -5203,7 +5218,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1ef73995-a12a-41b5-9c8e-979da8db49dd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7631),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of varicocele and hydrocele of spermatic cord",
                             DiscountRate = 27,
                             Enabled = true,
@@ -5215,7 +5230,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("258ffa27-b7d3-411d-8897-d0a854acef9f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7634),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Correction of cleft palate",
                             DiscountRate = 17,
                             Enabled = true,
@@ -5227,7 +5242,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e0dc742f-fc16-4d31-a690-95219753ab8e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7637),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lingual thyroid",
                             DiscountRate = 10,
                             Enabled = true,
@@ -5239,7 +5254,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cf39b261-5214-45f4-8bac-f9ea719a8dde"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7680),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on cornea",
                             DiscountRate = 20,
                             Enabled = true,
@@ -5251,7 +5266,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f7e58cd4-87db-4ca5-88a2-a837149b2acd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7683),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Nephrotomy",
                             DiscountRate = 28,
                             Enabled = true,
@@ -5263,7 +5278,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1c8efbcb-8c8e-44b0-92df-d4ce19ca9aca"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7686),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of remaining testis",
                             DiscountRate = 19,
                             Enabled = true,
@@ -5275,7 +5290,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e14c74e7-b097-474f-ab2a-55bac3719238"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7688),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unilateral breast implant",
                             DiscountRate = 23,
                             Enabled = true,
@@ -5287,7 +5302,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a0d19745-4061-4cee-8b5d-aa498478cd65"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7691),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other iridectomy",
                             DiscountRate = 8,
                             Enabled = true,
@@ -5299,7 +5314,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1f6a873d-4957-4859-8a50-c618d64ff456"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7693),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on orbit and eyeball",
                             DiscountRate = 8,
                             Enabled = true,
@@ -5311,7 +5326,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("25d2c301-2cca-4001-a21e-6ff0a49a4e12"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7696),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of testis",
                             DiscountRate = 3,
                             Enabled = true,
@@ -5323,7 +5338,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0e4ced63-53bb-4a99-afea-c56a8ac943a4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7700),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion of tendon sheath",
                             DiscountRate = 3,
                             Enabled = true,
@@ -5335,7 +5350,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bc464297-c7f8-4395-b004-332bf1b813a0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7702),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Local excision or destruction of lesion or tissue of bony palate",
                             DiscountRate = 11,
                             Enabled = true,
@@ -5347,7 +5362,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d398cb63-d154-4920-9301-818f9adeb213"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7704),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arteriography of femoral and other lower extremity arteries",
                             DiscountRate = 7,
                             Enabled = true,
@@ -5359,7 +5374,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("372a9fa5-f37d-47dd-9ff7-148d970386f8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7707),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of other penetrating foreign body from cervix",
                             DiscountRate = 9,
                             Enabled = true,
@@ -5371,7 +5386,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("84465576-4476-4ca4-825b-7a84e22038ae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7712),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transpleural thoracoscopy",
                             DiscountRate = 4,
                             Enabled = true,
@@ -5383,7 +5398,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("29f7d229-32ef-4668-97e9-822243caa274"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7714),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation of prosthetic device of leg",
                             DiscountRate = 13,
                             Enabled = true,
@@ -5395,7 +5410,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("79dd45c8-6abb-4cc1-a6d7-176fcb4dba3a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7717),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bone marrow transplant, not otherwise specified",
                             DiscountRate = 12,
                             Enabled = true,
@@ -5407,7 +5422,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e7e75953-6e2c-4ee7-989b-75b2b50202a1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7719),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dilation of urethra",
                             DiscountRate = 27,
                             Enabled = true,
@@ -5419,7 +5434,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f10aff88-09b3-4be1-bd7f-3e57ed91aba1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7724),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of joint, unspecified site",
                             DiscountRate = 18,
                             Enabled = true,
@@ -5431,7 +5446,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c71bdbe6-0167-4cf9-a65e-851922978e65"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7726),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Teleradiotherapy of other particulate radiation",
                             DiscountRate = 2,
                             Enabled = true,
@@ -5443,7 +5458,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("82026bf4-9c85-4d7d-aa73-88ed5ff1c1f8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7794),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other local excision or destruction of lesion of joint, elbow",
                             DiscountRate = 1,
                             Enabled = true,
@@ -5455,7 +5470,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6b529526-a9a4-4f35-9617-66f8b882bb51"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7798),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incision of bone without division, tarsals and metatarsals",
                             DiscountRate = 0,
                             Enabled = true,
@@ -5467,7 +5482,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3e2f5478-c288-4cb7-bb90-dcf865daf78c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7801),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Control of epistaxis by other means",
                             DiscountRate = 21,
                             Enabled = true,
@@ -5479,7 +5494,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9cd328a6-b189-4e2e-a939-4aa42406ca61"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7805),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wide excision or destruction of lesion or tissue of bony palate",
                             DiscountRate = 29,
                             Enabled = true,
@@ -5491,7 +5506,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6c41b321-fc23-4095-9a95-6fd768277417"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7808),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intra-abdominal venous shunt",
                             DiscountRate = 8,
                             Enabled = true,
@@ -5503,7 +5518,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c942e652-ed87-4614-8ca6-4bf773fbdb90"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7810),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and unspecified radical vaginal hysterectomy",
                             DiscountRate = 29,
                             Enabled = true,
@@ -5515,7 +5530,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7f259b69-a39b-420e-99b1-10d0e82664de"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7812),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision or destruction of lesion of sclera",
                             DiscountRate = 7,
                             Enabled = true,
@@ -5527,7 +5542,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7661e0be-af83-47ba-843a-771084a32019"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7815),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open excision or destruction of other lesion or tissue of bladder",
                             DiscountRate = 16,
                             Enabled = true,
@@ -5539,7 +5554,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("20270d3d-9a1a-4ab1-9f34-411e4b565245"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7818),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unilateral radical mastectomy",
                             DiscountRate = 26,
                             Enabled = true,
@@ -5551,7 +5566,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1f31f22c-4192-426b-b0a3-a0ebc3af2e75"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7820),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bilateral repair of inguinal hernia, not otherwise specified",
                             DiscountRate = 29,
                             Enabled = true,
@@ -5563,7 +5578,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f51127e3-98d9-4983-adf1-e5fc56ecd5df"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7823),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Percutaneous aspiration of seminal vesicle",
                             DiscountRate = 26,
                             Enabled = true,
@@ -5575,7 +5590,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("950eca40-2183-4294-bfea-13d24b185e1e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7826),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of orbital implant",
                             DiscountRate = 22,
                             Enabled = true,
@@ -5587,7 +5602,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fd69ded9-e714-4d80-8f3a-c15bfa80c5d7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7830),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Caval-pulmonary artery anastomosis",
                             DiscountRate = 14,
                             Enabled = true,
@@ -5599,7 +5614,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fc1461ba-57e4-482e-b194-b1baed150694"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7832),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other skin graft to hand",
                             DiscountRate = 14,
                             Enabled = true,
@@ -5611,7 +5626,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9704deb6-c4b0-479b-865b-101886698939"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7834),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on thyroid and parathyroid glands",
                             DiscountRate = 29,
                             Enabled = true,
@@ -5623,7 +5638,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e758d19f-2c39-463b-bb97-bd32e1925629"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7837),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Pyeloscopy",
                             DiscountRate = 23,
                             Enabled = true,
@@ -5635,7 +5650,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4264ba81-8c3f-4fd5-bc77-925886ae9e8c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(7839),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open and other replacement of pulmonary valve",
                             DiscountRate = 22,
                             Enabled = true,
@@ -5647,7 +5662,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4d17da67-bb02-426b-9352-872a2b6b7221"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8207),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Limb shortening procedures, other bones",
                             DiscountRate = 20,
                             Enabled = true,
@@ -5659,7 +5674,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5620d05e-175c-4d56-b3e1-90dd363be9d6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8217),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ligation and stripping of varicose veins, intracranial vessels",
                             DiscountRate = 20,
                             Enabled = true,
@@ -5671,7 +5686,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d1cb9bd8-17e7-4df4-9a75-ffba2716b503"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8223),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Retrograde pyelogram",
                             DiscountRate = 20,
                             Enabled = true,
@@ -5683,7 +5698,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8712b613-4456-47ea-8710-84cfcd8e84ec"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8227),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of fracture with internal fixation, tarsals and metatarsals",
                             DiscountRate = 23,
                             Enabled = true,
@@ -5695,7 +5710,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7dc8c871-8b88-4283-a909-d7405f90b8e3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8230),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair and plastic operations on bronchus",
                             DiscountRate = 22,
                             Enabled = true,
@@ -5707,7 +5722,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cf08ad30-603d-4b04-9541-d03ca58b421f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8235),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on female genital organs",
                             DiscountRate = 1,
                             Enabled = true,
@@ -5719,7 +5734,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("97579585-e5c7-46b0-a05a-bfcf2e8994b8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8239),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Irrigation of nasal passages",
                             DiscountRate = 4,
                             Enabled = true,
@@ -5731,7 +5746,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d66b57bc-81d3-4ef5-8c4c-0b1e8c02a134"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8241),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Allogeneic bone marrow transplant without purging",
                             DiscountRate = 27,
                             Enabled = true,
@@ -5743,7 +5758,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f4845c58-e8d7-48cb-8e80-acdef23caaa7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8244),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of urethra",
                             DiscountRate = 18,
                             Enabled = true,
@@ -5755,7 +5770,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3167036b-fb20-4d1c-8d62-07097ddd7418"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8249),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Muscle flap graft to breast",
                             DiscountRate = 12,
                             Enabled = true,
@@ -5767,7 +5782,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("123a787c-9068-4a33-830d-0c0593a8ffbb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8251),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ankle fusion",
                             DiscountRate = 1,
                             Enabled = true,
@@ -5779,7 +5794,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8572e313-ed6d-41ac-87e3-51a23435cfe2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8254),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other septoplasty",
                             DiscountRate = 21,
                             Enabled = true,
@@ -5791,7 +5806,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a38e2e0a-9747-460b-b745-a6a797a6459a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8257),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unspecified operation on bone injury, unspecified site",
                             DiscountRate = 2,
                             Enabled = true,
@@ -5803,7 +5818,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7065242c-7f2d-4ec8-8f65-1a87131e9085"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8259),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of intraluminal foreign body from trachea and bronchus without incision",
                             DiscountRate = 3,
                             Enabled = true,
@@ -5815,7 +5830,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("da13c5e6-b6bc-4d63-a0d0-5ac911e8f516"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8261),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Diagnostic ultrasound of other sites of thorax",
                             DiscountRate = 24,
                             Enabled = true,
@@ -5827,7 +5842,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("461e3ee5-1b2f-4c1f-8459-f8be72761a0e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8264),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of large intestine",
                             DiscountRate = 13,
                             Enabled = true,
@@ -5839,7 +5854,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9ed426de-3809-42d6-920c-16c4a9d376b2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8267),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic resection of transverse colon",
                             DiscountRate = 3,
                             Enabled = true,
@@ -5851,7 +5866,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9c75812c-f720-4013-9fef-0d70c9b6406d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8317),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of middle ear",
                             DiscountRate = 27,
                             Enabled = true,
@@ -5863,7 +5878,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9a42d4bd-f48c-4a2c-b05e-7bdda7dfd313"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8321),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cryotherapy of corneal lesion",
                             DiscountRate = 30,
                             Enabled = true,
@@ -5875,7 +5890,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("45127df8-2eb0-41e2-b89c-f9e37face533"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8324),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Angioplasty of other non-coronary vessel(s)",
                             DiscountRate = 24,
                             Enabled = true,
@@ -5887,7 +5902,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b0cd364d-e494-436f-888f-6a37ecd4006e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8329),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dental examination",
                             DiscountRate = 26,
                             Enabled = true,
@@ -5899,7 +5914,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4bbea68b-cea3-44dd-9da3-6fd4dec28bf7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8332),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of superficial foreign body from eye without incision",
                             DiscountRate = 23,
                             Enabled = true,
@@ -5911,7 +5926,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("739c9950-1665-4362-a1b4-a7a7318d3de8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8335),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of dislocation of shoulder",
                             DiscountRate = 11,
                             Enabled = true,
@@ -5923,7 +5938,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1dd91a56-5f52-40b8-8ea5-44c3bdbac96c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8338),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Reduction of anal prolapse",
                             DiscountRate = 18,
                             Enabled = true,
@@ -5935,7 +5950,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f6286ee2-8495-4c67-81f4-87b1d193db6f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8341),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lithium therapy",
                             DiscountRate = 8,
                             Enabled = true,
@@ -5947,7 +5962,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a5eba125-276a-4f22-b508-81d5b66f2757"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8344),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection of antidote",
                             DiscountRate = 9,
                             Enabled = true,
@@ -5959,7 +5974,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6b4c05ad-251f-4179-908a-b9c17dbee3e3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8347),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on gum",
                             DiscountRate = 22,
                             Enabled = true,
@@ -5971,7 +5986,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c6275a36-36a3-4827-8f75-39bdac3e483e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8349),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Root canal, not otherwise specified",
                             DiscountRate = 3,
                             Enabled = true,
@@ -5983,7 +5998,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b6dde842-af74-4680-87c1-e440c7bdc9f8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8352),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of knee",
                             DiscountRate = 29,
                             Enabled = true,
@@ -5995,7 +6010,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9efedf3e-5bdf-4e27-be12-c16c598eeb0c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8355),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Venous cutdown",
                             DiscountRate = 5,
                             Enabled = true,
@@ -6007,7 +6022,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a7ca12ba-4230-40d9-8762-c381aa5d1006"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8357),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations assisting delivery",
                             DiscountRate = 1,
                             Enabled = true,
@@ -6019,7 +6034,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5e9705ba-0c42-4312-bc1f-65a91b79b384"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8360),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other laparotomy",
                             DiscountRate = 27,
                             Enabled = true,
@@ -6031,7 +6046,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c898fa77-68cb-47cc-a74a-1ddfaeaf6e1c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8362),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from lower gastrointestinal tract and of stool, cell block and Papanicolaou smear",
                             DiscountRate = 13,
                             Enabled = true,
@@ -6043,7 +6058,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("650da18f-fdbd-464c-bb6e-306698047288"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8365),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bone graft, femur",
                             DiscountRate = 18,
                             Enabled = true,
@@ -6055,7 +6070,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b289387a-ff9e-4ddf-875c-428d527ca30f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8411),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of fracture with internal fixation, other specified bone",
                             DiscountRate = 26,
                             Enabled = true,
@@ -6067,7 +6082,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4c56828c-7b3e-423d-af76-cd382e7cb071"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8415),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other electric countershock of heart",
                             DiscountRate = 14,
                             Enabled = true,
@@ -6079,7 +6094,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a4f6f494-a174-46c9-9b2c-cb460636942d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8417),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Neurectasis",
                             DiscountRate = 18,
                             Enabled = true,
@@ -6091,7 +6106,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2e8ff1aa-0f81-4001-9b68-f8536a615dc6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8420),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair or plastic operations on bone, radius and ulna",
                             DiscountRate = 22,
                             Enabled = true,
@@ -6103,7 +6118,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bf094208-888f-4899-8c3b-dfca9687b0eb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8423),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Endarterectomy, unspecified site",
                             DiscountRate = 30,
                             Enabled = true,
@@ -6115,7 +6130,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4ab288e2-60b6-40ea-833f-045964f29cc3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8425),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion or tissue of conjunctiva",
                             DiscountRate = 6,
                             Enabled = true,
@@ -6127,7 +6142,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1a4ef664-7d04-43b4-83eb-7a829443fd22"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8428),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of perirenal or perivesical tissue",
                             DiscountRate = 5,
                             Enabled = true,
@@ -6139,7 +6154,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d8623b78-83c2-4428-8a6c-eae08ff31419"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8430),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Metatarsophalangeal fusion",
                             DiscountRate = 16,
                             Enabled = true,
@@ -6151,7 +6166,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e7c06b3b-4255-4dba-9366-ff3a2342bbb2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8432),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Exposure of tooth",
                             DiscountRate = 18,
                             Enabled = true,
@@ -6163,7 +6178,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7af822e0-b632-4865-a60c-ad65c886abf1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8435),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of artificial anal sphincter",
                             DiscountRate = 13,
                             Enabled = true,
@@ -6175,7 +6190,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("937bd132-75e1-4555-81b8-ed9560973701"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8437),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic bilateral repair of indirect inguinal hernia with graft or prosthesis",
                             DiscountRate = 12,
                             Enabled = true,
@@ -6187,7 +6202,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("790e3eaa-832c-44f4-9e44-e824ecc957b7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8440),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Autologous bone marrow transplant without purging",
                             DiscountRate = 20,
                             Enabled = true,
@@ -6199,7 +6214,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4deb0724-6c9d-4db1-933c-3213185ac40d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8443),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Destruction of chorioretinal lesion by cryotherapy",
                             DiscountRate = 15,
                             Enabled = true,
@@ -6211,7 +6226,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ed764f23-0c0a-408e-81bb-c90ec63e053e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8445),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision or removal of pacemaker device",
                             DiscountRate = 3,
                             Enabled = true,
@@ -6223,7 +6238,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("10bb6d69-89ec-4291-84e6-4ee873ba49c7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8448),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other skin graft to other sites",
                             DiscountRate = 1,
                             Enabled = true,
@@ -6235,7 +6250,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("db9018da-62ca-4d64-ac74-2de5dc8b2ada"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8450),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lymphangiogram of upper limb",
                             DiscountRate = 15,
                             Enabled = true,
@@ -6247,7 +6262,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0e35211a-4731-4a34-aa69-12f6c8a3e58d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8453),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Extracranial-intracranial (EC-IC) vascular bypass",
                             DiscountRate = 18,
                             Enabled = true,
@@ -6259,7 +6274,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c4c54ce8-24f3-4f3b-9454-6d3e3126a85a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8493),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Correction of lid retraction",
                             DiscountRate = 28,
                             Enabled = true,
@@ -6271,7 +6286,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6995f05e-ef15-44f2-8fa4-0ea1b8174b70"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8496),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Aorta-iliac-femoral bypass",
                             DiscountRate = 20,
                             Enabled = true,
@@ -6283,7 +6298,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d44b48cf-891c-4fa6-ba85-14502cddc59d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8499),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other local excision or destruction of lesion of joint, foot and toe",
                             DiscountRate = 23,
                             Enabled = true,
@@ -6295,7 +6310,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e51b4e87-3c98-42d0-aa09-ed9dcfdfd875"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8501),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ligation and stripping of varicose veins, intracranial vessels",
                             DiscountRate = 27,
                             Enabled = true,
@@ -6307,7 +6322,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("815991e1-e273-41f2-b5f2-dc849ac6e808"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8505),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Exteriorization of esophageal pouch",
                             DiscountRate = 20,
                             Enabled = true,
@@ -6319,7 +6334,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6049ef00-7125-4a3c-afc7-f137d756e3f7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8507),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fluorescein angiography or angioscopy of eye",
                             DiscountRate = 7,
                             Enabled = true,
@@ -6331,7 +6346,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("498a3148-4e16-4e27-a16b-d6a88ad4e4e0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8510),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of pedicle-based dynamic stabilization device(s)",
                             DiscountRate = 4,
                             Enabled = true,
@@ -6343,7 +6358,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a304f80d-497f-4475-8b08-ff7db56fb697"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8512),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Regional lymph node excision",
                             DiscountRate = 16,
                             Enabled = true,
@@ -6355,7 +6370,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cfebc795-ea9f-43e8-836f-7a8438203a33"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8514),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation or insertion of biventricular external heart assist system",
                             DiscountRate = 12,
                             Enabled = true,
@@ -6367,7 +6382,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b895fdee-d5ca-4c07-ba66-a98b213d551c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8517),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fitting of hearing aid",
                             DiscountRate = 20,
                             Enabled = true,
@@ -6379,7 +6394,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fb9138af-85ae-4830-b96e-80d3ccc79e51"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8519),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation or replacement of mechanical kidney",
                             DiscountRate = 19,
                             Enabled = true,
@@ -6391,7 +6406,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bf9491ab-dfed-40a8-9f7a-470ced4d023c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8522),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of seminal vesicle",
                             DiscountRate = 28,
                             Enabled = true,
@@ -6403,7 +6418,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3f064f45-9c58-4f69-abc0-64176e125c8a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8525),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Angiocardiography of venae cavae",
                             DiscountRate = 1,
                             Enabled = true,
@@ -6415,7 +6430,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c8c10e62-27ac-4843-a3c5-9c1cac0fb962"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8528),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Procedure on three vessels",
                             DiscountRate = 24,
                             Enabled = true,
@@ -6427,7 +6442,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f101af49-9b0b-4bf4-a995-c90e50016fd6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8530),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unspecified operation on bone injury, phalanges of foot",
                             DiscountRate = 14,
                             Enabled = true,
@@ -6439,7 +6454,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("951780c0-13b1-4d1b-b932-98eb8b3230f6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8533),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopically assisted vaginal hysterectomy (LAVH)",
                             DiscountRate = 27,
                             Enabled = true,
@@ -6451,7 +6466,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0b34e4f8-e7d6-452a-bfba-804090d9035a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8536),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of intestine",
                             DiscountRate = 24,
                             Enabled = true,
@@ -6463,7 +6478,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4888ee6c-6ff3-415a-8782-f980faed4d41"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8581),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Aspiration of thyroid field",
                             DiscountRate = 16,
                             Enabled = true,
@@ -6475,7 +6490,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("386ae6a1-9d35-483f-8016-2e99f1e3583b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8585),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Peritoneal dialysis",
                             DiscountRate = 22,
                             Enabled = true,
@@ -6487,7 +6502,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7c3ce1e9-70cf-4157-bdec-2a251fe09153"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8587),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Limb lengthening procedures, tibia and fibula",
                             DiscountRate = 19,
                             Enabled = true,
@@ -6499,7 +6514,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8a53c517-f131-4136-8fda-a027747f1488"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8590),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision or correction of bunionette",
                             DiscountRate = 8,
                             Enabled = true,
@@ -6511,7 +6526,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("220f3315-33bf-4f2c-b051-4288e8caa9bd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8592),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Radical prostatectomy",
                             DiscountRate = 0,
                             Enabled = true,
@@ -6523,7 +6538,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cfe18bd4-4799-4240-9dff-f95ca617622e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8596),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of other lesion or tissue of spermatic cord and epididymis",
                             DiscountRate = 22,
                             Enabled = true,
@@ -6535,7 +6550,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0519d6d1-1402-4cf9-8360-cac307ad2718"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8599),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of tracheostomy tube",
                             DiscountRate = 14,
                             Enabled = true,
@@ -6547,7 +6562,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bcba6750-42f5-414f-8222-c3058e4a09ee"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8601),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of lacrimal gland",
                             DiscountRate = 19,
                             Enabled = true,
@@ -6559,7 +6574,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8295594d-bbd1-4a0b-9d19-7594586a7821"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8604),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Application of orthodontic appliance",
                             DiscountRate = 1,
                             Enabled = true,
@@ -6571,7 +6586,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("225e275c-6e72-468b-a778-5c19d2379cbb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8606),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of dislocation of hip",
                             DiscountRate = 29,
                             Enabled = true,
@@ -6583,7 +6598,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a51c371c-db14-4dd2-b4ec-46e4da6c4bcd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8608),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of fracture without internal fixation, femur",
                             DiscountRate = 26,
                             Enabled = true,
@@ -6595,7 +6610,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("10f58454-ae2d-4e34-8d6a-7fc388abb820"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8611),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Group therapy for psychosexual dysfunction",
                             DiscountRate = 9,
                             Enabled = true,
@@ -6607,7 +6622,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("efa9ea43-641d-487f-9e9c-f2dbb324e0bf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8614),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other plastic repair of palate",
                             DiscountRate = 5,
                             Enabled = true,
@@ -6619,7 +6634,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1f6542df-d748-4742-b401-9aa095698e5b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8616),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fitting of denture",
                             DiscountRate = 19,
                             Enabled = true,
@@ -6631,7 +6646,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9d5b2c52-3480-4a21-baa5-50c33ea44614"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8619),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Pharyngeal diverticulectomy",
                             DiscountRate = 16,
                             Enabled = true,
@@ -6643,7 +6658,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6a5aa40b-124d-4306-9858-3e14d021fb86"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8622),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other removal of vitreous",
                             DiscountRate = 19,
                             Enabled = true,
@@ -6655,7 +6670,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b9fd1081-91ca-4682-99cc-5b2e89157586"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8624),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Destruction of rectal lesion or tissue by cryosurgery",
                             DiscountRate = 22,
                             Enabled = true,
@@ -6667,7 +6682,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("af3bf1f3-eb62-4f47-b118-de5dcc3bed3b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8664),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of dislocation of foot and toe",
                             DiscountRate = 23,
                             Enabled = true,
@@ -6679,7 +6694,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9324f241-2c9e-4cc2-8452-422e47b78df1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8667),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fenestration of inner ear (initial)",
                             DiscountRate = 19,
                             Enabled = true,
@@ -6691,7 +6706,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("174dfe8c-098e-4726-a585-bdeeb4d75047"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8671),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Accessory-hypoglossal anastomosis",
                             DiscountRate = 4,
                             Enabled = true,
@@ -6703,7 +6718,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("50f58d9a-77a8-4754-a448-221289923bd0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8673),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Monitoring of cardiac output by other technique",
                             DiscountRate = 9,
                             Enabled = true,
@@ -6715,7 +6730,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3d8db475-4e1e-4cd5-aa28-109d69b1dffc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8677),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of gastric bubble (balloon)",
                             DiscountRate = 10,
                             Enabled = true,
@@ -6727,7 +6742,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("41592956-88c0-41f1-80c6-c269beac12dd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8679),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closure of cholecystostomy",
                             DiscountRate = 15,
                             Enabled = true,
@@ -6739,7 +6754,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("febea71d-0bff-4486-ba33-f4e5d125813c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8682),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of subcutaneous electrical anal stimulator",
                             DiscountRate = 7,
                             Enabled = true,
@@ -6751,7 +6766,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("642860ff-835c-4d45-9e94-62aeb606ec86"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8684),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transposition of cranial and peripheral nerves",
                             DiscountRate = 9,
                             Enabled = true,
@@ -6763,7 +6778,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("aff85e97-4817-45b2-9897-97b0cf8d20c4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8687),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other partial ostectomy, humerus",
                             DiscountRate = 2,
                             Enabled = true,
@@ -6775,7 +6790,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("30e08403-3479-48d3-9dae-be2a6aa01c5c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8690),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on female genital organs",
                             DiscountRate = 30,
                             Enabled = true,
@@ -6787,7 +6802,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("34dabd04-2800-4eae-9b01-41e1873c195a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8693),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Exercise, not elsewhere classified",
                             DiscountRate = 30,
                             Enabled = true,
@@ -6799,7 +6814,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d2fad058-68c9-43bc-82b2-70a5c2acd67d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8695),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ventricular shunt to extracranial site NEC",
                             DiscountRate = 7,
                             Enabled = true,
@@ -6811,7 +6826,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4f0e6b7e-104e-4e03-82ec-7059191b5533"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8698),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed biopsy of skin and subcutaneous tissue",
                             DiscountRate = 8,
                             Enabled = true,
@@ -6823,7 +6838,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6fe28582-79d3-466d-959b-96279aeb95d9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8700),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of joint replacement of upper extremity",
                             DiscountRate = 17,
                             Enabled = true,
@@ -6835,7 +6850,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a85d0bfa-8b10-46bd-96c6-6b42eb9b3924"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8703),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of retinal tear by diathermy",
                             DiscountRate = 21,
                             Enabled = true,
@@ -6847,7 +6862,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("23332688-ad0f-46cb-93ff-4500c6633492"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8705),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Exploration of pituitary fossa",
                             DiscountRate = 19,
                             Enabled = true,
@@ -6859,7 +6874,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("568b2484-869a-49b9-b526-e4272295ccd6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8708),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intra-abdominal manipulation of large intestine",
                             DiscountRate = 30,
                             Enabled = true,
@@ -6871,7 +6886,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5f60e6b0-e0c3-4ad2-94ce-7f33972d9003"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8749),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of intraluminal foreign body from rectum and anus without incision",
                             DiscountRate = 24,
                             Enabled = true,
@@ -6883,7 +6898,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2f70464a-5259-4a91-a40c-0d967c101774"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8753),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other exploration and decompression of spinal canal",
                             DiscountRate = 17,
                             Enabled = true,
@@ -6895,7 +6910,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bb955e4b-6b32-4d7b-9171-10e1ba28825b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8756),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other suture of tendon",
                             DiscountRate = 6,
                             Enabled = true,
@@ -6907,7 +6922,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1bc1d18e-17a7-4691-816c-5a38adf41f27"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8758),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of hypospadias or epispadias",
                             DiscountRate = 10,
                             Enabled = true,
@@ -6919,7 +6934,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2c0e77b6-a54c-4014-bf51-a90b1ee5fd47"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8761),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on stomach",
                             DiscountRate = 21,
                             Enabled = true,
@@ -6931,7 +6946,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dcf643ac-52ce-4e16-bc5f-1045e4da0a2d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8764),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic wedge resection of ovary",
                             DiscountRate = 19,
                             Enabled = true,
@@ -6943,7 +6958,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f8e418f0-1bee-411a-a911-6dc86942bc48"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8766),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other endoscopy of small intestine",
                             DiscountRate = 7,
                             Enabled = true,
@@ -6955,7 +6970,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9f5a3687-a523-4ef0-811d-65f3cb445b93"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8769),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other myectomy of hand",
                             DiscountRate = 28,
                             Enabled = true,
@@ -6967,7 +6982,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3e16acd5-dca6-4d01-bd9b-96de0eac5212"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8771),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection into thoracic cavity",
                             DiscountRate = 3,
                             Enabled = true,
@@ -6979,7 +6994,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("979a1474-2f16-4c5c-a890-63adcccde97f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8773),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of intestine, not otherwise specified",
                             DiscountRate = 30,
                             Enabled = true,
@@ -6991,7 +7006,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("17177d8d-d337-464f-b115-9f1d9d6dcc6e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8776),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation or fitting of prosthetic limb device, not otherwise specified",
                             DiscountRate = 28,
                             Enabled = true,
@@ -7003,7 +7018,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3c9f9438-5727-4bb3-bebb-9fb700ebd2f9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8778),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and open repair of direct inguinal hernia with graft or prosthesis",
                             DiscountRate = 30,
                             Enabled = true,
@@ -7015,7 +7030,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f6a984d2-ffe8-4c8f-b87a-30153cf47d94"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8781),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic repair of direct inguinal hernia with graft or prosthesis",
                             DiscountRate = 10,
                             Enabled = true,
@@ -7027,7 +7042,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ecd4f84b-d7ae-4971-99db-d8bce919fa46"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8783),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of joint, hand and finger",
                             DiscountRate = 30,
                             Enabled = true,
@@ -7039,7 +7054,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("586a90b6-8876-407e-9cde-f53fe1a9079a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8786),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Operations on two or more extraocular muscles involving temporary detachment from globe, one or both eyes",
                             DiscountRate = 8,
                             Enabled = true,
@@ -7051,7 +7066,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3519337c-0020-4cfb-8fe5-9f70977ef43d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8788),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Creation of septal defect in heart",
                             DiscountRate = 5,
                             Enabled = true,
@@ -7063,7 +7078,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("71b39282-3ef4-434c-88a4-f8fe53aeb7f9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8790),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "(Aorto)coronary bypass of four or more coronary arteries",
                             DiscountRate = 25,
                             Enabled = true,
@@ -7075,7 +7090,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8d1c5b1c-aec5-4a81-8b41-e6b4c5739ed0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8858),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cannulation of pancreatic duct",
                             DiscountRate = 10,
                             Enabled = true,
@@ -7087,7 +7102,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ea4ada09-abb6-44cf-8e59-fd85867d0ecc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8863),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed reduction of dislocation of shoulder",
                             DiscountRate = 19,
                             Enabled = true,
@@ -7099,7 +7114,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("787cabb3-429e-4589-a557-c232803e6a6f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8866),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lysis of other anterior synechiae",
                             DiscountRate = 22,
                             Enabled = true,
@@ -7111,7 +7126,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0f74096a-3114-4eee-8384-dca37feab9bd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8869),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Measurement of limb length",
                             DiscountRate = 7,
                             Enabled = true,
@@ -7123,7 +7138,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("28afce44-5891-4579-9594-71b5cb2714f1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8876),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Reconstruction of eyelid with tarsoconjunctival flap",
                             DiscountRate = 1,
                             Enabled = true,
@@ -7135,7 +7150,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c28a07db-601e-4d54-ac94-e35ee31d8eae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8879),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation of cardiac resynchronization defibrillator, total system [CRT-D]",
                             DiscountRate = 6,
                             Enabled = true,
@@ -7147,7 +7162,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2c4f8be4-8393-45b9-80b8-6030e3b9a4e7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8881),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion or replacement of multiple array (two or more) rechargeable neurostimulator pulse generator",
                             DiscountRate = 30,
                             Enabled = true,
@@ -7159,7 +7174,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7c1b14cd-e3af-4f7f-b88b-71537a0bd41e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8884),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed reduction of fracture with internal fixation, carpals and metacarpals",
                             DiscountRate = 14,
                             Enabled = true,
@@ -7171,7 +7186,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("680052ef-60ff-44a3-b1b7-a65b98e8d701"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8887),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed reduction of separated epiphysis, femur",
                             DiscountRate = 22,
                             Enabled = true,
@@ -7183,7 +7198,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4106e93d-1cae-45fb-8e6d-6fe0d0bd8772"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8891),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on oral cavity",
                             DiscountRate = 4,
                             Enabled = true,
@@ -7195,7 +7210,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5413bb90-b857-4ea5-8902-ae170e2038b6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8894),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of wound catheter",
                             DiscountRate = 6,
                             Enabled = true,
@@ -7207,7 +7222,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("828be8d7-09e2-4620-ae07-d6cf15af902f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8896),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Prophylactic vaccination against arthropod-borne viral encephalitis",
                             DiscountRate = 15,
                             Enabled = true,
@@ -7219,7 +7234,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3926eb28-453f-48a8-a264-1906b904ecc6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8898),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lower limb amputation, not otherwise specified",
                             DiscountRate = 15,
                             Enabled = true,
@@ -7231,7 +7246,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("37d5149d-3418-4a28-9fbd-5d2c8a5d012e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8901),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Endoscopic retrograde cholangiopancreatography [ERCP]",
                             DiscountRate = 19,
                             Enabled = true,
@@ -7243,7 +7258,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3783af9d-e63a-4e62-b623-34486bd8364a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8903),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Endoscopic insertion or replacement of bronchial valve(s), multiple lobes",
                             DiscountRate = 7,
                             Enabled = true,
@@ -7255,7 +7270,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2d077109-6b33-44de-8e27-62e3ce694f23"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8906),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and open repair of indirect inguinal hernia with graft or prosthesis",
                             DiscountRate = 17,
                             Enabled = true,
@@ -7267,7 +7282,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("71dcb3d2-785b-442c-8bda-796d6dd14dbe"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8909),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion or tissue of large intestine",
                             DiscountRate = 5,
                             Enabled = true,
@@ -7279,7 +7294,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f4622db8-f2cc-4793-ae51-bba81432a676"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8951),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of automatic cardioverter/defibrillator pulse generator only",
                             DiscountRate = 11,
                             Enabled = true,
@@ -7291,7 +7306,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c6ac5fa0-fe19-4099-b543-dd48e20f9da5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8955),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Resection of vessel with anastomosis, upper limb vessels",
                             DiscountRate = 9,
                             Enabled = true,
@@ -7303,7 +7318,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1db5d338-a83c-420f-961c-bd43e41ce6ad"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8957),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of automatic cardioverter/defibrillator lead(s) only",
                             DiscountRate = 9,
                             Enabled = true,
@@ -7315,7 +7330,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1951f320-b2f6-4402-916d-549d8fac9021"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8960),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Thoracoscopic partial excision of thymus",
                             DiscountRate = 30,
                             Enabled = true,
@@ -7327,7 +7342,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("231fea01-02d7-4888-b5d6-f7641ead6e19"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8962),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of intrauterine contraceptive device",
                             DiscountRate = 2,
                             Enabled = true,
@@ -7339,7 +7354,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("41098c1c-1ee0-4216-bbdc-03012ee5f619"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8965),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open and other replacement of tricuspid valve",
                             DiscountRate = 29,
                             Enabled = true,
@@ -7351,7 +7366,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b1ab475d-6b32-4808-8cf3-38a7b3bd53ff"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8968),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of liver",
                             DiscountRate = 0,
                             Enabled = true,
@@ -7363,7 +7378,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3f09ad30-392d-4c50-b99f-5ebb35be8ecf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8970),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Resection of vessel with replacement, lower limb veins",
                             DiscountRate = 18,
                             Enabled = true,
@@ -7375,7 +7390,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("42816e21-3375-4c73-9472-6f6719ce1994"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8973),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unspecified operation on bone injury, radius and ulna",
                             DiscountRate = 17,
                             Enabled = true,
@@ -7387,7 +7402,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("391fb77d-fd83-45fd-92bb-058a6453dcd0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8975),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, toxicology",
                             DiscountRate = 4,
                             Enabled = true,
@@ -7399,7 +7414,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2afcaf0f-532a-4c36-aa0a-e91e739955f2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8978),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of joint structure, elbow",
                             DiscountRate = 2,
                             Enabled = true,
@@ -7411,7 +7426,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d21b0d2e-b965-4a0a-a1d1-4ba374fc6639"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8981),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of other bile duct",
                             DiscountRate = 4,
                             Enabled = true,
@@ -7423,7 +7438,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("38422627-ac54-4d24-b683-f3486a8aadae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8983),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of joint, unspecified site",
                             DiscountRate = 3,
                             Enabled = true,
@@ -7435,7 +7450,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9d480cfa-a3f0-4d04-9f15-0dbf00aaa442"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8986),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Radical excision of lesion of external ear",
                             DiscountRate = 9,
                             Enabled = true,
@@ -7447,7 +7462,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f088fa90-0620-4464-99a9-b175b8dd96f0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8989),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Retroperitoneal pneumogram",
                             DiscountRate = 14,
                             Enabled = true,
@@ -7459,7 +7474,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d9d72761-edab-4e2c-a07a-1f06f8675145"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8992),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of ampulla of Vater (with reimplantation of common duct)",
                             DiscountRate = 20,
                             Enabled = true,
@@ -7471,7 +7486,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d71e9b90-a847-40f6-b00c-94b903d61925"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(8994),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Trocar cholecystostomy",
                             DiscountRate = 3,
                             Enabled = true,
@@ -7483,7 +7498,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2aa26e2c-407b-4f49-81e5-28395de74624"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9375),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of prosthetic device from bile duct",
                             DiscountRate = 20,
                             Enabled = true,
@@ -7495,7 +7510,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("988afced-2a41-4d3d-ac8e-972936fff723"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9386),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from eye, culture and sensitivity",
                             DiscountRate = 9,
                             Enabled = true,
@@ -7507,7 +7522,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("95d24193-ed78-4cd8-80a0-c99150269aa0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9389),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open biopsy of bladder",
                             DiscountRate = 7,
                             Enabled = true,
@@ -7519,7 +7534,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("907d4d2f-9d8e-43a0-91be-7c49c2c35db3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9392),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Hip bearing surface, metal-on-polyethylene",
                             DiscountRate = 30,
                             Enabled = true,
@@ -7531,7 +7546,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("09b860e9-5a34-4234-bca3-795ca0b5e68e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9395),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Partial cystectomy",
                             DiscountRate = 12,
                             Enabled = true,
@@ -7543,7 +7558,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d3532e4c-a8bf-43bd-b9ed-3b8065b5955a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9397),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insufflation of therapeutic agent into fallopian tubes",
                             DiscountRate = 15,
                             Enabled = true,
@@ -7555,7 +7570,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a4738500-58c6-413e-89e0-882187d74017"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9400),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Delayed closure of granulating abdominal wound",
                             DiscountRate = 13,
                             Enabled = true,
@@ -7567,7 +7582,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("529339d5-ebbb-41e1-9770-5dc4a747fc75"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9402),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of cast on upper limb",
                             DiscountRate = 2,
                             Enabled = true,
@@ -7579,7 +7594,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7503c2a9-c6c0-4e67-b114-027fef7575c1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9405),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of sternal fixation device with rigid plates",
                             DiscountRate = 17,
                             Enabled = true,
@@ -7591,7 +7606,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0ae356ea-c2d7-4426-b355-3984eadee0e5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9407),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other suture of abdominal wall",
                             DiscountRate = 3,
                             Enabled = true,
@@ -7603,7 +7618,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ae19613a-491c-4538-90e3-45deecc17fea"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9410),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Percutaneous ablation of renal lesion or tissue",
                             DiscountRate = 4,
                             Enabled = true,
@@ -7615,7 +7630,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("343b4117-fa3f-4668-982a-ad646a94d858"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9413),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of penis",
                             DiscountRate = 4,
                             Enabled = true,
@@ -7627,7 +7642,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8cd062fd-13e4-4527-81a1-527d53942614"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9415),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intrathoracic esophageal anastomosis with interposition of small bowel",
                             DiscountRate = 12,
                             Enabled = true,
@@ -7639,7 +7654,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("55968491-3a72-4cca-8e44-5923915a2370"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9418),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open and other left hemicolectomy",
                             DiscountRate = 9,
                             Enabled = true,
@@ -7651,7 +7666,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1f3cfcb0-5f8f-41ed-829c-2a9cb9eb84c0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9421),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dilation of esophagus",
                             DiscountRate = 28,
                             Enabled = true,
@@ -7663,7 +7678,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5cfede72-a343-464d-8125-eb80f51d9ec7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9424),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fitting of denture",
                             DiscountRate = 14,
                             Enabled = true,
@@ -7675,7 +7690,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d9cd852a-b2b0-4311-8aca-ba7df2050ea9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9426),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement or repair of thoracic unit of (total) replacement heart system",
                             DiscountRate = 24,
                             Enabled = true,
@@ -7687,7 +7702,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4244700c-5f0b-47da-a519-8773c62df52c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9471),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Episiotomy",
                             DiscountRate = 4,
                             Enabled = true,
@@ -7699,7 +7714,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("702f15ed-8fa7-4c2d-86aa-b6c7ac521739"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9474),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Interview and evaluation, described as limited",
                             DiscountRate = 11,
                             Enabled = true,
@@ -7711,7 +7726,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2e3ece6f-71aa-427e-addf-723c60e238c4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9477),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of gastric bubble (balloon)",
                             DiscountRate = 14,
                             Enabled = true,
@@ -7723,7 +7738,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4295ced6-ef7b-4e95-9030-fb5c799031de"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9480),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Radical neck dissection, bilateral",
                             DiscountRate = 4,
                             Enabled = true,
@@ -7735,7 +7750,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7221ac57-b0df-4792-a231-125583e16089"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9483),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic incisional hernia repair with graft or prosthesis",
                             DiscountRate = 19,
                             Enabled = true,
@@ -7747,7 +7762,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b45f5951-5d02-459b-a221-cb3ed94f86c9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9486),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Resection of vessel with anastomosis, lower limb arteries",
                             DiscountRate = 17,
                             Enabled = true,
@@ -7759,7 +7774,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e9881108-781c-415b-a40c-ac6ccaeb49e0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9489),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of transplanted or rejected kidney",
                             DiscountRate = 6,
                             Enabled = true,
@@ -7771,7 +7786,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6fee6906-64f7-41b0-8162-81cd5e7ec2fc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9492),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total ostectomy of other facial bone with synchronous reconstruction",
                             DiscountRate = 21,
                             Enabled = true,
@@ -7783,7 +7798,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("aa691d6b-02ab-49bb-9f66-9a95354aa067"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9495),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other plastic operations on fascia",
                             DiscountRate = 29,
                             Enabled = true,
@@ -7795,7 +7810,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("126b15c1-4d38-4220-a06c-4bd6fd51c853"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9498),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Amputation and disarticulation of finger",
                             DiscountRate = 18,
                             Enabled = true,
@@ -7807,7 +7822,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("109db990-c429-4f8e-8c07-29ca7691f674"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9501),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Thoracoscopic pneumonectomy",
                             DiscountRate = 27,
                             Enabled = true,
@@ -7819,7 +7834,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("206d6cb1-d0be-4d9e-ace7-623ace7b90b5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9504),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of cranial neurostimulator pulse generator",
                             DiscountRate = 22,
                             Enabled = true,
@@ -7831,7 +7846,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("42ed6310-cbae-44e9-acb8-d1b94b93503c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9506),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other total reconstruction of breast",
                             DiscountRate = 4,
                             Enabled = true,
@@ -7843,7 +7858,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4178a2ea-afd5-4ea7-a787-2ef200cd4e98"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9510),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Infusion of 4-Factor Prothrombin Complex Concentrate",
                             DiscountRate = 6,
                             Enabled = true,
@@ -7855,7 +7870,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1a20629c-e2f8-43c2-866b-5169be765f64"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9513),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Irrigation of ear",
                             DiscountRate = 14,
                             Enabled = true,
@@ -7867,7 +7882,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("97092039-ef1a-4500-8c6b-b061b3cc0e96"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9515),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dilation of bladder neck",
                             DiscountRate = 0,
                             Enabled = true,
@@ -7879,7 +7894,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2161c6ef-a38d-44a9-a2e5-0b52bf2147f1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9518),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unilateral vulvectomy",
                             DiscountRate = 6,
                             Enabled = true,
@@ -7891,7 +7906,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("38b67a68-7466-4b6c-a132-ddfd48a368af"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9559),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Proctostomy",
                             DiscountRate = 23,
                             Enabled = true,
@@ -7903,7 +7918,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4b9b6e4a-854d-4a65-a6fc-58aa4cdf5d38"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9562),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Choledochoenterostomy",
                             DiscountRate = 4,
                             Enabled = true,
@@ -7915,7 +7930,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9a76247d-5004-43c8-83e0-9812b3f4da28"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9565),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laser interstitial thermal therapy [LITT] of lesion or tissue of brain under guidance",
                             DiscountRate = 18,
                             Enabled = true,
@@ -7927,7 +7942,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c1f3c0c7-cdd2-45e3-b380-c1df47b8fbc8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9568),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other abdomen tomography",
                             DiscountRate = 30,
                             Enabled = true,
@@ -7939,7 +7954,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("04378db7-1072-40ef-a8b9-ac33b15c2008"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9570),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair for facial weakness",
                             DiscountRate = 29,
                             Enabled = true,
@@ -7951,7 +7966,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("07e1005f-7efe-480c-9cdb-2e4460378a9e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9573),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other intrathoracic anastomosis of esophagus",
                             DiscountRate = 14,
                             Enabled = true,
@@ -7963,7 +7978,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e0c9a282-10b6-45f0-9981-c08fc23d7694"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9579),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other psychiatric somatotherapy",
                             DiscountRate = 26,
                             Enabled = true,
@@ -7975,7 +7990,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6c53c07b-e4e3-47f3-8f1b-4a4e779277f5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9581),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Quadricepsplasty",
                             DiscountRate = 0,
                             Enabled = true,
@@ -7987,7 +8002,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1ed54d15-34b1-4a45-95f2-78d684973990"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9584),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Common duct exploration for removal of calculus",
                             DiscountRate = 28,
                             Enabled = true,
@@ -7999,7 +8014,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("19f17cd3-0da0-4d61-8ead-a2ff7dd5b6d5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9587),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total splenectomy",
                             DiscountRate = 9,
                             Enabled = true,
@@ -8011,7 +8026,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("93aae39f-bbad-449a-b2e8-e2e37f7b3f5d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9590),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cyclodialysis",
                             DiscountRate = 30,
                             Enabled = true,
@@ -8023,7 +8038,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3cb598e6-c6ed-4887-bd03-257d7c983876"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9592),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and unspecified ablation of lung lesion or tissue",
                             DiscountRate = 13,
                             Enabled = true,
@@ -8035,7 +8050,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("09cc6c3a-f3f2-49a0-9ec6-c526b625e813"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9595),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Thyroid scan and radioisotope function studies",
                             DiscountRate = 8,
                             Enabled = true,
@@ -8047,7 +8062,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2950d433-bb20-4370-baec-1616fce97f8b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9597),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection of therapeutic substance into tendon of hand",
                             DiscountRate = 5,
                             Enabled = true,
@@ -8059,7 +8074,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("66693d79-5968-4d37-b7ad-26b1f76d311d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9601),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair or plastic operations on bone, scapula, clavicle, and thorax [ribs and sternum]",
                             DiscountRate = 24,
                             Enabled = true,
@@ -8071,7 +8086,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d9cc467f-13ef-4d79-9c87-42db5d598a27"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9604),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other nonoperative genitourinary system measurements",
                             DiscountRate = 12,
                             Enabled = true,
@@ -8083,7 +8098,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0d31f86e-5bc0-4757-a8a9-8c2a658c98db"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9608),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of ocular implant",
                             DiscountRate = 28,
                             Enabled = true,
@@ -8095,7 +8110,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("57fb9cc9-7260-47c7-b20f-fbee310b7363"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9611),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of hemorrhoids",
                             DiscountRate = 24,
                             Enabled = true,
@@ -8107,7 +8122,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d320592c-c14c-4821-9ae0-fc40401c5169"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9931),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incision of bone without division, scapula, clavicle, and thorax [ribs and sternum]",
                             DiscountRate = 1,
                             Enabled = true,
@@ -8119,7 +8134,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fa4ee7fb-2c7a-4d16-9f65-e0245dc35573"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9940),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Correction of ureteropelvic junction",
                             DiscountRate = 25,
                             Enabled = true,
@@ -8131,7 +8146,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c730c780-bf9a-4447-ba74-0c848d9b661c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9944),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion or tissue of spleen",
                             DiscountRate = 11,
                             Enabled = true,
@@ -8143,7 +8158,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ee3baf08-12b0-4680-a783-acffce493d55"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9948),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of peritoneum",
                             DiscountRate = 3,
                             Enabled = true,
@@ -8155,7 +8170,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d7399f01-d819-4df9-a7a6-d9faf5b60d19"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9952),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of peritoneal and retroperitoneal specimen, culture and sensitivity",
                             DiscountRate = 23,
                             Enabled = true,
@@ -8167,7 +8182,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("eb834e6f-3c6e-4bd1-8f3f-1fa3f85b30f9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9954),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of any type pacemaker device with dual-chamber device",
                             DiscountRate = 28,
                             Enabled = true,
@@ -8179,7 +8194,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a878b474-4d4c-4ac8-8050-23f552170059"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9957),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic simple suture of ovary",
                             DiscountRate = 10,
                             Enabled = true,
@@ -8191,7 +8206,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e01d45b4-e590-4356-b6ee-91aa2d9b3ee4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9960),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other oxygen enrichment",
                             DiscountRate = 27,
                             Enabled = true,
@@ -8203,7 +8218,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7dff0ff7-1493-47d4-b9e0-ac954ad432da"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9963),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other partial pancreatectomy",
                             DiscountRate = 20,
                             Enabled = true,
@@ -8215,7 +8230,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a94b1b95-ba33-48b6-9c6a-bbc9ef3b6583"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9966),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intrathoracic esophageal anastomosis with other interposition",
                             DiscountRate = 28,
                             Enabled = true,
@@ -8227,7 +8242,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d98ae8f3-a858-4d99-82ef-faaad304c7e4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9968),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Advancement of tendon",
                             DiscountRate = 5,
                             Enabled = true,
@@ -8239,7 +8254,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8bc55920-dd5a-4c4f-bc3c-6f93fb22e42b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9971),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dental scaling, polishing, and debridement",
                             DiscountRate = 18,
                             Enabled = true,
@@ -8251,7 +8266,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b8498edb-7f49-466c-8254-dab678629d78"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9973),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on stomach",
                             DiscountRate = 29,
                             Enabled = true,
@@ -8263,7 +8278,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("23e962f2-0a8e-4d73-8227-11070c4560d7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9976),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Scan of other sites of head",
                             DiscountRate = 1,
                             Enabled = true,
@@ -8275,7 +8290,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("aa443b89-2879-4fcf-bcbe-b80e001e5bc5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9978),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion or tissue of gum",
                             DiscountRate = 30,
                             Enabled = true,
@@ -8287,7 +8302,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f5582659-25d9-420e-b64b-7bd411377abd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9981),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of bronchus",
                             DiscountRate = 19,
                             Enabled = true,
@@ -8299,7 +8314,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b6dbe56b-ee92-41da-bb47-76231b042270"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 213, DateTimeKind.Utc).AddTicks(9984),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Gastroscopy through artificial stoma",
                             DiscountRate = 5,
                             Enabled = true,
@@ -8311,7 +8326,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("949a35bf-98cc-4cfe-813f-15a848e492a6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(317),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of tendon of hand for graft",
                             DiscountRate = 16,
                             Enabled = true,
@@ -8323,7 +8338,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e3327061-08b0-46ec-adfc-bed7afee9bf6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(325),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Pressure measurement of sphincter of Oddi",
                             DiscountRate = 11,
                             Enabled = true,
@@ -8335,7 +8350,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4f77168e-252a-424e-9ac5-bde9e041b353"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(328),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sphenoidotomy",
                             DiscountRate = 7,
                             Enabled = true,
@@ -8347,7 +8362,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d73a95b0-1028-41aa-b327-977ea9888ed8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(331),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of axillary lymph node",
                             DiscountRate = 18,
                             Enabled = true,
@@ -8359,7 +8374,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f80d8779-dd2f-4955-b5c1-c1ea32cc00d6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(334),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of carotid sinus stimulation lead(s) only",
                             DiscountRate = 10,
                             Enabled = true,
@@ -8371,7 +8386,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("915fccb3-afe3-4765-a7a1-dfea551f7631"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(337),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of intra-aneurysm sac pressure monitoring device (intraoperative)",
                             DiscountRate = 0,
                             Enabled = true,
@@ -8383,7 +8398,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("238270b7-0722-42c5-9f70-29d16232389e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(340),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arthrocentesis",
                             DiscountRate = 4,
                             Enabled = true,
@@ -8395,7 +8410,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("28c355a9-4c1c-4504-bf47-1ce901978364"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(343),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of drug-eluting coronary artery stent(s)",
                             DiscountRate = 30,
                             Enabled = true,
@@ -8407,7 +8422,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1f41300a-c275-4616-8422-6f70d17be6b3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(346),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Local excision of lesion or tissue of bone, tibia and fibula",
                             DiscountRate = 10,
                             Enabled = true,
@@ -8419,7 +8434,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d8c7c8cd-20fb-425f-94a1-6ddb52f38e6c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(350),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of indwelling urinary catheter",
                             DiscountRate = 7,
                             Enabled = true,
@@ -8431,7 +8446,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b1300d47-8e99-4add-831f-e70655f32a59"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(353),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Radical mastoidectomy",
                             DiscountRate = 23,
                             Enabled = true,
@@ -8443,7 +8458,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("22297355-a788-4ef2-bf36-99982489c1ee"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(355),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Referral for other psychologic rehabilitation",
                             DiscountRate = 24,
                             Enabled = true,
@@ -8455,7 +8470,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("af83bb0c-a869-4890-b2b1-848f28a0ffce"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(358),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of thoracotomy tube or pleural cavity drain",
                             DiscountRate = 9,
                             Enabled = true,
@@ -8467,7 +8482,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e378f849-14ed-45b2-a73c-53f35c67d96d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(360),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic cecectomy",
                             DiscountRate = 23,
                             Enabled = true,
@@ -8479,7 +8494,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3131fd82-e6b3-4ae5-bef6-80aa974d7d91"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(363),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of lesion or tissue of lip",
                             DiscountRate = 20,
                             Enabled = true,
@@ -8491,7 +8506,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6709af28-1c2c-4370-a878-c7d64e94c4b7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(367),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Administration of tetanus toxoid",
                             DiscountRate = 6,
                             Enabled = true,
@@ -8503,7 +8518,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("75c193ec-f7dc-4511-9f42-aade8f811513"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(370),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of dislocation of shoulder",
                             DiscountRate = 18,
                             Enabled = true,
@@ -8515,7 +8530,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c4d8ff2a-8b6c-4de2-abd1-19e78844f36f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(687),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of operative wound of anterior segment, not elsewhere classified",
                             DiscountRate = 12,
                             Enabled = true,
@@ -8527,7 +8542,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1a6df83b-e54b-45f9-a712-caef35095e29"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(695),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection or infusion of immunoglobulin",
                             DiscountRate = 17,
                             Enabled = true,
@@ -8539,7 +8554,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6b53ef34-26cf-4a0a-b4db-7637dec181d0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(700),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arthrotomy for removal of prosthesis without replacement, ankle",
                             DiscountRate = 19,
                             Enabled = true,
@@ -8551,7 +8566,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("32e4e467-5c7f-4646-8d39-45a2353aef55"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(703),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other revision of vascular procedure",
                             DiscountRate = 18,
                             Enabled = true,
@@ -8563,7 +8578,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("99402327-b033-4730-8cf8-b87d66e4426f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(706),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of intraluminal foreign body from esophagus without incision",
                             DiscountRate = 1,
                             Enabled = true,
@@ -8575,7 +8590,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4fbb3eab-3e09-44f2-b978-5c251760eb89"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(709),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation of rechargeable cardiac contractility modulation [CCM], total system",
                             DiscountRate = 1,
                             Enabled = true,
@@ -8587,7 +8602,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cf293094-dbdf-429e-a60e-9de6d5ee7fb0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(712),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of common duct",
                             DiscountRate = 20,
                             Enabled = true,
@@ -8599,7 +8614,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("38dd4a49-f1dd-40f9-bb5f-1dc2bdbc062e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(715),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection or infusion of other therapeutic or prophylactic substance",
                             DiscountRate = 15,
                             Enabled = true,
@@ -8611,7 +8626,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c57a84a4-43a7-4e74-b67b-d3c50daae0c4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(718),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of partial spinal disc prosthesis, cervical",
                             DiscountRate = 27,
                             Enabled = true,
@@ -8623,7 +8638,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6b346627-4c6f-49da-b8d7-0343e9495fff"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(721),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other suture of abdominal wall",
                             DiscountRate = 19,
                             Enabled = true,
@@ -8635,7 +8650,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("84d49021-d945-4456-8a47-627231c0e23c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(723),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of uterus and supporting structures",
                             DiscountRate = 3,
                             Enabled = true,
@@ -8647,7 +8662,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9a6697c9-8cc2-4574-9e6e-76c3f1e8588b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(725),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Spinal blood patch",
                             DiscountRate = 22,
                             Enabled = true,
@@ -8659,7 +8674,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d1af1ea3-111f-4433-be66-47bc7afbda78"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(728),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Unilateral radical mastectomy",
                             DiscountRate = 23,
                             Enabled = true,
@@ -8671,7 +8686,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("88c42d1c-03b2-4b59-8164-92691e0f8b29"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(731),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Endocervical biopsy",
                             DiscountRate = 24,
                             Enabled = true,
@@ -8683,7 +8698,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c2898606-4a5a-4563-9144-8d69c8f410a4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(733),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Subconvulsive electroshock therapy",
                             DiscountRate = 15,
                             Enabled = true,
@@ -8695,7 +8710,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("07cf369a-bea0-4493-be84-db09d65d577c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(735),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other laparoscopic partial excision of large intestine",
                             DiscountRate = 15,
                             Enabled = true,
@@ -8707,7 +8722,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("60721ec1-5299-4f8a-b53b-2988147dca9a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(738),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ultraviolet light therapy",
                             DiscountRate = 23,
                             Enabled = true,
@@ -8719,7 +8734,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("df8cdbcd-2845-48ab-ba34-ff607e1d7bf0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1079),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transfusion of blood expander",
                             DiscountRate = 20,
                             Enabled = true,
@@ -8731,7 +8746,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b8fe6e90-dde6-4902-8d16-fb51159269b9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1088),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intraoperative manipulation of stomach",
                             DiscountRate = 30,
                             Enabled = true,
@@ -8743,7 +8758,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ff56e358-788d-43cb-9868-b1feb4839316"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1091),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Operations for sex transformation, not elsewhere classified",
                             DiscountRate = 5,
                             Enabled = true,
@@ -8755,7 +8770,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6b7c814d-e0f0-4484-a687-9210e65ac69f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1093),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other surgical occlusion of vessels, upper limb vessels",
                             DiscountRate = 17,
                             Enabled = true,
@@ -8767,7 +8782,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("747f0803-aac1-498d-ac38-6bf9a256f353"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1097),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Thermography of other sites",
                             DiscountRate = 10,
                             Enabled = true,
@@ -8779,7 +8794,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("24a9f1d5-3fc0-47f8-a6d4-52453133fb8c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1099),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Limb shortening procedures, tarsals and metatarsals",
                             DiscountRate = 7,
                             Enabled = true,
@@ -8791,7 +8806,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9638609c-23e6-4979-afab-8343cf352444"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1101),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of nasopharyngeal airway",
                             DiscountRate = 11,
                             Enabled = true,
@@ -8803,7 +8818,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ea6671d8-4006-44fb-8e37-015d267b8ce5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1104),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other reconstruction of eyelid with flaps or grafts",
                             DiscountRate = 6,
                             Enabled = true,
@@ -8815,7 +8830,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9c860c72-2bf8-45fa-92d1-3a3c3eb52718"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1106),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Choroid plexectomy",
                             DiscountRate = 3,
                             Enabled = true,
@@ -8827,7 +8842,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5aa72556-2cec-443e-920a-f95c60949c01"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1109),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bone graft, tarsals and metatarsals",
                             DiscountRate = 11,
                             Enabled = true,
@@ -8839,7 +8854,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("092ad296-fc99-45ed-8137-8c83117c0fc5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1112),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Synovectomy, foot and toe",
                             DiscountRate = 24,
                             Enabled = true,
@@ -8851,7 +8866,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("38bc68f5-21e8-449c-ad59-093d412b255a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1114),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of vas deferens and epididymis",
                             DiscountRate = 15,
                             Enabled = true,
@@ -8863,7 +8878,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6f324b7c-99da-4933-bb49-12b30bde1ab9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1116),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of lesion of anterior segment of eye, not otherwise specified",
                             DiscountRate = 29,
                             Enabled = true,
@@ -8875,7 +8890,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e15d8790-665d-492e-9841-6691989282c0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1119),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other soft tissue x-ray of chest wall",
                             DiscountRate = 29,
                             Enabled = true,
@@ -8887,7 +8902,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("70d06f6a-9a1f-446c-9088-0e7c56fae870"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1122),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other division of bone, carpals and metacarpals",
                             DiscountRate = 29,
                             Enabled = true,
@@ -8899,7 +8914,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("55a9adbf-c7ab-4d56-b00f-ac83b024fc9b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1126),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other open umbilical herniorrhaphy",
                             DiscountRate = 16,
                             Enabled = true,
@@ -8911,7 +8926,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("59fb02d7-39c1-44d7-9f7a-9a839dfe15d9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1128),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Culdoscopy",
                             DiscountRate = 29,
                             Enabled = true,
@@ -8923,7 +8938,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9db37099-89d4-4002-81e4-66e2bd6b561e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1458),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of other vaginal pessary",
                             DiscountRate = 30,
                             Enabled = true,
@@ -8935,7 +8950,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0032497d-8b96-4806-986b-377b7dec29db"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1468),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Creation of peritoneovascular shunt",
                             DiscountRate = 8,
                             Enabled = true,
@@ -8947,7 +8962,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9b02d7ef-cd11-47ab-a8d0-f63297d33a60"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1472),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of implanted devices from bone, other bones",
                             DiscountRate = 10,
                             Enabled = true,
@@ -8959,7 +8974,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0b95c6cf-c848-4e7f-b242-1fd37ce5a8b8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1476),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closure of fistula of mouth",
                             DiscountRate = 0,
                             Enabled = true,
@@ -8971,7 +8986,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2195f8ab-3ea3-4f6f-8855-c8889786e682"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1480),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of thyroglossal duct or tract",
                             DiscountRate = 7,
                             Enabled = true,
@@ -8983,7 +8998,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cdfe05de-807f-4c63-b24a-63071c4f3024"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1482),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Partial shoulder replacement",
                             DiscountRate = 3,
                             Enabled = true,
@@ -8995,7 +9010,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d5ef249a-5d00-412e-b66e-c3763a387344"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1485),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fasciotomy",
                             DiscountRate = 8,
                             Enabled = true,
@@ -9007,7 +9022,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0503ed8a-d994-4327-9cf4-be51b929b52b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1487),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on larynx",
                             DiscountRate = 21,
                             Enabled = true,
@@ -9019,7 +9034,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("52342fc5-cf8e-4210-8f48-b3625a137c2f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1490),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Local excision of lesion or tissue of bone, unspecified site",
                             DiscountRate = 9,
                             Enabled = true,
@@ -9031,7 +9046,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d1efab83-c6c8-430f-b6d8-afbfd8dfc57b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1492),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Destruction of lesion of eyelid",
                             DiscountRate = 20,
                             Enabled = true,
@@ -9043,7 +9058,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("40427032-5241-4597-a924-a844ca50f810"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1494),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion of other soft tissue",
                             DiscountRate = 8,
                             Enabled = true,
@@ -9055,7 +9070,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0fa3cb9d-75d2-4c98-803a-7ced41dcf0a9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1497),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of one vascular stent",
                             DiscountRate = 20,
                             Enabled = true,
@@ -9067,7 +9082,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("24ff6e46-d376-4100-9672-264319c40677"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1499),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Masters' two-step stress test",
                             DiscountRate = 26,
                             Enabled = true,
@@ -9079,7 +9094,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c26e3b28-e899-426e-8381-4a59a2338ca8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1502),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bone graft, unspecified site",
                             DiscountRate = 4,
                             Enabled = true,
@@ -9091,7 +9106,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d9d51385-2329-40e5-8770-9a3558b4a489"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1504),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total esophagectomy",
                             DiscountRate = 7,
                             Enabled = true,
@@ -9103,7 +9118,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f487ee95-ba63-4ed5-a2eb-bc3131219efe"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1507),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Posterior resection of rectum",
                             DiscountRate = 21,
                             Enabled = true,
@@ -9115,7 +9130,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4636d146-8793-49dc-8602-063770db5089"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1510),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ligation of thoracic duct",
                             DiscountRate = 13,
                             Enabled = true,
@@ -9127,7 +9142,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("be8d14f0-c1ce-46a2-b090-a09fd9e3ac5c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1827),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion or replacement of multiple array (two or more) rechargeable neurostimulator pulse generator",
                             DiscountRate = 6,
                             Enabled = true,
@@ -9139,7 +9154,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("286c507b-952b-4f59-9d54-3261904031f2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1835),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of esophageal obturator airway",
                             DiscountRate = 9,
                             Enabled = true,
@@ -9151,7 +9166,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6396d9ca-7ddf-42d4-b496-18468f1f8653"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1840),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other cataract extraction",
                             DiscountRate = 14,
                             Enabled = true,
@@ -9163,7 +9178,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0e1c975e-915c-410b-860d-7cefa2f2cf2d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1846),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from operative wound, cell block and Papanicolaou smear",
                             DiscountRate = 4,
                             Enabled = true,
@@ -9175,7 +9190,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f9f79ae7-99b8-4da5-9dfb-1b731dddb01e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1849),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bilateral vulvectomy",
                             DiscountRate = 2,
                             Enabled = true,
@@ -9187,7 +9202,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0a5c55f8-4eb8-424e-b54b-cead2eca099c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1852),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on parathyroid glands",
                             DiscountRate = 26,
                             Enabled = true,
@@ -9199,7 +9214,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1be61044-9378-4b20-9a81-856fcd30b84e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1855),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other soft tissue x-ray of upper limb",
                             DiscountRate = 11,
                             Enabled = true,
@@ -9211,7 +9226,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3f29236e-cc27-4c14-b212-9152ff739f62"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1857),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of intraluminal foreign body from urethra without incision",
                             DiscountRate = 19,
                             Enabled = true,
@@ -9223,7 +9238,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7d94416d-bf8c-46aa-a41e-e1ee6e19ed6b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1860),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of hydrocele (of tunica vaginalis)",
                             DiscountRate = 14,
                             Enabled = true,
@@ -9235,7 +9250,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("58bc6eeb-cc1e-44a5-aae7-21acd1373ce4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1862),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lobotomy and tractotomy",
                             DiscountRate = 11,
                             Enabled = true,
@@ -9247,7 +9262,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d65f9ee9-5cb9-4312-b839-974b50a220b3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1865),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other x-ray of spine",
                             DiscountRate = 2,
                             Enabled = true,
@@ -9259,7 +9274,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bcc6d10a-5634-4fd1-8d67-22bd5ed6e807"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1869),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Amputation through forearm",
                             DiscountRate = 19,
                             Enabled = true,
@@ -9271,7 +9286,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9d225e00-c00f-47c1-a726-a8e56f8d581f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1871),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other surgical occlusion of vessels, other vessels of head and neck",
                             DiscountRate = 5,
                             Enabled = true,
@@ -9283,7 +9298,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8e67efeb-5141-4ffd-a27d-08f370e57b4a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1874),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other electrocoagulation of rectal lesion or tissue",
                             DiscountRate = 13,
                             Enabled = true,
@@ -9295,7 +9310,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cf52601d-af9e-42fc-b9ea-8e0a17a1e387"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1877),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Endoscopic insertion of nasopancreatic drainage tube",
                             DiscountRate = 16,
                             Enabled = true,
@@ -9307,7 +9322,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e97c9c60-1c56-4648-bc11-1542eb6d696a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1879),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other partial pancreatectomy",
                             DiscountRate = 29,
                             Enabled = true,
@@ -9319,7 +9334,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6dcf220d-5916-4cf1-aeaf-2dce93c59a1f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(1883),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic left hemicolectomy",
                             DiscountRate = 6,
                             Enabled = true,
@@ -9331,7 +9346,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3fbf5385-77d7-45f8-b2f5-4791215a6e4b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2378),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other pull-through resection of rectum",
                             DiscountRate = 18,
                             Enabled = true,
@@ -9343,7 +9358,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1578de0f-a853-493d-b563-550aa0a281b8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2387),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Vaginal douche",
                             DiscountRate = 4,
                             Enabled = true,
@@ -9355,7 +9370,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("177939ed-ed6f-4ee1-a578-f1dff65606c0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2392),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Crisis intervention",
                             DiscountRate = 16,
                             Enabled = true,
@@ -9367,7 +9382,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e598137c-5dc9-44ca-b11d-876837ea4dd8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2398),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, culture",
                             DiscountRate = 16,
                             Enabled = true,
@@ -9379,7 +9394,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("aacf602d-6a0e-404e-9b32-d18aa6d91cad"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2401),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on penis",
                             DiscountRate = 14,
                             Enabled = true,
@@ -9391,7 +9406,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f5d63150-f078-4e31-b726-a6fefd65084d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2404),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other division of bone, tibia and fibula",
                             DiscountRate = 21,
                             Enabled = true,
@@ -9403,7 +9418,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("83097d13-8402-4560-9c48-bfce3b0b1297"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2406),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Salpingo-uterostomy",
                             DiscountRate = 15,
                             Enabled = true,
@@ -9415,7 +9430,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ef5c4d87-9360-4b03-9c80-db64dca56b63"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2409),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Full-thickness graft to breast",
                             DiscountRate = 23,
                             Enabled = true,
@@ -9427,7 +9442,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2605c771-2b7e-4330-86de-9ae809249a1d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2412),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from unspecified site, bacterial smear",
                             DiscountRate = 6,
                             Enabled = true,
@@ -9439,7 +9454,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("71c46acb-f36e-49f8-87d6-45a80f48b0e9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2414),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incision of bone without division, carpals and metacarpals",
                             DiscountRate = 13,
                             Enabled = true,
@@ -9451,7 +9466,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e19cd768-7f1b-4e33-9145-5e0f729f9627"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2417),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Diagnostic procedures on bone, not elsewhere classified, humerus",
                             DiscountRate = 11,
                             Enabled = true,
@@ -9463,7 +9478,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("eb4591e9-76ee-41d6-9677-6810fc910dc2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2419),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed osteoplasty [osteotomy] of mandibular ramus",
                             DiscountRate = 26,
                             Enabled = true,
@@ -9475,7 +9490,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8ff2bb54-cbb7-4195-a2f9-dfb1349d4581"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2422),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closure of fistula of mouth",
                             DiscountRate = 22,
                             Enabled = true,
@@ -9487,7 +9502,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dd5a434c-3f8a-4365-809b-9e5a919012aa"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2424),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open reduction of separated epiphysis, humerus",
                             DiscountRate = 27,
                             Enabled = true,
@@ -9499,7 +9514,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("15e4637c-ae50-436a-8baf-6e299efcd06b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2426),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other arthrotomy, foot and toe",
                             DiscountRate = 4,
                             Enabled = true,
@@ -9511,7 +9526,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1d8730e2-c4b5-4c45-b987-7b9b84c977d6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2429),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Suture of laceration of uterus",
                             DiscountRate = 3,
                             Enabled = true,
@@ -9523,7 +9538,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cff344f7-c9ef-4bd4-a332-3d76772d5439"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2431),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transluminal coronary atherectomy",
                             DiscountRate = 28,
                             Enabled = true,
@@ -9535,7 +9550,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8fca484e-b390-49ae-8a0d-54715d46ed43"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2757),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Phacoemulsification and aspiration of cataract",
                             DiscountRate = 17,
                             Enabled = true,
@@ -9547,7 +9562,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2a05407d-7ea1-42fa-8cab-1cbc81359aa4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2765),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arthrotomy for removal of prosthesis without replacement, hand and finger",
                             DiscountRate = 12,
                             Enabled = true,
@@ -9559,7 +9574,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cb846a0a-24cd-4f09-bfb1-ddfa7fc93fbe"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2768),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from eye, other microscopic examination",
                             DiscountRate = 4,
                             Enabled = true,
@@ -9571,7 +9586,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b73ef93b-723d-42b5-8111-7a426bd6a362"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2774),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Posterior anal sphincterotomy",
                             DiscountRate = 0,
                             Enabled = true,
@@ -9583,7 +9598,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("208ac801-78bd-48f0-8ed0-690ded0b04c1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2777),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of other fistula of bladder",
                             DiscountRate = 4,
                             Enabled = true,
@@ -9595,7 +9610,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e185ec17-f3a2-4264-bf97-86acb7e6bf1b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2780),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ureteral catheterization",
                             DiscountRate = 15,
                             Enabled = true,
@@ -9607,7 +9622,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b8010cc0-d86f-4c38-8490-22d1bab318e5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2782),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion or replacement of other neurostimulator pulse generator",
                             DiscountRate = 3,
                             Enabled = true,
@@ -9619,7 +9634,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b331ce3f-4a21-4df6-836a-e0908819f430"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2786),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Infusion of drotrecogin alfa (activated)",
                             DiscountRate = 10,
                             Enabled = true,
@@ -9631,7 +9646,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f0438638-54eb-4b3a-804d-a527426ffafa"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2789),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of current obstetric laceration of rectum and sphincter ani",
                             DiscountRate = 14,
                             Enabled = true,
@@ -9643,7 +9658,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b930b795-a9ab-49dd-8c98-4bba9e96787b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2791),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Percutaneous atherectomy of intracranial vessel(s)",
                             DiscountRate = 7,
                             Enabled = true,
@@ -9655,7 +9670,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d191ced7-40ae-480c-8fc8-ec955f6cf842"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2794),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion or tissue of conjunctiva",
                             DiscountRate = 3,
                             Enabled = true,
@@ -9667,7 +9682,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3dd21acf-5194-4f49-897a-e33f03d55aba"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2797),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of heart",
                             DiscountRate = 19,
                             Enabled = true,
@@ -9679,7 +9694,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8b9806ff-5a3c-4a64-b8f2-7de000d8d74d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2800),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of vaginal mold",
                             DiscountRate = 25,
                             Enabled = true,
@@ -9691,7 +9706,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("18f46397-b731-4e47-bcf6-5a35d60f1240"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2803),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open and other sigmoidectomy",
                             DiscountRate = 11,
                             Enabled = true,
@@ -9703,7 +9718,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("176a586e-f34a-4887-9b49-778620a23f50"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2805),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of petrous pyramid air cells",
                             DiscountRate = 5,
                             Enabled = true,
@@ -9715,7 +9730,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("cf77d508-be18-419a-95fb-0da7e4b7464a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2808),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed [endoscopic] biopsy of bronchus",
                             DiscountRate = 4,
                             Enabled = true,
@@ -9727,7 +9742,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2c5714d0-6fb5-4e1d-abf8-7d9ea4b15cd7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2811),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Whirlpool treatment",
                             DiscountRate = 25,
                             Enabled = true,
@@ -9739,7 +9754,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5c38b9ba-9509-419a-ab3f-53d7908cf855"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2862),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from liver, biliary tract, and pancreas, culture and sensitivity",
                             DiscountRate = 26,
                             Enabled = true,
@@ -9751,7 +9766,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("882bfbb8-3532-4e9f-937e-f1b83b5d1da7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2867),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ligation and stripping of varicose veins, upper limb vessels",
                             DiscountRate = 27,
                             Enabled = true,
@@ -9763,7 +9778,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1043d26b-e397-4cc8-8c21-001f89ccdc0a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2870),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other removal of coronary artery obstruction",
                             DiscountRate = 12,
                             Enabled = true,
@@ -9775,7 +9790,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c3d5d302-e2b6-4e77-9501-a8da9ddfaac6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2873),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Upper limb amputation, not otherwise specified",
                             DiscountRate = 10,
                             Enabled = true,
@@ -9787,7 +9802,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fa5d50ec-c47b-48b6-bbed-d683db21f01d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2877),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fusion or refusion of 2-3 vertebrae",
                             DiscountRate = 8,
                             Enabled = true,
@@ -9799,7 +9814,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("59922ec9-3a1b-42f5-bb25-9c044021e819"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2879),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of heart, not otherwise specified",
                             DiscountRate = 15,
                             Enabled = true,
@@ -9811,7 +9826,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3deb96bb-6519-4f17-9bfe-cb78195a8dd7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2881),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of prosthetic device from bile duct",
                             DiscountRate = 26,
                             Enabled = true,
@@ -9823,7 +9838,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("66b00af8-13e4-492c-9b1c-8ef3fcfdec5b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2886),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Manual replacement of inverted uterus",
                             DiscountRate = 15,
                             Enabled = true,
@@ -9835,7 +9850,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5d1b374f-a850-433e-a849-a6aa0ed690fe"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2888),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other partial cholecystectomy",
                             DiscountRate = 26,
                             Enabled = true,
@@ -9847,7 +9862,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c4752586-02b8-4eea-b0f0-1f9f5b129b2c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2891),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Procedure on single vessel",
                             DiscountRate = 10,
                             Enabled = true,
@@ -9859,7 +9874,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f4f0c6f6-030e-44ca-936b-6d1fb2d3b922"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2895),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Partial ureterectomy",
                             DiscountRate = 20,
                             Enabled = true,
@@ -9871,7 +9886,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("56f68871-d930-4ae6-ace5-15ccafd25d4d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2898),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Manual reduction of rectal prolapse",
                             DiscountRate = 26,
                             Enabled = true,
@@ -9883,7 +9898,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("245ea1b8-3b9e-4984-8e46-7ae9e6037dae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2901),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on facial bones and joints",
                             DiscountRate = 30,
                             Enabled = true,
@@ -9895,7 +9910,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("340cf8a0-a74f-4e2d-a5c8-56c0425cb317"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2904),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ligation of hemorrhoids",
                             DiscountRate = 19,
                             Enabled = true,
@@ -9907,7 +9922,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ee4489a8-ef13-47b2-aa0a-4d4d367215bb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2906),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other radiotherapeutic procedure",
                             DiscountRate = 13,
                             Enabled = true,
@@ -9919,7 +9934,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2e179cfa-7570-4684-b810-e5054f287b1d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2909),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other scleral reinforcement",
                             DiscountRate = 20,
                             Enabled = true,
@@ -9931,7 +9946,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("57a0911d-a2ec-4060-84b8-d86993d1b504"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2911),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dilation of anal sphincter",
                             DiscountRate = 7,
                             Enabled = true,
@@ -9943,7 +9958,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8a517609-4ea8-40a2-9967-d324bf4c6414"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2953),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Lysis of pharyngeal adhesions",
                             DiscountRate = 15,
                             Enabled = true,
@@ -9955,7 +9970,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d9bcfc9b-3f99-493a-bd6f-fc31968fd341"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2956),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arthroscopy, knee",
                             DiscountRate = 13,
                             Enabled = true,
@@ -9967,7 +9982,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d1dd73be-4451-4b46-b298-bbecfbf3d6d6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2959),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other antesternal esophageal anastomosis with interposition",
                             DiscountRate = 21,
                             Enabled = true,
@@ -9979,7 +9994,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fa2c1054-46c3-46b5-bd13-77e224246ee7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2961),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of knee replacement, tibial component",
                             DiscountRate = 5,
                             Enabled = true,
@@ -9991,7 +10006,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6635a271-757c-40cd-9516-01fce5288907"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2965),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion of other soft tissue",
                             DiscountRate = 5,
                             Enabled = true,
@@ -10003,7 +10018,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("df0ab974-23f3-43da-a39c-96d94d4d3760"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2967),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of laceration involving lid margin, partial-thickness",
                             DiscountRate = 8,
                             Enabled = true,
@@ -10015,7 +10030,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("876f1699-90f9-424f-a2cc-547dd131f7ca"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2971),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Thoracoscopic robotic assisted procedure",
                             DiscountRate = 17,
                             Enabled = true,
@@ -10027,7 +10042,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ef3596de-fc44-4eb0-b873-881bd4ce7206"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2973),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, culture and sensitivity",
                             DiscountRate = 2,
                             Enabled = true,
@@ -10039,7 +10054,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2dab82f3-fb9e-4c81-a39f-cc0f874e0a86"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2976),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of (cement) spacer",
                             DiscountRate = 12,
                             Enabled = true,
@@ -10051,7 +10066,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("41fc2429-c98b-4733-9517-e3244c7b120b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2979),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed reduction of fracture without internal fixation, phalanges of hand",
                             DiscountRate = 25,
                             Enabled = true,
@@ -10063,7 +10078,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6e1a6089-9343-46ab-9b93-ae7d0fccc752"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2982),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of blepharoptosis by frontalis muscle technique with fascial sling",
                             DiscountRate = 22,
                             Enabled = true,
@@ -10075,7 +10090,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("427c7fc7-adc9-4f93-83cf-dc9684bf84e1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2985),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of intracranial neurostimulator lead(s)",
                             DiscountRate = 0,
                             Enabled = true,
@@ -10087,7 +10102,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("90f6ba30-3864-4819-a0ba-82fc516d430e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2988),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bilateral repair of inguinal hernia, not otherwise specified",
                             DiscountRate = 21,
                             Enabled = true,
@@ -10099,7 +10114,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("11cb8d8c-26e2-4da1-a3b9-7b6fe9dcd24b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2990),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sialoadenectomy, not otherwise specified",
                             DiscountRate = 17,
                             Enabled = true,
@@ -10111,7 +10126,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("048aec57-4c8a-4a6b-8efa-10692a745c12"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2992),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sequestrectomy of facial bone",
                             DiscountRate = 26,
                             Enabled = true,
@@ -10123,7 +10138,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ce51b0e2-3953-49b5-959e-8428b6569bf3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2995),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Recession of one extraocular muscle",
                             DiscountRate = 21,
                             Enabled = true,
@@ -10135,7 +10150,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("aa619ef1-8190-4261-a550-63efc9ddb148"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(2997),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transabdominal proctosigmoidoscopy",
                             DiscountRate = 6,
                             Enabled = true,
@@ -10147,7 +10162,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1f49dcea-8d80-4a4b-b119-04e2d2e5a25b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3039),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Rehabilitation, not elsewhere classified",
                             DiscountRate = 9,
                             Enabled = true,
@@ -10159,7 +10174,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("21d28bac-e8a2-4dfe-ad92-b8cda509f6f6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3043),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Application of splint",
                             DiscountRate = 28,
                             Enabled = true,
@@ -10171,7 +10186,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("19790bd1-cbee-4544-9bbb-f1834d8f55db"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3046),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other fusion of foot",
                             DiscountRate = 27,
                             Enabled = true,
@@ -10183,7 +10198,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("db4b3c93-3f65-4a80-8cce-cd76e39a43f3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3048),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on small intestine",
                             DiscountRate = 10,
                             Enabled = true,
@@ -10195,7 +10210,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("eafe65c0-2f6c-4c0c-9c19-65e14ba8c55f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3051),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion or tissue of diaphragm",
                             DiscountRate = 20,
                             Enabled = true,
@@ -10207,7 +10222,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("524d9006-0a89-4fb9-a799-c1560d7c3b28"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3054),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of (naso-)gastric or esophagostomy tube",
                             DiscountRate = 14,
                             Enabled = true,
@@ -10219,7 +10234,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("46de4ea6-c366-4b39-8864-f0640e13abe1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3057),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed [aspiration] [percutaneous] biopsy of spleen",
                             DiscountRate = 29,
                             Enabled = true,
@@ -10231,7 +10246,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f9cf9fbc-260b-4493-bb23-2e1555d198bd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3060),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Limb lengthening procedures, radius and ulna",
                             DiscountRate = 23,
                             Enabled = true,
@@ -10243,7 +10258,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f046c8f6-b990-4e4f-a50e-6c7350e4c3b2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3063),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Electrocochleography",
                             DiscountRate = 7,
                             Enabled = true,
@@ -10255,7 +10270,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("076bb637-5a3e-4f08-bfeb-4ff9fd9f587e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3066),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Supersaturated oxygen therapy",
                             DiscountRate = 1,
                             Enabled = true,
@@ -10267,7 +10282,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8887063f-1d3d-4aea-a4a0-e8a263353685"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3068),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic repair of indirect inguinal hernia with graft or prosthesis",
                             DiscountRate = 14,
                             Enabled = true,
@@ -10279,7 +10294,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("935a202e-eeb6-49cf-86a2-99c18aed1b5c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3070),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Reattachment of muscle",
                             DiscountRate = 19,
                             Enabled = true,
@@ -10291,7 +10306,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a01be4e5-59ab-475b-9e9a-ae2e8c673aa0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3073),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on valves of heart",
                             DiscountRate = 20,
                             Enabled = true,
@@ -10303,7 +10318,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f7747260-b91f-40b9-a70b-ef7d234d320a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3075),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection of hemorrhoids",
                             DiscountRate = 9,
                             Enabled = true,
@@ -10315,7 +10330,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5f3fd848-a56a-4655-aedc-6b1f282f86cf"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3078),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Canthotomy",
                             DiscountRate = 0,
                             Enabled = true,
@@ -10327,7 +10342,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ae3e4851-631b-4f8e-b990-545a3cb40c34"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3081),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Exploration of pineal field",
                             DiscountRate = 28,
                             Enabled = true,
@@ -10339,7 +10354,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("51ee1cf6-f72b-4151-9261-e37fdb90816f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3083),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Thoracoscopic incision of thymus",
                             DiscountRate = 25,
                             Enabled = true,
@@ -10351,7 +10366,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b5644275-0d2b-49bc-8ba8-79b1af802e75"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3151),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed [transurethral] biopsy of bladder",
                             DiscountRate = 28,
                             Enabled = true,
@@ -10363,7 +10378,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b8dc1de8-7325-4987-a864-cb38414ad066"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3156),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Wedge osteotomy, radius and ulna",
                             DiscountRate = 22,
                             Enabled = true,
@@ -10375,7 +10390,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ce54bcf4-1244-4227-b429-840b9118b493"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3159),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, toxicology",
                             DiscountRate = 26,
                             Enabled = true,
@@ -10387,7 +10402,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4584e878-c766-4946-99ae-6c60c1d5f334"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3162),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Resection of vessel with anastomosis, aorta",
                             DiscountRate = 15,
                             Enabled = true,
@@ -10399,7 +10414,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bd246710-f2e6-4ad1-8332-c7f136d74966"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3164),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Percutaneous chordotomy",
                             DiscountRate = 19,
                             Enabled = true,
@@ -10411,7 +10426,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("31c8fb68-866e-4fd6-ad95-3ab3b90a4572"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3167),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed [endoscopic] biopsy of rectum",
                             DiscountRate = 20,
                             Enabled = true,
@@ -10423,7 +10438,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d5f0aaf7-0aa3-4bb4-824e-c0295edb6c0c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3170),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other change in muscle or tendon length",
                             DiscountRate = 17,
                             Enabled = true,
@@ -10435,7 +10450,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("93f1aec9-62ae-4f28-bdbe-841234bd47a2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3173),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from endocrine gland, not elsewhere classified, cell block and Papanicolaou smear",
                             DiscountRate = 14,
                             Enabled = true,
@@ -10447,7 +10462,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7a32b3b5-984a-4b3d-acf8-cc90e39d43f0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3175),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open biopsy of uterus",
                             DiscountRate = 5,
                             Enabled = true,
@@ -10459,7 +10474,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("093bc13c-2ce7-4152-a371-523bbcdf5bd9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3178),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of pineal gland",
                             DiscountRate = 18,
                             Enabled = true,
@@ -10471,7 +10486,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("df38dfff-f288-43fd-a57a-15daa3f2b74b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3182),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed (percutaneous) [needle] biopsy of liver",
                             DiscountRate = 10,
                             Enabled = true,
@@ -10483,7 +10498,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("41b21c31-d144-425e-9028-7794eef589d2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3185),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of mesentery",
                             DiscountRate = 28,
                             Enabled = true,
@@ -10495,7 +10510,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b3100018-2645-4ecf-a507-e2eebee712d0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3187),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intestinal biopsy, site unspecified",
                             DiscountRate = 14,
                             Enabled = true,
@@ -10507,7 +10522,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("57762ba8-8558-44ea-820e-501650fba948"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3189),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of lesion of lacrimal gland",
                             DiscountRate = 18,
                             Enabled = true,
@@ -10519,7 +10534,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c23bac34-2e72-4a64-9504-f5660ee42bc1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3192),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion or replacement of skull tongs or halo traction device",
                             DiscountRate = 26,
                             Enabled = true,
@@ -10531,7 +10546,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f3f8957c-e57a-4fcf-b019-19c1e2f7a4bd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3194),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Hysterotomy to terminate pregnancy",
                             DiscountRate = 11,
                             Enabled = true,
@@ -10543,7 +10558,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("48e243d0-3e73-4562-a984-90792b98b160"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3197),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Exploration of tendon sheath of hand",
                             DiscountRate = 5,
                             Enabled = true,
@@ -10555,7 +10570,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("be2b305d-474c-4dd4-b1e0-2a6413e79ed3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3241),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Skeletal x-ray of ankle and foot",
                             DiscountRate = 8,
                             Enabled = true,
@@ -10567,7 +10582,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9faaa4a8-a964-476d-9bf5-6a6a572e72b5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3244),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bilateral repair of inguinal hernia, not otherwise specified",
                             DiscountRate = 2,
                             Enabled = true,
@@ -10579,7 +10594,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("07d9b59c-5933-4890-b2dd-72cfb808a10a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3247),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on orbit and eyeball",
                             DiscountRate = 21,
                             Enabled = true,
@@ -10591,7 +10606,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("63db219c-ba0d-42db-bd13-116dcfee96a6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3250),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other irrigation of wound",
                             DiscountRate = 2,
                             Enabled = true,
@@ -10603,7 +10618,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a878a08f-7432-4ad1-a511-f9c7def2b8da"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3252),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Hyperthermia for treatment of cancer",
                             DiscountRate = 29,
                             Enabled = true,
@@ -10615,7 +10630,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8087a090-515e-4987-9b84-f9544ef31329"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3255),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on biliary tract",
                             DiscountRate = 29,
                             Enabled = true,
@@ -10627,7 +10642,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("91fc05c5-9f3b-4e80-80d8-947bbe3dff62"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3257),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Suture of muscle or fascia of hand",
                             DiscountRate = 8,
                             Enabled = true,
@@ -10639,7 +10654,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("77868af2-fd76-4439-9970-0f5eb87c8a11"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3260),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on anus",
                             DiscountRate = 28,
                             Enabled = true,
@@ -10651,7 +10666,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("51055135-5a99-4584-b9dc-cb7a4f34e398"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3263),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Midtarsal fusion",
                             DiscountRate = 19,
                             Enabled = true,
@@ -10663,7 +10678,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5a22fad9-222a-4b66-9f82-b91cb1c20eae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3265),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of middle ear",
                             DiscountRate = 10,
                             Enabled = true,
@@ -10675,7 +10690,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5f95eba6-2bb2-4923-9aae-dcea38a13336"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3268),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Transureteroureterostomy",
                             DiscountRate = 12,
                             Enabled = true,
@@ -10687,7 +10702,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7fa76ba9-e6bd-490b-8ec6-d45b3909eaee"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3270),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bilateral repair of inguinal hernia, not otherwise specified",
                             DiscountRate = 24,
                             Enabled = true,
@@ -10699,7 +10714,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9a5516d1-b062-4eab-a393-973fc4d0a5f6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3273),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other destruction of intervertebral disc",
                             DiscountRate = 18,
                             Enabled = true,
@@ -10711,7 +10726,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d3086f1d-ea70-4eae-9d47-154ad9a5dfe1"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3275),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of choledochohepatic tube for decompression",
                             DiscountRate = 15,
                             Enabled = true,
@@ -10723,7 +10738,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("328a04a0-0732-4945-b358-6e6d17378bd0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3277),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fitting of denture",
                             DiscountRate = 8,
                             Enabled = true,
@@ -10735,7 +10750,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("db89ff70-cd6c-48b8-a627-1bbfb4376f40"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3280),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other partial dacryoadenectomy",
                             DiscountRate = 19,
                             Enabled = true,
@@ -10747,7 +10762,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("27b7b295-5f64-4b1c-9008-70a713470b2d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3285),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from female genital tract, cell block and Papanicolaou smear",
                             DiscountRate = 11,
                             Enabled = true,
@@ -10759,7 +10774,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("62a3daff-d541-4bfd-8517-872c2e796ee2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3327),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Supersaturated oxygen therapy",
                             DiscountRate = 3,
                             Enabled = true,
@@ -10771,7 +10786,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4ddb3727-847d-4934-9d96-d4ca8f155e8e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3330),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Limb lengthening procedures, tarsals and metatarsals",
                             DiscountRate = 25,
                             Enabled = true,
@@ -10783,7 +10798,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9674b2fc-2b23-4654-888d-c22e11fb18a9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3333),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Isolation",
                             DiscountRate = 20,
                             Enabled = true,
@@ -10795,7 +10810,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3f2ba015-299a-4329-9853-c24aea7aea0c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3337),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Vaginal packing",
                             DiscountRate = 30,
                             Enabled = true,
@@ -10807,7 +10822,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fc77614f-7fb8-4452-aae3-dd738fe637d3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3340),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Extraperitoneal cesarean section",
                             DiscountRate = 10,
                             Enabled = true,
@@ -10819,7 +10834,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1625166e-5f56-4407-a580-390ee5045b49"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3343),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sequestrectomy, radius and ulna",
                             DiscountRate = 28,
                             Enabled = true,
@@ -10831,7 +10846,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ff726f5b-5d4f-4f0f-996e-5915c76e7be0"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3346),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection of air into peritoneal cavity",
                             DiscountRate = 0,
                             Enabled = true,
@@ -10843,7 +10858,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b0aa293f-e267-44cc-8583-8c2be520afce"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3349),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of retinal tear",
                             DiscountRate = 16,
                             Enabled = true,
@@ -10855,7 +10870,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0b172546-05e2-4715-be78-5e57484928dd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3352),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Alcohol detoxification",
                             DiscountRate = 3,
                             Enabled = true,
@@ -10867,7 +10882,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("56328e44-88f5-4504-a041-6b5d4cc17226"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3354),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision or destruction of intervertebral disc, unspecified",
                             DiscountRate = 16,
                             Enabled = true,
@@ -10879,7 +10894,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2cd9747b-8325-45da-92b6-c01dc43c8675"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3357),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on anus and perianal tissue",
                             DiscountRate = 25,
                             Enabled = true,
@@ -10891,7 +10906,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("26825586-4f93-4699-bdc9-b5fa1ad765c6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3361),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Complete parathyroidectomy",
                             DiscountRate = 2,
                             Enabled = true,
@@ -10903,7 +10918,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("17145a35-071e-4c71-98d1-b94f577a07a8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3364),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation of prosthetic device of leg",
                             DiscountRate = 9,
                             Enabled = true,
@@ -10915,7 +10930,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bcce2f80-f21b-413a-876e-b2b6af170563"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3367),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on rectum and perirectal tissue",
                             DiscountRate = 29,
                             Enabled = true,
@@ -10927,7 +10942,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8941d78d-a48d-4448-bc13-e81626e36a57"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3369),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on vessels of heart",
                             DiscountRate = 9,
                             Enabled = true,
@@ -10939,7 +10954,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bb230ad9-002b-47b6-96a5-926fb203ce0c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3371),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other hand muscle transposition",
                             DiscountRate = 27,
                             Enabled = true,
@@ -10951,7 +10966,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("137ab7a3-7cef-45e0-bf8a-14bd9eecef68"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3375),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Delayed suture of tendon",
                             DiscountRate = 29,
                             Enabled = true,
@@ -10963,7 +10978,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("251d69a0-7a2b-484b-bf42-e5ad09dd976d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3747),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Forceps rotation of fetal head",
                             DiscountRate = 30,
                             Enabled = true,
@@ -10975,7 +10990,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8a7465cd-3a4e-4100-b2d3-8bf3deadab87"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3757),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total gastrectomy with intestinal interposition",
                             DiscountRate = 2,
                             Enabled = true,
@@ -10987,7 +11002,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("73d1cd1c-ae2f-4359-bed6-f65915f7f471"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3760),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of cystocele and rectocele",
                             DiscountRate = 27,
                             Enabled = true,
@@ -10999,7 +11014,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e430c8fa-07ff-48e4-91a1-2d70b77e3bdb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3765),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Excision of periurethral tissue",
                             DiscountRate = 27,
                             Enabled = true,
@@ -11011,7 +11026,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9b23f35c-56a2-42b0-922a-ed06812db002"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3768),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Radical excision of axillary lymph nodes",
                             DiscountRate = 15,
                             Enabled = true,
@@ -11023,7 +11038,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d4703a9c-8551-42a8-b0ff-889e1d1b18fe"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3774),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Urethral meatoplasty",
                             DiscountRate = 9,
                             Enabled = true,
@@ -11035,7 +11050,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("baec383c-54c1-4eff-8aa5-1b552a1e5c48"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3777),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed reduction of dislocation of hand and finger",
                             DiscountRate = 5,
                             Enabled = true,
@@ -11047,7 +11062,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6b9a381f-dffa-426f-8f9b-1a054d827a1e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3779),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection or infusion of biological response modifier [BRM] as an antineoplastic agent",
                             DiscountRate = 4,
                             Enabled = true,
@@ -11059,7 +11074,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("388905c6-a90f-4e0d-8714-7efb9f64e10a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3781),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of partial spinal disc prosthesis, lumbosacral",
                             DiscountRate = 30,
                             Enabled = true,
@@ -11071,7 +11086,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b919e7f7-d946-4f3d-963a-6371714bb899"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3784),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bone marrow transplant, not otherwise specified",
                             DiscountRate = 11,
                             Enabled = true,
@@ -11083,7 +11098,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6e3da614-2674-493f-8f7f-a4094ccb8a8e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3787),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closure of bronchial fistula",
                             DiscountRate = 7,
                             Enabled = true,
@@ -11095,7 +11110,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4778523b-507a-4c94-843c-98403193c8fa"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3790),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, culture and sensitivity",
                             DiscountRate = 6,
                             Enabled = true,
@@ -11107,7 +11122,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7ba0b59f-f112-450e-8c29-a474cc474b48"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3792),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other bilateral endoscopic destruction or occlusion of fallopian tubes",
                             DiscountRate = 1,
                             Enabled = true,
@@ -11119,7 +11134,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("085c8847-af2a-44c5-b0c0-b00b5ea07e8a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3795),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Laparoscopic radical vaginal hysterectomy [LRVH]",
                             DiscountRate = 19,
                             Enabled = true,
@@ -11131,7 +11146,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("be21e542-b821-4eca-ae08-6f26d76f1000"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3797),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of joint, unspecified site",
                             DiscountRate = 28,
                             Enabled = true,
@@ -11143,7 +11158,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("e440d817-161d-47a1-b8f2-f13c22450342"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3800),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other spinal traction",
                             DiscountRate = 19,
                             Enabled = true,
@@ -11155,7 +11170,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d852b30e-5122-4959-abc7-ef81b0e89b94"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3802),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other excision of soft tissue",
                             DiscountRate = 26,
                             Enabled = true,
@@ -11167,7 +11182,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("40fef1d7-a82c-4e99-87fb-a1872c94f7a9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3851),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Heart revascularization by arterial implant",
                             DiscountRate = 27,
                             Enabled = true,
@@ -11179,7 +11194,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5ea7f7af-7673-4b2b-948f-bc759a55346f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3854),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Spinal subarachnoid-ureteral shunt",
                             DiscountRate = 8,
                             Enabled = true,
@@ -11191,7 +11206,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d0d4831b-b5fd-45ff-b577-ba106806c807"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3857),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of joint",
                             DiscountRate = 17,
                             Enabled = true,
@@ -11203,7 +11218,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("88e56318-fc45-4601-b626-2b8ca7042092"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3859),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Resection of exteriorized segment of large intestine",
                             DiscountRate = 24,
                             Enabled = true,
@@ -11215,7 +11230,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6efa8c95-a768-49b9-a98d-359aba65aa3b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3862),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sinogram of chest wall",
                             DiscountRate = 16,
                             Enabled = true,
@@ -11227,7 +11242,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1171b951-8b4c-423a-87a5-4e345991b14e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3866),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intra-abdominal manipulation of large intestine",
                             DiscountRate = 28,
                             Enabled = true,
@@ -11239,7 +11254,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("39784d63-d02c-45df-95f1-a7493c09ba30"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3869),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of diaphragm",
                             DiscountRate = 1,
                             Enabled = true,
@@ -11251,7 +11266,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5a77fab9-3f00-46b2-b8e1-e552fa31e596"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3872),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion of gastric bubble (balloon)",
                             DiscountRate = 19,
                             Enabled = true,
@@ -11263,7 +11278,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("aba5df5e-97d6-4517-a28b-5ed91f313714"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3874),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of stoma of small intestine",
                             DiscountRate = 1,
                             Enabled = true,
@@ -11275,7 +11290,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ae9d3dde-a12a-4eeb-b0f2-dc533ed5e38a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3877),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision of mastoidectomy",
                             DiscountRate = 23,
                             Enabled = true,
@@ -11287,7 +11302,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0b75edcc-d3e2-4f67-9a9a-d3252ece882e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3879),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Vaccination against rubella",
                             DiscountRate = 18,
                             Enabled = true,
@@ -11299,7 +11314,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c2230a23-6d14-4f2d-b8ce-db21efd8c566"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3881),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Repair of injury of extraocular muscle",
                             DiscountRate = 15,
                             Enabled = true,
@@ -11311,7 +11326,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("aeb3e494-a12e-4550-91c1-f984e6290ec7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3884),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Suture of laceration of salivary gland",
                             DiscountRate = 27,
                             Enabled = true,
@@ -11323,7 +11338,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d5e667da-621e-41a6-8073-292dcc919328"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3886),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dilation of esophagus",
                             DiscountRate = 4,
                             Enabled = true,
@@ -11335,7 +11350,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9f2685b5-f20f-4953-9a9b-3ed2234ff3c9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3889),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation of rechargeable cardiac contractility modulation [CCM], total system",
                             DiscountRate = 27,
                             Enabled = true,
@@ -11347,7 +11362,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d1bf0b82-f23d-4dab-a91d-ab4b915c64cd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3891),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of chest wall",
                             DiscountRate = 6,
                             Enabled = true,
@@ -11359,7 +11374,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("390dc0be-5c2a-428b-a868-320f0c9b2bae"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(3893),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair or plastic operations on bone, patella",
                             DiscountRate = 27,
                             Enabled = true,
@@ -11371,7 +11386,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9568d653-06c7-4432-bf6d-9927893b8f99"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4222),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open and other right hemicolectomy",
                             DiscountRate = 1,
                             Enabled = true,
@@ -11383,7 +11398,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4e4a08d4-edc0-46a7-956e-8886f2fa70f9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4233),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed reduction of dislocation of knee",
                             DiscountRate = 4,
                             Enabled = true,
@@ -11395,7 +11410,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2a48296b-ff03-4901-bf3e-03a6e207fb86"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4236),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fusion or refusion of 9 or more vertebrae",
                             DiscountRate = 12,
                             Enabled = true,
@@ -11407,7 +11422,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("56e47f8a-5a50-45ef-8d81-cfea14741e5d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4240),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on trachea",
                             DiscountRate = 5,
                             Enabled = true,
@@ -11419,7 +11434,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6226d3e8-47ea-4107-b06f-a0da63960090"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4242),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Radical dissection of thoracic structures",
                             DiscountRate = 3,
                             Enabled = true,
@@ -11431,7 +11446,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("202a01c6-c888-42b8-bd7e-d417e7c80581"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4245),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on breast",
                             DiscountRate = 11,
                             Enabled = true,
@@ -11443,7 +11458,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("89a22a45-5f1d-4610-ac36-d97711789889"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4247),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Injection into inner ear",
                             DiscountRate = 0,
                             Enabled = true,
@@ -11455,7 +11470,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3e6216eb-8be8-41d3-a210-3f65b1a2ff66"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4249),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of orbital implant",
                             DiscountRate = 4,
                             Enabled = true,
@@ -11467,7 +11482,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2ebcc0ad-cc4b-4ecc-9019-2d14c3567207"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4252),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closure of anal fistula",
                             DiscountRate = 12,
                             Enabled = true,
@@ -11479,7 +11494,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dbb55a16-e848-41b0-9d72-7297a0b91dab"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4256),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Alcoholism counseling",
                             DiscountRate = 3,
                             Enabled = true,
@@ -11491,7 +11506,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0a1ce5c7-3e03-41ce-bf72-53f92277a9cb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4259),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed reduction of fracture with internal fixation, tibia and fibula",
                             DiscountRate = 14,
                             Enabled = true,
@@ -11503,7 +11518,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("3c6b6e40-87ad-4126-a91e-4dc8bc2f5a7b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4261),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Uterine artery embolization [UAE] with coils",
                             DiscountRate = 21,
                             Enabled = true,
@@ -11515,7 +11530,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5e40cf1b-6089-4409-a0e6-a84e510e3896"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4264),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of seminal vesicle",
                             DiscountRate = 21,
                             Enabled = true,
@@ -11527,7 +11542,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("106e631c-d051-4c32-b0fb-998e4e2fa24c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4267),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other repair of nasal sinus",
                             DiscountRate = 28,
                             Enabled = true,
@@ -11539,7 +11554,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("aff98b56-882c-4997-9e6f-063f17801a7e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4269),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cauterization of hemorrhoids",
                             DiscountRate = 20,
                             Enabled = true,
@@ -11551,7 +11566,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c88250ff-9f7b-4478-9cc7-2413b966f865"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4271),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other pleural biopsy",
                             DiscountRate = 5,
                             Enabled = true,
@@ -11563,7 +11578,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("67c1fb63-0e61-49a2-8b4c-87beb8c3f9e9"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4274),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Administration of measles-mumps-rubella vaccine",
                             DiscountRate = 21,
                             Enabled = true,
@@ -11575,7 +11590,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b4a661cc-97ea-4261-8dd6-8b2ded826ef8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4594),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Comprehensive eye examination",
                             DiscountRate = 21,
                             Enabled = true,
@@ -11587,7 +11602,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f366e08e-ce6b-472f-a713-1974e533541c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4602),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of perianal abscess",
                             DiscountRate = 8,
                             Enabled = true,
@@ -11599,7 +11614,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("8ab4088e-14ca-422c-a87c-a92bc99b6a86"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4606),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other antesternal esophageal anastomosis with interposition",
                             DiscountRate = 21,
                             Enabled = true,
@@ -11611,7 +11626,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("23b25e22-68a5-4317-b5fb-238e861cd45e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4609),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Replacement of vaginal or vulvar packing or drain",
                             DiscountRate = 24,
                             Enabled = true,
@@ -11623,7 +11638,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d1adbc03-f325-4fc8-a412-38adc2f68ae7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4614),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of parathyroid gland",
                             DiscountRate = 6,
                             Enabled = true,
@@ -11635,7 +11650,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("07ae9609-8b2e-41f7-9f44-b316f89254f7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4616),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Sequestrectomy, patella",
                             DiscountRate = 18,
                             Enabled = true,
@@ -11647,7 +11662,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c57cb701-8165-4f8e-8965-9e0b913c7256"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4620),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Revision or replacement of epiretinal visual prosthesis",
                             DiscountRate = 7,
                             Enabled = true,
@@ -11659,7 +11674,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0e1916d0-8127-4279-b8f4-eee6564a2ac8"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4625),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Isolation",
                             DiscountRate = 27,
                             Enabled = true,
@@ -11671,7 +11686,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dfa0f918-d2c0-449f-ba1b-37c6faf02664"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4627),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Suture of cranial and peripheral nerves",
                             DiscountRate = 21,
                             Enabled = true,
@@ -11683,7 +11698,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f8514970-b010-4625-ab76-f59e41766a60"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4630),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Radical excision of axillary lymph nodes",
                             DiscountRate = 12,
                             Enabled = true,
@@ -11695,7 +11710,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bfc528fc-4ef9-42e0-930f-89592d81ab92"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4632),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Open abdominoperineal resection of the rectum",
                             DiscountRate = 12,
                             Enabled = true,
@@ -11707,7 +11722,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("1b374a39-3415-4aa5-abb9-e1f86a1a11dc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4635),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other oxygen enrichment",
                             DiscountRate = 2,
                             Enabled = true,
@@ -11719,7 +11734,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("10e31139-aa28-41c6-80be-373f4cb79993"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4638),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Diagnostic procedures on bone, not elsewhere classified, carpals and metacarpals",
                             DiscountRate = 5,
                             Enabled = true,
@@ -11731,7 +11746,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5aef90b6-32f3-415d-ac9a-ed1cbd9e0071"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4641),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other local excision or destruction of lesion of joint, hand and finger",
                             DiscountRate = 24,
                             Enabled = true,
@@ -11743,7 +11758,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c6a40310-d603-424b-a74b-2670d11ade7c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4643),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Administration of diphtheria toxoid",
                             DiscountRate = 21,
                             Enabled = true,
@@ -11755,7 +11770,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("16c7961f-cdac-4b46-a4f1-12207a82e39c"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4646),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Vaginal packing",
                             DiscountRate = 12,
                             Enabled = true,
@@ -11767,7 +11782,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("7f977275-a355-45bc-9187-d3391977c138"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4648),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Correction of fetal defect",
                             DiscountRate = 4,
                             Enabled = true,
@@ -11779,7 +11794,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("ee3819fb-32f2-4d41-bcf9-7fbe0dd30de4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4967),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Mediastinal pneumogram",
                             DiscountRate = 6,
                             Enabled = true,
@@ -11791,7 +11806,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("746f2bd2-f9dd-4456-b113-1b8079e9c4d5"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4981),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other incision of perianal tissue",
                             DiscountRate = 0,
                             Enabled = true,
@@ -11803,7 +11818,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("645ee195-e337-4454-9963-fa74c020da21"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4984),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Dental wiring",
                             DiscountRate = 4,
                             Enabled = true,
@@ -11815,7 +11830,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9ead92d1-cc06-45a7-a591-8e479cc34824"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4987),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other suprapubic cystostomy",
                             DiscountRate = 10,
                             Enabled = true,
@@ -11827,7 +11842,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4e9a5cd1-2f51-4ce4-9355-fdc52f62e6ea"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4990),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Tendon graft",
                             DiscountRate = 24,
                             Enabled = true,
@@ -11839,7 +11854,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("02d497cb-625d-4bd3-ae06-ab4dd1555698"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4992),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Incision of vessel, other vessels of head and neck",
                             DiscountRate = 16,
                             Enabled = true,
@@ -11851,7 +11866,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fcb8d105-ed65-46d9-91bb-3624d1a3260b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4995),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Allogeneic bone marrow transplant with purging",
                             DiscountRate = 24,
                             Enabled = true,
@@ -11863,7 +11878,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("f11323d6-b8dd-44fb-9e74-0f27b71dbf50"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(4997),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Application of external fixator device, humerus",
                             DiscountRate = 24,
                             Enabled = true,
@@ -11875,7 +11890,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b83e9472-2844-488b-ad03-ed487d6ebefe"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5000),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Hip bearing surface, metal-on-metal",
                             DiscountRate = 6,
                             Enabled = true,
@@ -11887,7 +11902,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("9b6cd566-53e5-420d-b248-b361cef2e157"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5002),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ligation of vas deferens",
                             DiscountRate = 14,
                             Enabled = true,
@@ -11899,7 +11914,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2c625925-ef3e-4545-87f8-609ca021061f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5005),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Common duct exploration for removal of calculus",
                             DiscountRate = 18,
                             Enabled = true,
@@ -11911,7 +11926,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c7c11827-4ccb-43ff-9387-e09190f63c33"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5008),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on parathyroid glands",
                             DiscountRate = 6,
                             Enabled = true,
@@ -11923,7 +11938,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4bcc3b90-fe46-4303-9eac-fa30aeb2be67"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5010),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total ureterectomy",
                             DiscountRate = 19,
                             Enabled = true,
@@ -11935,7 +11950,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fc486c83-1607-4fcb-9677-44492fb5fb89"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5013),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Total excision of pituitary gland, transfrontal approach",
                             DiscountRate = 0,
                             Enabled = true,
@@ -11947,7 +11962,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("944fa28d-a4fd-4fd9-9d32-1e1a349e67f3"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5016),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Alcoholism counseling",
                             DiscountRate = 5,
                             Enabled = true,
@@ -11959,7 +11974,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4e3f79b4-a5c5-46e1-8289-2cd606ee389f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5019),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closed [percutaneous] [needle] biopsy of mediastinum",
                             DiscountRate = 28,
                             Enabled = true,
@@ -11971,7 +11986,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b2dc90a0-f182-403e-850e-0c47eebb617e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5022),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Cerebral scan",
                             DiscountRate = 8,
                             Enabled = true,
@@ -11983,7 +11998,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("dcb1d809-4480-4a10-b4c3-14549b75c7ab"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5378),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Arthrotomy for removal of prosthesis without replacement, elbow",
                             DiscountRate = 15,
                             Enabled = true,
@@ -11995,7 +12010,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c04735c5-6e9c-413a-bf01-94a4e24769bd"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5387),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Endoscopic dilation of ampulla and biliary duct",
                             DiscountRate = 10,
                             Enabled = true,
@@ -12007,7 +12022,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("6bf2a200-f42b-4075-ae5b-a91b3b50a3b7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5392),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on breast",
                             DiscountRate = 11,
                             Enabled = true,
@@ -12019,7 +12034,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("bb88b1fb-c075-4d78-9e1c-84468fa10172"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5396),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Implantation or replacement of carotid sinus stimulation pulse generator only",
                             DiscountRate = 17,
                             Enabled = true,
@@ -12031,7 +12046,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b1576050-1be4-4450-abaa-0088f18156fe"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5401),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other and open repair of other hernia of anterior abdominal wall with graft or prosthesis",
                             DiscountRate = 25,
                             Enabled = true,
@@ -12043,7 +12058,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2a7cb963-b9b0-44ab-9a8a-f35b5537de87"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5405),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fitting of prosthesis above knee",
                             DiscountRate = 29,
                             Enabled = true,
@@ -12055,7 +12070,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b57ef255-f552-478c-b47a-abd979832313"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5408),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closure of branchial cleft fistula",
                             DiscountRate = 10,
                             Enabled = true,
@@ -12067,7 +12082,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("aa782566-883f-4c5d-800d-b2bcee0808fc"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5410),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Suture of laceration of chest wall",
                             DiscountRate = 14,
                             Enabled = true,
@@ -12079,7 +12094,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("01c0e09d-f897-49af-aa21-8d89edb2994f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5412),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Angiocardiography, not otherwise specified",
                             DiscountRate = 1,
                             Enabled = true,
@@ -12091,7 +12106,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0b0b3de3-9246-4349-a532-702eb6b41200"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5415),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Intravenous infusion of clofarabine",
                             DiscountRate = 15,
                             Enabled = true,
@@ -12103,7 +12118,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5c67b787-1179-49d3-9c64-21b433f7b6b7"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5417),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other anterior resection of rectum",
                             DiscountRate = 3,
                             Enabled = true,
@@ -12115,7 +12130,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("2a5d22f7-d243-4200-be42-99aa0e85b38d"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5419),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Stretching of fascia",
                             DiscountRate = 28,
                             Enabled = true,
@@ -12127,7 +12142,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c9eba354-f401-4a6c-acb5-09a7c4afe021"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5422),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other partial ostectomy, unspecified site",
                             DiscountRate = 28,
                             Enabled = true,
@@ -12139,7 +12154,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("4d7e9a4b-7a74-4770-8f7b-dfb80d513e43"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5424),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Decortication of lung",
                             DiscountRate = 9,
                             Enabled = true,
@@ -12151,7 +12166,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c6eccd96-f894-4dd8-8444-0c561897ed2e"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5426),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Video and radio-telemetered electroencephalographic monitoring",
                             DiscountRate = 7,
                             Enabled = true,
@@ -12163,7 +12178,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("994ae634-cbe3-4b63-a688-fb4836a5cff2"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5429),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Closure of intestinal stoma, not otherwise specified",
                             DiscountRate = 18,
                             Enabled = true,
@@ -12175,7 +12190,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("57a3c22d-0941-4d4b-bab6-1661be414ed6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5432),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Plastic operation on pharynx",
                             DiscountRate = 10,
                             Enabled = true,
@@ -12187,7 +12202,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("b9d68350-99d4-4e94-b7d2-d8bff1bcbac6"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5798),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Bunionectomy with soft tissue correction and osteotomy of the first metatarsal",
                             DiscountRate = 10,
                             Enabled = true,
@@ -12199,7 +12214,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("da1427a3-c1e8-49ce-a3ad-55e62c041369"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5806),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Fitting of external prosthesis of penis",
                             DiscountRate = 24,
                             Enabled = true,
@@ -12211,7 +12226,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("30b60447-1543-4f69-8b80-bc514138997f"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5809),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Insertion or replacement of external ventricular drain [EVD]",
                             DiscountRate = 19,
                             Enabled = true,
@@ -12223,7 +12238,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("0df998dc-f850-4cc1-a1a5-5cf071fb000a"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5812),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other psychiatric drug therapy",
                             DiscountRate = 10,
                             Enabled = true,
@@ -12235,7 +12250,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("34ec56aa-5f6e-48a5-8531-b0aee6f3e211"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5815),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Osteopathic manipulative treatment for general mobilization",
                             DiscountRate = 4,
                             Enabled = true,
@@ -12247,7 +12262,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("5f2979a4-ef18-4fd5-b63d-5a290305baca"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5817),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Biopsy of bone, femur",
                             DiscountRate = 3,
                             Enabled = true,
@@ -12259,7 +12274,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("c60aa8d6-7774-4c03-8750-56d792c34714"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5820),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other operations on uvula",
                             DiscountRate = 26,
                             Enabled = true,
@@ -12271,7 +12286,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("a5e2a93b-697c-4d42-80b8-5ff124c9a972"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5823),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Local excision of lesion or tissue of bone, carpals and metacarpals",
                             DiscountRate = 21,
                             Enabled = true,
@@ -12283,7 +12298,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fd3fbfb9-4365-47f5-b026-a9124a1b8aac"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5825),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Removal of other penetrating foreign body from cervix",
                             DiscountRate = 11,
                             Enabled = true,
@@ -12295,7 +12310,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("98f133e5-69c5-4e30-b37d-36020c88bcbb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5828),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Release of carpal tunnel",
                             DiscountRate = 14,
                             Enabled = true,
@@ -12307,7 +12322,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("fe7d4dc9-b078-4e89-a40e-ae2148bcbf3b"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5830),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Central venous pressure monitoring",
                             DiscountRate = 8,
                             Enabled = true,
@@ -12319,7 +12334,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d3ecdcbe-0102-493a-b2bc-c4c0832c06fb"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5833),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Other diagnostic procedures on iris, ciliary body, sclera, and anterior chamber",
                             DiscountRate = 28,
                             Enabled = true,
@@ -12331,7 +12346,7 @@ namespace MigrationsSqlServer.Migrations
                         new
                         {
                             Id = new Guid("d271c158-42fd-420b-ad0c-6f6cce6e1dd4"),
-                            DateCreated = new DateTime(2024, 1, 14, 9, 59, 19, 214, DateTimeKind.Utc).AddTicks(5835),
+                            DateCreated = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Circumcision",
                             DiscountRate = 6,
                             Enabled = true,
@@ -12641,6 +12656,25 @@ namespace MigrationsSqlServer.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("QuasarShopData.Favorite", b =>
+                {
+                    b.HasOne("QuasarShopData.Product", "Product")
+                        .WithMany("Favorites")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("QuasarShopData.Customer", "User")
+                        .WithMany("Favorites")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("QuasarShopData.Order", b =>
                 {
                     b.HasOne("QuasarShopData.Customer", "User")
@@ -12750,6 +12784,8 @@ namespace MigrationsSqlServer.Migrations
                 {
                     b.Navigation("Comments");
 
+                    b.Navigation("Favorites");
+
                     b.Navigation("OrderDetails");
 
                     b.Navigation("ProductImages");
@@ -12762,6 +12798,8 @@ namespace MigrationsSqlServer.Migrations
                     b.Navigation("Addresses");
 
                     b.Navigation("Comments");
+
+                    b.Navigation("Favorites");
 
                     b.Navigation("Orders");
 
