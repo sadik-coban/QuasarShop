@@ -76,6 +76,7 @@ public class HomeController : ControllerBase
             .AsNoTracking()
             .Include(p => p.Catalogs)
             .Include(p => p.Comments)
+            .ThenInclude(p=>p.User)
             .Include(p => p.ProductImages)
             .Include(p => p.Favorites)
             .Where(p => p.Enabled)
@@ -88,7 +89,7 @@ public class HomeController : ControllerBase
                 p.DiscountedPrice,
                 p.Description,
                 Catalogs = p.Catalogs.Where(q => q.Enabled).Select(q => new { q.Id, q.Name }),
-                Comments = p.Comments.Where(q => q.Enabled).Select(q => new { q.Id, q.Rate, q.Text, q.Date, q.UserName }),
+                Comments = p.Comments.Where(q => q.Enabled || q.UserId == UserId!.Value).OrderByDescending(p=>p.Date).Select(q => new { q.Id, q.Rate, q.Text, q.Date, q.UserName }),
                 ProductImages = p.ProductImages.Select(q => new { q.Id, q.Image }),
                 //Image = imageUrl,
                 p.Image,
@@ -146,11 +147,20 @@ public class HomeController : ControllerBase
         return RedirectToAction(nameof(Checkout));
     }
 
+    [Authorize]
+    [HttpPost]
+    public async Task<IActionResult> AddComment(CommentViewModel model)
+    {
+        await productsService.AddComment(model.ProductId, UserId!.Value, model.Text, model.Rating);
+        return RedirectToAction(nameof(Product), new { id = model.ProductId });
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
 
 }

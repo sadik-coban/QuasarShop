@@ -40,7 +40,7 @@ public interface IProductsService
     Task ClearFavorites(Guid userId);
 
     Task<int> GetShoppingCartCount(Guid userId);
-    
+
     Task<List<ShoppingCartItem>> GetShoppingCart(Guid userId);
 
     Task AddToShoppingCart(Guid productId, Guid userId, int quantity);
@@ -49,7 +49,7 @@ public interface IProductsService
 
     byte[]? GetProductImageBytes(Guid id);
 
-
+    Task AddComment(Guid productId, Guid userId, string text, int rate);
 }
 
 
@@ -239,8 +239,8 @@ public class ProductsService : IProductsService
         return await context
             .ShoppingCartItems
             .AsNoTracking()
-            .Include(p=>p.Product)
-            .Where(p=>p.UserId == userId)   
+            .Include(p => p.Product)
+            .Where(p => p.UserId == userId)
             .ToListAsync();
     }
 
@@ -251,6 +251,24 @@ public class ProductsService : IProductsService
 
     public async Task ClearShoppingCart(Guid userId)
     {
-        await context.ShoppingCartItems.Where(p=>p.UserId == userId).ExecuteDeleteAsync();  
+        await context.ShoppingCartItems.Where(p => p.UserId == userId).ExecuteDeleteAsync();
+    }
+
+    public async Task AddComment(Guid productId, Guid userId, string text, int rate)
+    {
+        var comment = new Comment
+        {
+            Date = DateTime.UtcNow,
+            DateCreated = DateTime.UtcNow,
+            Enabled = false,
+            ProductId = productId,
+            UserId = userId,
+            Text = text,
+            Rate = rate
+        };
+
+        context.Comments.Add(comment);
+        await context.SaveChangesAsync();
+
     }
 }

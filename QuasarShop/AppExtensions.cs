@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Protocols.WsTrust;
 using QuasarShopData;
@@ -54,7 +55,7 @@ public static class AppExtensions
 
         userManager.CreateAsync(user, configuration.GetValue<string>("Security:DefaultUser:Password")).Wait(); ;
         userManager.AddToRoleAsync(user, "Administrators").Wait();
-        var claimResult =  userManager.AddClaimAsync(user, new Claim(ClaimTypes.GivenName, configuration.GetValue<string>("Security:DefaultUser:Name"))).Result;
+        var claimResult = userManager.AddClaimAsync(user, new Claim(ClaimTypes.GivenName, configuration.GetValue<string>("Security:DefaultUser:Name"))).Result;
 
 
         return builder;
@@ -64,6 +65,18 @@ public static class AppExtensions
     //{
     //    return new PagedList<T> { AbsolutePage = page, PageSize = pageSize, Items = list.Skip((page - 1) * pageSize).Take(pageSize) };
     //}
+
+    public static string ToCreatedTimeString(this DateTime date)
+    {
+        var delta = DateTime.UtcNow.Subtract(date);
+        if (delta.TotalMinutes < 1)
+            return "şimdi";
+        if (delta.TotalMinutes > 1 && delta.TotalMinutes < 60)
+            return "biraz önce";
+
+        return $"{date.ToLocalTime().ToShortDateString()} - {date.ToLocalTime().ToShortTimeString()}";
+    }
+
 }
 
 //public class PagedList<T>

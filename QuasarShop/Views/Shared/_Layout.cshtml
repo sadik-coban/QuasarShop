@@ -49,20 +49,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        $(() => {
-            $('.rating-wrapper i').on('mouseenter', (evt) => {
-                let elm = $(evt.target);
-                let index = $(elm).attr('data-index');
-                $('.rating-wrapper i').removeClass('bi-star');
-                for (var i = 0; i < 5; i++) {
 
-                    $(`.rating-wrapper i[data-index=${i}]`).addClass(i <= index ? 'bi-star-fill' : 'bi-star')
-                }
-            });
-
-        });
-    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
