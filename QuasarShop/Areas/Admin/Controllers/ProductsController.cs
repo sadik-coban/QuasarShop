@@ -116,7 +116,7 @@ public class ProductsController : ControllerBase
         item.DiscountRate = int.Parse(model.DiscountRate);
         if (image is not null)
             item.Image = image;
-        
+
         TempData["success"] = $"{entityName} güncelleme işlemi başarıyla tamamlanmıştır!";
 
         await productsService.Update(item, model.Catalogs, images, model.ImagesToDelete);
@@ -129,5 +129,20 @@ public class ProductsController : ControllerBase
         TempData["success"] = $"{entityName} silme işlemi başarıyla tamamlanmıştır!";
         return RedirectToAction(nameof(Index));
     }
+
+
+    public async Task<IActionResult> EnableComment(Guid id)
+    {
+        await productsService.EnableComment(id);
+        return RedirectToAction("Index", "Dashboard");
+    }
+
+    public async Task<IActionResult> RemoveComment(Guid id)
+    {
+        await productsService.RemoveComment(id);
+        return RedirectToAction("Index", "Dashboard");
+    }
+
+
 
 }

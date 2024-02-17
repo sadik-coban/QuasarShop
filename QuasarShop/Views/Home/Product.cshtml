@@ -1,5 +1,8 @@
 ﻿@{
     ViewData["Title"] = Model.Name;
+
+    var creditCards = CreditCard.CreateCards();
+
 }
 
 <div class="row">
@@ -110,7 +113,69 @@
             }
         </div>
     </div>
-    <div class="tab-pane fade" id="installments-tab-pane" role="tabpanel" aria-labelledby="installments-tab" tabindex="0">3</div>
+    <div class="tab-pane fade" id="installments-tab-pane" role="tabpanel" aria-labelledby="installments-tab" tabindex="0">
+        <div class="row row-cols-1 row-cols-md-4">
+            @foreach (var cc in creditCards)
+            {
+                <div class="col p-1">
+                    <table class="table table-bordered table-sm">
+                        <thead>
+                            <tr>
+                                <th class="bg-light text-center" colspan="3">
+                                    @cc.Name
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Taksit</th>
+                                <th>Taksit Tutarı</th>
+                                <th>Toplam Tutar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < 11; i++)
+                            {
+                                foreach (var installment in cc.Installments)
+                                {
+                                    if (installment.Number == i + 2)
+                                    {
+                                        <tr>
+                                            <td>@(i+2)</td>
+                                            <td class="text-center fw-bold">
+                                                @if (installment.Number == (i + 2))
+                                                {
+                                                    <span>@installment.Amount(Model.DiscountedPrice).ToString("n2")</span>
+                                                }
+
+                                            </td>
+                                            <td class="text-center">
+                                                @if (installment.Number == (i + 2))
+                                                {
+                                                    <span>@installment.Total(Model.DiscountedPrice).ToString("n2")</span>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+
+                                }
+                                if (!cc.Installments.Any(p => p.Number == i + 2))
+                                {
+                                    <tr>
+                                        <td>@(i+2)</td>
+                                        <td class="text-center">
+                                            -
+                                        </td>
+                                        <td class="text-center">
+                                            -
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
 </div>
 
 @section Scripts {

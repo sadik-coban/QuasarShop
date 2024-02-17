@@ -50,6 +50,12 @@ public interface IProductsService
     byte[]? GetProductImageBytes(Guid id);
 
     Task AddComment(Guid productId, Guid userId, string text, int rate);
+
+    Task<List<GetCommentsViewModel>> GetAllNewCommentsAsync();
+    Task<List<GetCommentsViewModel>> GetAllCommentsAsync();
+    Task EnableComment(Guid id);
+    Task RemoveComment(Guid id);
+
 }
 
 
@@ -269,6 +275,58 @@ public class ProductsService : IProductsService
 
         context.Comments.Add(comment);
         await context.SaveChangesAsync();
+
+    }
+    public async Task<List<GetCommentsViewModel>> GetAllNewCommentsAsync()
+    {
+        return await context
+            .Comments
+            .Include(p => p.User)
+            .Include(p => p.Product)
+            .OrderBy(p => p.DateCreated)
+            .Where(p=>!p.Enabled)
+            .Select(p => new GetCommentsViewModel
+            {
+                Id = p.Id,
+                Text = p.Text,
+                Rating = p.Rate,
+                Enabled = p.Enabled,
+                Created = p.DateCreated,
+                UserId = p.UserId,
+                UserName = p.User!.Name,
+                ProductId = p.ProductId,
+                ProductName = p.Product!.Name
+            }).ToListAsync();
+    }
+    public async Task<List<GetCommentsViewModel>> GetAllCommentsAsync()
+    {
+        return await context
+            .Comments
+            .Include(p => p.User)
+            .Include(p => p.Product)
+            .OrderBy(p => p.DateCreated)
+            .Select(p => new GetCommentsViewModel
+            {
+                Id = p.Id,
+                Text = p.Text,
+                Rating = p.Rate,
+                Enabled = p.Enabled,
+                Created = p.DateCreated,
+                UserId = p.UserId,
+                UserName = p.User!.Name,
+                ProductId = p.ProductId,
+                ProductName = p.Product!.Name
+            }).ToListAsync();
+    }
+
+    public async Task EnableComment(Guid id)
+    {
+        await context.Comments.Where(p=>p.Id == id).ExecuteUpdateAsync(p=>p.SetProperty(q=>q.Enabled,true));
+    }
+
+    public async Task RemoveComment(Guid id)
+    {
+        await context.Comments.Where(p => p.Id == id).ExecuteDeleteAsync();
 
     }
 }

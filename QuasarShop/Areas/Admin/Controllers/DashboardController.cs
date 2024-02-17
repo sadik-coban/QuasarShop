@@ -9,14 +9,17 @@ namespace QuasarShop.Areas.Admin.Controllers
     public class DashboardController : Controller
     {
         private readonly AppDbContext context;
+        private readonly IProductsService productsService;
 
         public DashboardController(
-            AppDbContext context
+            AppDbContext context,
+            IProductsService productsService
             )
         {
             this.context = context;
+            this.productsService = productsService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var month = DateTime.Today.AddMonths(-1);
             var year = DateTime.Today.AddYears(-1);
@@ -41,6 +44,7 @@ namespace QuasarShop.Areas.Admin.Controllers
                 .Comments
                 .Count(p => !p.Enabled);
 
+            ViewBag.NewComments = await productsService.GetAllNewCommentsAsync();
 
             return View();
         }
