@@ -43,7 +43,6 @@ namespace QuasarShop.Controllers
             return View();
         }
 
-
         public IActionResult Login()
         {
             return View(new LoginViewModel { RememberMe = true });
@@ -107,7 +106,7 @@ namespace QuasarShop.Controllers
                 DateOfBirth = model.DateOfBirth
             };
 
-            var result = await userManager.CreateAsync(user,model.Password);
+            var result = await userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
                 var claims = new[]
@@ -197,6 +196,13 @@ namespace QuasarShop.Controllers
         {
             await productsService.AddToFavorites(id, UserId!.Value);
             return Redirect($"{(returnUrl ?? "/")}#{id}");
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Orders()
+        {
+            var result = await productsService.GetOrders(UserId!.Value);
+            return View(result);
         }
     }
 }

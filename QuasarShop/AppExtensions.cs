@@ -3,6 +3,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Protocols.WsTrust;
 using QuasarShopData;
+using Stripe;
 using System.Globalization;
 using System.Security.Claims;
 
@@ -57,7 +58,7 @@ public static class AppExtensions
         userManager.AddToRoleAsync(user, "Administrators").Wait();
         var claimResult = userManager.AddClaimAsync(user, new Claim(ClaimTypes.GivenName, configuration.GetValue<string>("Security:DefaultUser:Name"))).Result;
 
-
+        StripeConfiguration.ApiKey = configuration.GetValue<string>("Security:StripeKey");
         return builder;
     }
 

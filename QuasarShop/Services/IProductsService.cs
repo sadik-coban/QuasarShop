@@ -56,6 +56,10 @@ public interface IProductsService
     Task EnableComment(Guid id);
     Task RemoveComment(Guid id);
 
+    Task<PaymentResult> Payment(Guid UserId);
+
+    Task<List<Order>> GetOrders(Guid userId);
+
 }
 
 
@@ -284,7 +288,7 @@ public class ProductsService : IProductsService
             .Include(p => p.User)
             .Include(p => p.Product)
             .OrderBy(p => p.DateCreated)
-            .Where(p=>!p.Enabled)
+            .Where(p => !p.Enabled)
             .Select(p => new GetCommentsViewModel
             {
                 Id = p.Id,
@@ -321,12 +325,51 @@ public class ProductsService : IProductsService
 
     public async Task EnableComment(Guid id)
     {
-        await context.Comments.Where(p=>p.Id == id).ExecuteUpdateAsync(p=>p.SetProperty(q=>q.Enabled,true));
+        await context.Comments.Where(p => p.Id == id).ExecuteUpdateAsync(p => p.SetProperty(q => q.Enabled, true));
     }
 
     public async Task RemoveComment(Guid id)
     {
         await context.Comments.Where(p => p.Id == id).ExecuteDeleteAsync();
 
+    }
+
+    public async Task<PaymentResult> Payment(Guid userId)
+    {
+        if (1 != 1)
+        {
+            return new PaymentResult { Succeeded = false, Error = "bla bla..." };
+        }
+
+        var items = await GetShoppingCart(userId);
+        var order = new Order
+        {
+            Date = DateTime.UtcNow,
+            UserId = userId,
+            OrderDetails = items.Select(p => new OrderDetail
+            {
+                Price = p.Product!.DiscountedPrice,
+                Quantity = p.Quantity,
+                ProductId = p.ProductId,
+                DiscountRate = p.Product.DiscountRate
+            }).ToList()
+        };
+        context.Orders.Add(order);
+        await context.SaveChangesAsync();
+
+        await ClearShoppingCart(userId);
+
+        return new PaymentResult { Succeeded = true };
+    }
+
+    public async Task<List<Order>> GetOrders(Guid userId)
+    {
+        return await context
+             .Orders
+             .AsNoTracking()
+             .Include(p => p.OrderDetails)
+             .ThenInclude(p => p.Product)
+             .Where(p => p.UserId == userId)
+             .ToListAsync();
     }
 }
