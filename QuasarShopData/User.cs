@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using QuasarShopData;
+using Microsoft.Extensions.Configuration;
 
 namespace QuasarShopData;
 

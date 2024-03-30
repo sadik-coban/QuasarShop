@@ -12,8 +12,8 @@ using QuasarShopData;
 namespace MigrationsSqlServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240106083201_Init")]
-    partial class Init
+    [Migration("20240330130342_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,9 +21,6 @@ namespace MigrationsSqlServer.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.14")
-                .HasAnnotation("Proxies:ChangeTracking", false)
-                .HasAnnotation("Proxies:CheckEquality", false)
-                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -248,6 +245,21 @@ namespace MigrationsSqlServer.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("QuasarShopData.Favorite", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Favorites");
+                });
+
             modelBuilder.Entity("QuasarShopData.Order", b =>
                 {
                     b.Property<Guid>("Id")
@@ -259,6 +271,9 @@ namespace MigrationsSqlServer.Migrations
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("smalldatetime");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -364,7 +379,7 @@ namespace MigrationsSqlServer.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImage");
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("QuasarShopData.Role", b =>
@@ -645,6 +660,25 @@ namespace MigrationsSqlServer.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("QuasarShopData.Favorite", b =>
+                {
+                    b.HasOne("QuasarShopData.Product", "Product")
+                        .WithMany("Favorites")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("QuasarShopData.Customer", "User")
+                        .WithMany("Favorites")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("QuasarShopData.Order", b =>
                 {
                     b.HasOne("QuasarShopData.Customer", "User")
@@ -754,6 +788,8 @@ namespace MigrationsSqlServer.Migrations
                 {
                     b.Navigation("Comments");
 
+                    b.Navigation("Favorites");
+
                     b.Navigation("OrderDetails");
 
                     b.Navigation("ProductImages");
@@ -766,6 +802,8 @@ namespace MigrationsSqlServer.Migrations
                     b.Navigation("Addresses");
 
                     b.Navigation("Comments");
+
+                    b.Navigation("Favorites");
 
                     b.Navigation("Orders");
 

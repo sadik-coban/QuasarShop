@@ -3,6 +3,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Protocols.WsTrust;
 using QuasarShopData;
+using QuasarShopData.Infrastructure;
 using Stripe;
 using System.Globalization;
 using System.Security.Claims;
@@ -48,17 +49,24 @@ public static class AppExtensions
 
         var user = new Manager
         {
+            Id = Guid.Parse("5b43a7a4-9933-491c-d299-08dc0e91fa27"),
             UserName = configuration.GetValue<string>("Security:DefaultUser:UserName"),
             Email = configuration.GetValue<string>("Security:DefaultUser:UserName"),
             Name = configuration.GetValue<string>("Security:DefaultUser:Name"),
             EmailConfirmed = true
         };
-
-        userManager.CreateAsync(user, configuration.GetValue<string>("Security:DefaultUser:Password")).Wait(); ;
+        //var user = userManager.FindByEmailAsync("manager@qs.com").Result;
+        userManager.CreateAsync(user, configuration.GetValue<string>("Security:DefaultUser:Password")).Wait();
         userManager.AddToRoleAsync(user, "Administrators").Wait();
         var claimResult = userManager.AddClaimAsync(user, new Claim(ClaimTypes.GivenName, configuration.GetValue<string>("Security:DefaultUser:Name"))).Result;
 
         StripeConfiguration.ApiKey = configuration.GetValue<string>("Security:StripeKey");
+
+        ProductData productData = new ProductData();
+
+        context.Products.AddRange(productData.Products);
+        context.SaveChanges();
+
         return builder;
     }
 
