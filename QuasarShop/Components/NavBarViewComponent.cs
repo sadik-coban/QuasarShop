@@ -24,9 +24,7 @@ namespace QuasarShop.Components
             var userId = Guid.Parse(UserClaimsPrincipal.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? Guid.Empty.ToString());
             return View(new NavbarViewModel
             {
-                Catalogs = await catalogsService.GetAll().Where(p => p.Enabled).ToListAsync(),
-                FavoriteCount = User.Identity.IsAuthenticated ? await productsService.GetFavoriteCount(userId) : 0,
-                ShoppingCartItemCount = User.Identity.IsAuthenticated ? await productsService.GetShoppingCartCount(userId) : 0
+                Catalogs = await catalogsService.GetAll().Where(p => p.Enabled).ToListAsync()
             });
         }
     }

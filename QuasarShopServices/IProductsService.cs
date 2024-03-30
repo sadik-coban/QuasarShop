@@ -47,7 +47,6 @@ public class ProductsService : IProductsService
     public async Task Create(string name, bool enabled, Guid userId, decimal price, int discountRate, string? description, string? image, IEnumerable<string>? images, IEnumerable<Guid> catalogs)
     {
         var selectedCatalogs = context.Catalogs.Where(p => catalogs.Any(q => q == p.Id)).ToList();
-
         await Create(new Product
         {
             UserId = userId,
@@ -57,7 +56,7 @@ public class ProductsService : IProductsService
             DiscountRate = discountRate,
             Description = description,
             Image = image,
-            ProductImages = images?.Select(p => new ProductImage { Image = p }).ToList(),
+            ProductImages = images?.Select(p => new ProductImage { UserId = userId, Image = p }).ToList(),
             Catalogs = selectedCatalogs
         });
     }
